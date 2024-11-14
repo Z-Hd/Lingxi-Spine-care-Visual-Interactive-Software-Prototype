@@ -1,0 +1,16 @@
+# ninja log v6
+33	142	7524096782543842	.qt_plugins/Qt6_QmlPlugins_Imports_SurgicalRobotSoftware.cmake	dc6d23329fc07dc3
+33	142	7524096782543842	D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/.qt_plugins/Qt6_QmlPlugins_Imports_SurgicalRobotSoftware.cmake	dc6d23329fc07dc3
+24	612	7524116357412674	SurgicalRobotSoftware_autogen/timestamp	10bc1ee28e27692
+24	612	7524116357412674	SurgicalRobotSoftware_autogen/mocs_compilation.cpp	10bc1ee28e27692
+24	612	7524116357412674	D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/SurgicalRobotSoftware_autogen/timestamp	10bc1ee28e27692
+24	612	7524116357412674	D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/SurgicalRobotSoftware_autogen/mocs_compilation.cpp	10bc1ee28e27692
+613	662	7524116358516433	SurgicalRobotSoftware_autogen/EWIEGA46WW/qrc_image.cpp	21f8dd1b1e50465c
+613	662	7524116358516433	D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/SurgicalRobotSoftware_autogen/EWIEGA46WW/qrc_image.cpp	21f8dd1b1e50465c
+694	762	7524116358901146	CMakeFiles/SurgicalRobotSoftware.dir/SurgicalRobotSoftware_autogen/EWIEGA46WW/qrc_image.cpp.obj	49ad0bf297e1e0db
+662	2167	7524116358576435	CMakeFiles/SurgicalRobotSoftware.dir/SurgicalRobotSoftware_autogen/mocs_compilation.cpp.obj	626752f799f49199
+680	2088	7524116358766098	CMakeFiles/SurgicalRobotSoftware.dir/main.cpp.obj	dcef84bb6d4d9dcf
+685	2368	7524116358806094	CMakeFiles/SurgicalRobotSoftware.dir/login.cpp.obj	babcd571ba3b5bd7
+690	3895	7524116358856118	CMakeFiles/SurgicalRobotSoftware.dir/spinalimage.cpp.obj	49957a601fff047a
+25	47	7524096736981786	CMakeFiles/clean.additional	30e2c863849131fd
+47	56	7524096737212020	clean	706119ba4f4f443c

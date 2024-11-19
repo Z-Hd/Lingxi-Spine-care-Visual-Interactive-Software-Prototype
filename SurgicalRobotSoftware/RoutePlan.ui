@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1063</width>
-    <height>702</height>
+    <width>1080</width>
+    <height>688</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>20</pointsize>
+          <pointsize>17</pointsize>
          </font>
         </property>
         <property name="text">
@@ -146,9 +146,6 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget" native="true"/>
-   </item>
-   <item>
     <widget class="QGroupBox" name="Visualize">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -200,7 +197,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>123</string>
+             <string>N</string>
             </property>
            </widget>
           </item>
@@ -238,7 +235,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>123</string>
+             <string>N</string>
             </property>
            </widget>
           </item>
@@ -276,7 +273,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>123</string>
+             <string>N</string>
             </property>
            </widget>
           </item>

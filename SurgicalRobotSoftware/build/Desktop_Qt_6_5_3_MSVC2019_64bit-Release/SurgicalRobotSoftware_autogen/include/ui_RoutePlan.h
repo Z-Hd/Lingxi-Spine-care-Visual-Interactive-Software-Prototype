@@ -39,7 +39,6 @@ public:
     QPushButton *Refresh_2;
     QSpacerItem *horizontalSpacer_6;
     QSpacerItem *horizontalSpacer_4;
-    QWidget *widget;
     QGroupBox *Visualize;
     QGridLayout *gridLayout;
     QVTKOpenGLNativeWidget *Model3D_2;
@@ -68,7 +67,7 @@ public:
     {
         if (RoutePlan->objectName().isEmpty())
             RoutePlan->setObjectName("RoutePlan");
-        RoutePlan->resize(1063, 702);
+        RoutePlan->resize(1080, 688);
         verticalLayout = new QVBoxLayout(RoutePlan);
         verticalLayout->setObjectName("verticalLayout");
         Title = new QGroupBox(RoutePlan);
@@ -83,7 +82,7 @@ public:
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
         QFont font;
-        font.setPointSize(20);
+        font.setPointSize(17);
         label->setFont(font);
 
         horizontalLayout_2->addWidget(label);
@@ -128,11 +127,6 @@ public:
 
 
         verticalLayout->addWidget(Title);
-
-        widget = new QWidget(RoutePlan);
-        widget->setObjectName("widget");
-
-        verticalLayout->addWidget(widget);
 
         Visualize = new QGroupBox(RoutePlan);
         Visualize->setObjectName("Visualize");
@@ -290,9 +284,9 @@ public:
         label->setText(QCoreApplication::translate("RoutePlan", "\346\244\216\351\227\264\345\255\224\351\200\232\351\201\223\345\205\245\350\267\257\345\256\232\344\275\215", nullptr));
         Refresh_2->setText(QCoreApplication::translate("RoutePlan", "\345\210\267\346\226\260", nullptr));
         Visualize->setTitle(QCoreApplication::translate("RoutePlan", "Visualize", nullptr));
-        Coronal_Label_2->setText(QCoreApplication::translate("RoutePlan", "123", nullptr));
-        Sagittal_Label_2->setText(QCoreApplication::translate("RoutePlan", "123", nullptr));
-        Transverse_Label_2->setText(QCoreApplication::translate("RoutePlan", "123", nullptr));
+        Coronal_Label_2->setText(QCoreApplication::translate("RoutePlan", "N", nullptr));
+        Sagittal_Label_2->setText(QCoreApplication::translate("RoutePlan", "N", nullptr));
+        Transverse_Label_2->setText(QCoreApplication::translate("RoutePlan", "N", nullptr));
         Previous_and_Next->setTitle(QCoreApplication::translate("RoutePlan", "Previous&Next", nullptr));
         Previous_2->setText(QCoreApplication::translate("RoutePlan", "\344\270\212\344\270\200\346\255\245", nullptr));
         Next_2->setText(QCoreApplication::translate("RoutePlan", "\344\270\213\344\270\200\346\255\245", nullptr));

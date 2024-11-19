@@ -89,7 +89,7 @@ void RoutePlan::SagittalSliderChange(int value){
 
 void RoutePlan::on_Refresh_2_clicked()
 {
-    QWidget::repaint();
+    QWidget::update();
     QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/raw/spine_007.nii.gz"));
     vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
     reader->SetFileName(str.toStdString().c_str());

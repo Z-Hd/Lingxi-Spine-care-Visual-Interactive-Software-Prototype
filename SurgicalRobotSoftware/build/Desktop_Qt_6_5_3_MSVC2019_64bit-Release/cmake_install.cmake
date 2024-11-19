@@ -1,4 +1,4 @@
-# Install script for directory: D:/qtProjects/SurgicalRobotSoftware
+# Install script for directory: E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,7 +33,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/SurgicalRobotSoftware.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/SurgicalRobotSoftware.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -44,5 +44,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

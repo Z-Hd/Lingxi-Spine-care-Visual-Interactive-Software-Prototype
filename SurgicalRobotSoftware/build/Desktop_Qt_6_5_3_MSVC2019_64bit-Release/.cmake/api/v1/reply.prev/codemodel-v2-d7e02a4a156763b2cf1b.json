@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-bfc1bc918b2053995c10.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SurgicalRobotSoftware",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SurgicalRobotSoftware::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SurgicalRobotSoftware-Release-ba7a1b71d944e83972f2.json",
+					"name" : "SurgicalRobotSoftware",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SurgicalRobotSoftware_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SurgicalRobotSoftware_autogen-Release-a4948d0f33d3314d4d28.json",
+					"name" : "SurgicalRobotSoftware_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SurgicalRobotSoftware_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SurgicalRobotSoftware_autogen_timestamp_deps-Release-43192decab0b75e42186.json",
+					"name" : "SurgicalRobotSoftware_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SurgicalRobotSoftware_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SurgicalRobotSoftware_qmlimportscan-Release-29063298fc2d69da56ea.json",
+					"name" : "SurgicalRobotSoftware_qmlimportscan",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release",
+		"source" : "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

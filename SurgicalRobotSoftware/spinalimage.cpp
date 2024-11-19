@@ -23,6 +23,7 @@
 #include <vtkDataSet.h>
 #include <vtkPointData.h>
 #include <QVTKOpenGLNativeWidget.h>
+#include "mainwidget.h"
 
 
 

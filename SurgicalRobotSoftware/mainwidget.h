@@ -2,6 +2,7 @@
 #define MAINWIDGET_H
 
 #include <QWidget>
+#include <vtkImageData.h>
 
 namespace Ui {
 class mainWidget;
@@ -14,6 +15,8 @@ class mainWidget : public QWidget
 public:
     explicit mainWidget(QWidget *parent = nullptr);
     ~mainWidget();
+    vtkImageData* imageData;
+    vtkImageData* imageSegment;
 
 private:
     Ui::mainWidget *ui;

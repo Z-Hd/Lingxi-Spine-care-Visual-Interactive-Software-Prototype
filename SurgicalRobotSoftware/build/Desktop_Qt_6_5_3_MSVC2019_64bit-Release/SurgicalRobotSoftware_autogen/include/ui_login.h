@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -31,7 +32,10 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QLineEdit *passwordEdit;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer;
     QPushButton *login;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QWidget *Login)
     {
@@ -75,10 +79,29 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer);
+
         login = new QPushButton(verticalLayoutWidget);
         login->setObjectName("login");
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(login->sizePolicy().hasHeightForWidth());
+        login->setSizePolicy(sizePolicy);
+        login->setLayoutDirection(Qt::LeftToRight);
 
-        verticalLayout->addWidget(login);
+        horizontalLayout_3->addWidget(login);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_2);
+
+
+        verticalLayout->addLayout(horizontalLayout_3);
 
 
         retranslateUi(Login);

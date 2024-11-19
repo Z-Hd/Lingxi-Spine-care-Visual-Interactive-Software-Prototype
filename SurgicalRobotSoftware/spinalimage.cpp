@@ -57,6 +57,10 @@ void SpinalImage::initImage(){
     ui->sagittalSlider1->setMaximum(origin[0] + spacing[0]*extent[1]);
     connect(ui->sagittalSlider1,&QSlider::valueChanged,this,&SpinalImage::sagittalSliderChange);
     ui->sagittalSlider1->setValue( origin[0] + spacing[0] * 0.5 * (extent[0] + extent[1]));
+
+    axialSliderChange(ui->axialSlider1->value());
+    coronalSliderChange(ui->coronalSlider1->value());
+    sagittalSliderChange(ui->sagittalSlider1->value());
 }
 
 SpinalImage::~SpinalImage()
@@ -77,19 +81,31 @@ void SpinalImage::on_nextStep1_clicked()
 
 void SpinalImage::axialSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->axialPlane1->renderWindow();
-    resliceTool.showReslice(imageData,axialRenderWindow,ResliceTool::Axial,value);
+    if(isSegment){
+        vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->axialSegment->renderWindow();
+        resliceTool.showReslice(imageSegment,axialSegmentRender,ResliceTool::Axial,value,true);
+    }
+    resliceTool.showReslice(imageData,axialRenderWindow,ResliceTool::Axial,value,false);
     ui->axialIndex1->setText(QString::number(value));
 }
 
 void SpinalImage::coronalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->coronalPlane1->renderWindow();
-    resliceTool.showReslice(imageData,coronalRenderWindow,ResliceTool::Coronal,value);
+    if(isSegment){
+        vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->coronalSegment->renderWindow();
+        resliceTool.showReslice(imageSegment,coronalSegmentRender,ResliceTool::Coronal,value,true);
+    }
+    resliceTool.showReslice(imageData,coronalRenderWindow,ResliceTool::Coronal,value,false);
     ui->coronalIndex1->setText(QString::number(value));
 }
 
 void SpinalImage::sagittalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->sagittalPlane1->renderWindow();
-    resliceTool.showReslice(imageData,sagittalRenderWindow,ResliceTool::Sagittal,value);
+    if(isSegment){
+        vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->sagittalSegment->renderWindow();
+        resliceTool.showReslice(imageSegment,sagittalSegmentRender,ResliceTool::Sagittal,value,true);
+    }
+    resliceTool.showReslice(imageData,sagittalRenderWindow,ResliceTool::Sagittal,value,false);
     ui->sagittalIndex1->setText(QString::number(value));
 }
 
@@ -97,11 +113,32 @@ void SpinalImage::sagittalSliderChange(int value){
 
 void SpinalImage::on_loadImage_clicked()
 {
+
     QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/raw/spine_007.nii.gz"));
     vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
     reader->SetFileName(str.toStdString().c_str());
     reader->Update();
     imageData = reader->GetOutput();
+    isSegment=false;
+    ui->axialSegment->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    ui->coronalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    ui->sagittalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    initImage();
+}
+
+
+void SpinalImage::on_segment_clicked()
+{
+
+    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/segment/spine_007.nii.gz"));
+    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
+    reader->SetFileName(str.toStdString().c_str());
+    reader->Update();
+    imageSegment = reader->GetOutput();
+    isSegment=true;
+    ui->axialSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    ui->coronalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    ui->sagittalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     initImage();
 }
 

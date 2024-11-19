@@ -30,17 +30,20 @@ public:
     QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_4;
     QVTKOpenGLNativeWidget *axialPlane1;
+    QVTKOpenGLNativeWidget *axialSegment;
     QVBoxLayout *verticalLayout_4;
     QSlider *axialSlider1;
     QLabel *axialIndex1;
     QVTKOpenGLNativeWidget *threeDimensiona1;
     QHBoxLayout *horizontalLayout_5;
     QVTKOpenGLNativeWidget *coronalPlane1;
+    QVTKOpenGLNativeWidget *coronalSegment;
     QVBoxLayout *verticalLayout_5;
     QSlider *coronalSlider1;
     QLabel *coronalIndex1;
     QHBoxLayout *horizontalLayout_6;
     QVTKOpenGLNativeWidget *sagittalPlane1;
+    QVTKOpenGLNativeWidget *sagittalSegment;
     QVBoxLayout *verticalLayout_6;
     QSlider *sagittalSlider1;
     QLabel *sagittalIndex1;
@@ -75,6 +78,16 @@ public:
 
         horizontalLayout_4->addWidget(axialPlane1);
 
+        axialSegment = new QVTKOpenGLNativeWidget(SpinalImage);
+        axialSegment->setObjectName("axialSegment");
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(axialSegment->sizePolicy().hasHeightForWidth());
+        axialSegment->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_4->addWidget(axialSegment);
+
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName("verticalLayout_4");
         axialSlider1 = new QSlider(SpinalImage);
@@ -85,11 +98,11 @@ public:
 
         axialIndex1 = new QLabel(SpinalImage);
         axialIndex1->setObjectName("axialIndex1");
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(axialIndex1->sizePolicy().hasHeightForWidth());
-        axialIndex1->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(axialIndex1->sizePolicy().hasHeightForWidth());
+        axialIndex1->setSizePolicy(sizePolicy2);
         axialIndex1->setTextFormat(Qt::AutoText);
         axialIndex1->setMargin(2);
 
@@ -117,6 +130,13 @@ public:
 
         horizontalLayout_5->addWidget(coronalPlane1);
 
+        coronalSegment = new QVTKOpenGLNativeWidget(SpinalImage);
+        coronalSegment->setObjectName("coronalSegment");
+        sizePolicy1.setHeightForWidth(coronalSegment->sizePolicy().hasHeightForWidth());
+        coronalSegment->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_5->addWidget(coronalSegment);
+
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName("verticalLayout_5");
         coronalSlider1 = new QSlider(SpinalImage);
@@ -127,8 +147,8 @@ public:
 
         coronalIndex1 = new QLabel(SpinalImage);
         coronalIndex1->setObjectName("coronalIndex1");
-        sizePolicy1.setHeightForWidth(coronalIndex1->sizePolicy().hasHeightForWidth());
-        coronalIndex1->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(coronalIndex1->sizePolicy().hasHeightForWidth());
+        coronalIndex1->setSizePolicy(sizePolicy2);
 
         verticalLayout_5->addWidget(coronalIndex1);
 
@@ -146,6 +166,13 @@ public:
         sagittalPlane1->setSizePolicy(sizePolicy);
 
         horizontalLayout_6->addWidget(sagittalPlane1);
+
+        sagittalSegment = new QVTKOpenGLNativeWidget(SpinalImage);
+        sagittalSegment->setObjectName("sagittalSegment");
+        sizePolicy1.setHeightForWidth(sagittalSegment->sizePolicy().hasHeightForWidth());
+        sagittalSegment->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_6->addWidget(sagittalSegment);
 
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setObjectName("verticalLayout_6");
@@ -192,11 +219,11 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         loadImage = new QPushButton(groupBox);
         loadImage->setObjectName("loadImage");
-        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(loadImage->sizePolicy().hasHeightForWidth());
-        loadImage->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(loadImage->sizePolicy().hasHeightForWidth());
+        loadImage->setSizePolicy(sizePolicy3);
 
         verticalLayout->addWidget(loadImage);
 

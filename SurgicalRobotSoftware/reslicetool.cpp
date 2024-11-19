@@ -62,17 +62,27 @@ vtkSmartPointer<vtkImageReslice> ResliceTool::getReslice(vtkImageData* imageData
     return imageReslice;
 }
 
-void ResliceTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRenderWindow>& renderWindow,Type type,double index){
+void ResliceTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRenderWindow>& renderWindow,Type type,double index,bool isSegment){
     auto ImageReslice=getReslice(imageData,type,index);
     ImageReslice->Update();
     vtkImageData* outputImagedata = ImageReslice->GetOutput();
     double range[2];
     outputImagedata->GetScalarRange(range);
     auto lookupTable = vtkSmartPointer<vtkLookupTable>::New();
-    lookupTable->SetRange(range[0], range[1]);
-    lookupTable->SetValueRange(0.0, 1.0);
-    lookupTable->SetSaturationRange(0.0, 0.0);
-    lookupTable->SetRampToLinear();
+    if(isSegment){
+        lookupTable->SetNumberOfTableValues(5);  // 设置 0～4 共5个值
+        lookupTable->SetRange(0, 4);             // 设置范围，覆盖所有分割值
+        lookupTable->SetTableValue(0, 0.0, 0.0, 0.0, 0.0);   // 背景透明
+        lookupTable->SetTableValue(1, 1.0, 0.0, 0.0, 1.0);   // 红色
+        lookupTable->SetTableValue(2, 0.0, 1.0, 0.0, 1.0);   // 绿色
+        lookupTable->SetTableValue(3, 0.0, 0.0, 1.0, 1.0);   // 蓝色
+        lookupTable->SetTableValue(4, 1.0, 1.0, 0.0, 1.0);   // 黄色
+    }else{
+        lookupTable->SetRange(range[0], range[1]);
+        lookupTable->SetValueRange(0.0, 1.0);
+        lookupTable->SetSaturationRange(0.0, 0.0);
+        lookupTable->SetRampToLinear();
+    }
     lookupTable->Build();
     auto mapToColors = vtkSmartPointer<vtkImageMapToColors>::New();
     mapToColors->SetLookupTable(lookupTable);

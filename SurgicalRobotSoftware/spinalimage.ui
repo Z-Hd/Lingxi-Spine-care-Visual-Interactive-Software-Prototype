@@ -32,6 +32,16 @@
         </widget>
        </item>
        <item>
+        <widget class="QVTKOpenGLNativeWidget" name="axialSegment" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
           <widget class="QSlider" name="axialSlider1">
@@ -86,6 +96,16 @@
         </widget>
        </item>
        <item>
+        <widget class="QVTKOpenGLNativeWidget" name="coronalSegment" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
           <widget class="QSlider" name="coronalSlider1">
@@ -117,6 +137,16 @@
         <widget class="QVTKOpenGLNativeWidget" name="sagittalPlane1" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QVTKOpenGLNativeWidget" name="sagittalSegment" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>

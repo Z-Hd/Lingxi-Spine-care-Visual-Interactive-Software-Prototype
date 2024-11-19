@@ -48,11 +48,12 @@ static constexpr auto qt_meta_stringdata_CLASSSpinalImageENDCLASS = QtMocHelpers
     "value",
     "coronalSliderChange",
     "sagittalSliderChange",
-    "on_loadImage_clicked"
+    "on_loadImage_clicked",
+    "on_segment_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSSpinalImageENDCLASS_t {
-    uint offsetsAndSizes[22];
+    uint offsetsAndSizes[24];
     char stringdata0[12];
     char stringdata1[19];
     char stringdata2[1];
@@ -64,6 +65,7 @@ struct qt_meta_stringdata_CLASSSpinalImageENDCLASS_t {
     char stringdata8[20];
     char stringdata9[21];
     char stringdata10[21];
+    char stringdata11[19];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSSpinalImageENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -79,7 +81,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSSpinalImageENDCLASS_t qt_meta_s
         QT_MOC_LITERAL(114, 5),  // "value"
         QT_MOC_LITERAL(120, 19),  // "coronalSliderChange"
         QT_MOC_LITERAL(140, 20),  // "sagittalSliderChange"
-        QT_MOC_LITERAL(161, 20)   // "on_loadImage_clicked"
+        QT_MOC_LITERAL(161, 20),  // "on_loadImage_clicked"
+        QT_MOC_LITERAL(182, 18)   // "on_segment_clicked"
     },
     "SpinalImage",
     "nextButton_pressed",
@@ -91,7 +94,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSSpinalImageENDCLASS_t qt_meta_s
     "value",
     "coronalSliderChange",
     "sagittalSliderChange",
-    "on_loadImage_clicked"
+    "on_loadImage_clicked",
+    "on_segment_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -103,7 +107,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSSpinalImageENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -111,16 +115,17 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSSpinalImageENDCLASS[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   62,    2, 0x06,    1 /* Public */,
-       3,    0,   63,    2, 0x06,    2 /* Public */,
+       1,    0,   68,    2, 0x06,    1 /* Public */,
+       3,    0,   69,    2, 0x06,    2 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   64,    2, 0x08,    3 /* Private */,
-       5,    0,   65,    2, 0x08,    4 /* Private */,
-       6,    1,   66,    2, 0x08,    5 /* Private */,
-       8,    1,   69,    2, 0x08,    7 /* Private */,
-       9,    1,   72,    2, 0x08,    9 /* Private */,
-      10,    0,   75,    2, 0x08,   11 /* Private */,
+       4,    0,   70,    2, 0x08,    3 /* Private */,
+       5,    0,   71,    2, 0x08,    4 /* Private */,
+       6,    1,   72,    2, 0x08,    5 /* Private */,
+       8,    1,   75,    2, 0x08,    7 /* Private */,
+       9,    1,   78,    2, 0x08,    9 /* Private */,
+      10,    0,   81,    2, 0x08,   11 /* Private */,
+      11,    0,   82,    2, 0x08,   12 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -132,6 +137,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSSpinalImageENDCLASS[] = {
     QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -164,6 +170,8 @@ Q_CONSTINIT const QMetaObject SpinalImage::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_loadImage_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_segment_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -183,6 +191,7 @@ void SpinalImage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 5: _t->coronalSliderChange((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 6: _t->sagittalSliderChange((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 7: _t->on_loadImage_clicked(); break;
+        case 8: _t->on_segment_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -223,13 +232,13 @@ int SpinalImage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

@@ -27,6 +27,8 @@ private slots:
 
     void on_loadImage_clicked();
 
+    void on_segment_clicked();
+
 signals:
     void nextButton_pressed();
     void preButton_pressed();
@@ -34,7 +36,9 @@ signals:
 private:
     Ui::SpinalImage *ui;
     vtkImageData* imageData;
+    vtkImageData* imageSegment;
     ResliceTool resliceTool;
+    bool isSegment=false;
 };
 
 #endif // SPINALIMAGE_H

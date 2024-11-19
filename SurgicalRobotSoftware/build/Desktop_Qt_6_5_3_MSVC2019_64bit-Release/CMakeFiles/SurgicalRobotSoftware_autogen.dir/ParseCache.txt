@@ -283,7 +283,62 @@ E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/RoutePlan.h
  mdp:D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h
  mdp:D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtWidgets/qwidget.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkABI.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkABINamespace.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkAlgorithm.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkAutoInit.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkBuild.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkCommand.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkCommonCoreModule.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkCommonDataModelModule.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkCommonExecutionModelModule.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkCompiler.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkDataObject.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkDataSet.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkDebugLeaksManager.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkDeprecation.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkEventData.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkFeatures.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkFiltersCoreModule.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkIOStream.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkImageAlgorithm.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkImageData.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkImageReslice.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkImagingCoreModule.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkIndent.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkMeta.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkNew.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkOStrStreamWrapper.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkOStreamWrapper.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkObject.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkObjectBase.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkOptions.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkPlatform.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkRenderWindow.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkRenderingCoreModule.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkSetGet.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkSmartPointer.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkSmartPointerBase.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkStructuredData.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkSystemIncludes.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkThreadedImageAlgorithm.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkThreads.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkTimeStamp.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkType.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkVersionQuick.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkWeakPointerBase.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkWin32Header.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkWindow.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkWrappingHints.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtk_kwiml.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkkwiml/abi.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtkkwiml/int.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtksys/Configure.h
+ mdp:D:/vtk_pix/include/vtk-9.4/vtksys/Configure.hxx
+ mdp:D:/vtk_pix/include/vtk-9.4/vtksys/Status.hxx
+ mdp:D:/vtk_pix/include/vtk-9.4/vtksys/SystemTools.hxx
  mdp:E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/RoutePlan.h
+ mdp:E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/reslicetool.h
 E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/spinalimage.h
  mmc:Q_OBJECT
  mdp:D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/q20memory.h

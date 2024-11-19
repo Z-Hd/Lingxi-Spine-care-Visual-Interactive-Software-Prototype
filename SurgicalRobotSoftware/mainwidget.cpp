@@ -16,9 +16,9 @@ mainWidget::mainWidget(QWidget *parent)
     this->setGeometry(screenGeometry);
     SpinalImage* spinalImage = new SpinalImage();
     IntraoperativeImage* intraoperativeImage = new IntraoperativeImage();
-    Form* form = new Form();
+    RoutePlan* routeplan = new RoutePlan();
     ui->stackedWidget->addWidget(spinalImage);
-    ui->stackedWidget->addWidget(form);
+    ui->stackedWidget->addWidget(routeplan);
     ui->stackedWidget->addWidget(intraoperativeImage);
     ui->stackedWidget->setCurrentIndex(0);
     connect(spinalImage,&SpinalImage::preButton_pressed,[=](){
@@ -29,10 +29,10 @@ mainWidget::mainWidget(QWidget *parent)
     connect(spinalImage,&SpinalImage::nextButton_pressed,[=](){
         ui->stackedWidget->setCurrentIndex(1);
     });
-    connect(form,&Form::preButton_pressed,[=](){
+    connect(routeplan,&RoutePlan::preButton_pressed,[=](){
         ui->stackedWidget->setCurrentIndex(0);
     });
-    connect(form,&Form::nextButton_pressed,[=](){
+    connect(routeplan,&RoutePlan::nextButton_pressed,[=](){
         ui->stackedWidget->setCurrentIndex(2);
     });
 

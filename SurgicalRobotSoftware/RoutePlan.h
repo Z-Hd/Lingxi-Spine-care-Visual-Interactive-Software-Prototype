@@ -2,31 +2,38 @@
 #define ROUTEPLAN_H
 
 #include <QWidget>
+#include <vtkImageData.h>
+#include "reslicetool.h"
 
 namespace Ui {
 class RoutePlan;
 }
 
-class Form : public QWidget
+class RoutePlan : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Form(QWidget *parent = nullptr);
-    ~Form();
+    explicit RoutePlan(QWidget *parent = nullptr);
+    ~RoutePlan();
+    void initImage();
 
 private slots:
     void on_Refresh_2_clicked();
-
     void on_Next_2_clicked();
-
     void on_Previous_2_clicked();
+    void TransverseSliderChange(int value);
+    void CoronalSliderChange(int value);
+    void SagittalSliderChange(int value);
+
 signals:
     void preButton_pressed();
     void nextButton_pressed();
 
 private:
     Ui::RoutePlan *ui;
+    vtkImageData* imageData;
+    ResliceTool resliceTool;
 };
 
 #endif // ROUTEPLAN_H

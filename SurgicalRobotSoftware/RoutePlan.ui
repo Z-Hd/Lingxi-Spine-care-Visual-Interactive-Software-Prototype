@@ -168,9 +168,9 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <layout class="QHBoxLayout" name="Coronal">
+       <layout class="QHBoxLayout" name="Coronal_2">
         <item>
-         <widget class="QVTKOpenGLNativeWidget" name="Coronal_2" native="true">
+         <widget class="QVTKOpenGLNativeWidget" name="CoronalPlane_2" native="true">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -180,16 +180,16 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="Coronal_Sub">
+         <layout class="QVBoxLayout" name="CoronalSub_2">
           <item>
-           <widget class="QSlider" name="Coronal_Slider_2">
+           <widget class="QSlider" name="CoronalSlider_2">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="Coronal_Label_2">
+           <widget class="QLabel" name="CoronalLabel_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -206,9 +206,9 @@
        </layout>
       </item>
       <item row="1" column="3">
-       <layout class="QHBoxLayout" name="Sagittal">
+       <layout class="QHBoxLayout" name="Sagittal_2">
         <item>
-         <widget class="QVTKOpenGLNativeWidget" name="Sagittal_2" native="true">
+         <widget class="QVTKOpenGLNativeWidget" name="SagittalPlane_2" native="true">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -218,16 +218,16 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="Sagittal_Sub">
+         <layout class="QVBoxLayout" name="SagittalSub_2">
           <item>
-           <widget class="QSlider" name="Sagittal_Slider_2">
+           <widget class="QSlider" name="SagittalSlider_2">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="Sagittal_Label_2">
+           <widget class="QLabel" name="SagittalLabel_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -244,9 +244,9 @@
        </layout>
       </item>
       <item row="1" column="0">
-       <layout class="QHBoxLayout" name="Transverse">
+       <layout class="QHBoxLayout" name="Transverse_2">
         <item>
-         <widget class="QVTKOpenGLNativeWidget" name="Transverse_2" native="true">
+         <widget class="QVTKOpenGLNativeWidget" name="TransversePlane_2" native="true">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -256,16 +256,16 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="Transverse_Sub">
+         <layout class="QVBoxLayout" name="TransverseSub_2">
           <item>
-           <widget class="QSlider" name="Transverse_Slider_2">
+           <widget class="QSlider" name="TransverseSlider_2">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="Transverse_Label_2">
+           <widget class="QLabel" name="TransverseLabel_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
               <horstretch>0</horstretch>

@@ -44,24 +44,24 @@ void RoutePlan::initImage(){
     imageData->GetSpacing(spacing);
     imageData->GetOrigin(origin);
 
-    ui->Transverse_Slider_2->setMinimum(origin[2] + spacing[2]*extent[4]);
-    ui->Transverse_Slider_2->setMaximum(origin[2] + spacing[2]*extent[5]);
-    connect(ui->Transverse_Slider_2,&QSlider::valueChanged,this,&RoutePlan::TransverseSliderChange);
-    ui->Transverse_Slider_2->setValue(origin[2] + spacing[2] * 0.5 * (extent[4] + extent[5]));
+    ui->TransverseSlider_2->setMinimum(origin[2] + spacing[2]*extent[4]);
+    ui->TransverseSlider_2->setMaximum(origin[2] + spacing[2]*extent[5]);
+    connect(ui->TransverseSlider_2,&QSlider::valueChanged,this,&RoutePlan::TransverseSliderChange);
+    ui->TransverseSlider_2->setValue(origin[2] + spacing[2] * 0.5 * (extent[4] + extent[5]));
 
-    ui->Coronal_Slider_2->setMinimum(origin[1] + spacing[1]*extent[2]);
-    ui->Coronal_Slider_2->setMaximum(origin[1] + spacing[1]*extent[3]);
-    connect(ui->Coronal_Slider_2,&QSlider::valueChanged,this,&RoutePlan::CoronalSliderChange);
-    ui->Coronal_Slider_2->setValue(origin[1] + spacing[1] * 0.5 * (extent[2] + extent[3]));
+    ui->CoronalSlider_2->setMinimum(origin[1] + spacing[1]*extent[2]);
+    ui->CoronalSlider_2->setMaximum(origin[1] + spacing[1]*extent[3]);
+    connect(ui->CoronalSlider_2,&QSlider::valueChanged,this,&RoutePlan::CoronalSliderChange);
+    ui->CoronalSlider_2->setValue(origin[1] + spacing[1] * 0.5 * (extent[2] + extent[3]));
 
-    ui->Sagittal_Slider_2->setMinimum(origin[0] + spacing[0]*extent[0]);
-    ui->Sagittal_Slider_2->setMaximum(origin[0] + spacing[0]*extent[1]);
-    connect(ui->Sagittal_Slider_2,&QSlider::valueChanged,this,&RoutePlan::SagittalSliderChange);
-    ui->Sagittal_Slider_2->setValue( origin[0] + spacing[0] * 0.5 * (extent[0] + extent[1]));
+    ui->SagittalSlider_2->setMinimum(origin[0] + spacing[0]*extent[0]);
+    ui->SagittalSlider_2->setMaximum(origin[0] + spacing[0]*extent[1]);
+    connect(ui->SagittalSlider_2,&QSlider::valueChanged,this,&RoutePlan::SagittalSliderChange);
+    ui->SagittalSlider_2->setValue( origin[0] + spacing[0] * 0.5 * (extent[0] + extent[1]));
 
-    TransverseSliderChange(ui->Transverse_Slider_2->value());
-    CoronalSliderChange(ui->Coronal_Slider_2->value());
-    SagittalSliderChange(ui->Sagittal_Slider_2->value());
+    TransverseSliderChange(ui->TransverseSlider_2->value());
+    CoronalSliderChange(ui->CoronalSlider_2->value());
+    SagittalSliderChange(ui->SagittalSlider_2->value());
 }
 
 RoutePlan::~RoutePlan()
@@ -70,21 +70,21 @@ RoutePlan::~RoutePlan()
 }
 
 void RoutePlan::TransverseSliderChange(int value){
-    vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->Transverse_2->renderWindow();
+    vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->TransversePlane_2->renderWindow();
     resliceTool.showReslice(imageData,axialRenderWindow,ResliceTool::Axial,value,false);
-    ui->Transverse_Label_2->setText(QString::number(value));
+    ui->TransverseLabel_2->setText(QString::number(value));
 }
 
 void RoutePlan::CoronalSliderChange(int value){
-    vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->Coronal_2->renderWindow();
+    vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->CoronalPlane_2->renderWindow();
     resliceTool.showReslice(imageData,coronalRenderWindow,ResliceTool::Coronal,value,false);
-    ui->Coronal_Label_2->setText(QString::number(value));
+    ui->CoronalLabel_2->setText(QString::number(value));
 }
 
 void RoutePlan::SagittalSliderChange(int value){
-    vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->Sagittal_2->renderWindow();
+    vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->SagittalPlane_2->renderWindow();
     resliceTool.showReslice(imageData,sagittalRenderWindow,ResliceTool::Sagittal,value,false);
-    ui->Sagittal_Label_2->setText(QString::number(value));
+    ui->SagittalLabel_2->setText(QString::number(value));
 }
 
 void RoutePlan::on_Refresh_2_clicked()

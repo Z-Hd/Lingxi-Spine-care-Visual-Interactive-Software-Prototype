@@ -69,36 +69,6 @@ RoutePlan::~RoutePlan()
     delete ui;
 }
 
-void RoutePlan::TransverseSliderChange(int value){
-    vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->TransversePlane_2->renderWindow();
-    resliceTool.showReslice(imageData,axialRenderWindow,ResliceTool::Axial,value,false);
-    ui->TransverseLabel_2->setText(QString::number(value));
-}
-
-void RoutePlan::CoronalSliderChange(int value){
-    vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->CoronalPlane_2->renderWindow();
-    resliceTool.showReslice(imageData,coronalRenderWindow,ResliceTool::Coronal,value,false);
-    ui->CoronalLabel_2->setText(QString::number(value));
-}
-
-void RoutePlan::SagittalSliderChange(int value){
-    vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->SagittalPlane_2->renderWindow();
-    resliceTool.showReslice(imageData,sagittalRenderWindow,ResliceTool::Sagittal,value,false);
-    ui->SagittalLabel_2->setText(QString::number(value));
-}
-
-void RoutePlan::on_Refresh_2_clicked()
-{
-    QWidget::update();
-    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/raw/spine_007.nii.gz"));
-    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
-    reader->SetFileName(str.toStdString().c_str());
-    reader->Update();
-    imageData = reader->GetOutput();
-    initImage();
-}
-
-
 void RoutePlan::on_Next_2_clicked()
 {
     emit nextButton_pressed();
@@ -110,3 +80,61 @@ void RoutePlan::on_Previous_2_clicked()
     emit preButton_pressed();
 }
 
+void RoutePlan::TransverseSliderChange(int value){
+    vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->TransversePlane_2->renderWindow();
+    if(isSegment){
+        vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->TransverseSegment_2->renderWindow();
+        resliceTool.showReslice(imageSegment,axialSegmentRender,ResliceTool::Axial,value,true);
+    }
+    resliceTool.showReslice(imageData,axialRenderWindow,ResliceTool::Axial,value,false);
+    ui->TransverseLabel_2->setText(QString::number(value));
+}
+
+void RoutePlan::CoronalSliderChange(int value){
+    vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->CoronalPlane_2->renderWindow();
+    if(isSegment){
+        vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->CoronalSegment_2->renderWindow();
+        resliceTool.showReslice(imageSegment,coronalSegmentRender,ResliceTool::Coronal,value,true);
+    }
+    resliceTool.showReslice(imageData,coronalRenderWindow,ResliceTool::Coronal,value,false);
+    ui->CoronalLabel_2->setText(QString::number(value));
+}
+
+void RoutePlan::SagittalSliderChange(int value){
+    vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->SagittalPlane_2->renderWindow();
+    if(isSegment){
+        vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->SagittalSegment_2->renderWindow();
+        resliceTool.showReslice(imageSegment,sagittalSegmentRender,ResliceTool::Sagittal,value,true);
+    }
+    resliceTool.showReslice(imageData,sagittalRenderWindow,ResliceTool::Sagittal,value,false);
+    ui->SagittalLabel_2->setText(QString::number(value));
+}
+
+void RoutePlan::on_Refresh_2_clicked()
+{
+    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/raw/spine_007.nii.gz"));
+    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
+    reader->SetFileName(str.toStdString().c_str());
+    reader->Update();
+    imageData = reader->GetOutput();
+    isSegment=false;
+    ui->TransverseSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    ui->SagittalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    initImage();
+}
+
+
+void RoutePlan::on_Segment_2_clicked()
+{
+    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/segment/spine_007.nii.gz"));
+    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
+    reader->SetFileName(str.toStdString().c_str());
+    reader->Update();
+    imageSegment = reader->GetOutput();
+    isSegment=true;
+    ui->TransverseSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    ui->SagittalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    initImage();
+}

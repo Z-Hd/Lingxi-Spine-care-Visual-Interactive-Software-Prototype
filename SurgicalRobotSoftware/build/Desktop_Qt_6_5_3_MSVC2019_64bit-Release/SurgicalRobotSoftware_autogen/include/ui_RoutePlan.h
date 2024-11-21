@@ -37,6 +37,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_5;
     QPushButton *Refresh_2;
+    QPushButton *Segment_2;
     QSpacerItem *horizontalSpacer_6;
     QSpacerItem *horizontalSpacer_4;
     QGroupBox *Visualize;
@@ -44,16 +45,19 @@ public:
     QVTKOpenGLNativeWidget *Model3D_2;
     QHBoxLayout *Coronal_2;
     QVTKOpenGLNativeWidget *CoronalPlane_2;
+    QVTKOpenGLNativeWidget *CoronalSegment_2;
     QVBoxLayout *CoronalSub_2;
     QSlider *CoronalSlider_2;
     QLabel *CoronalLabel_2;
     QHBoxLayout *Sagittal_2;
     QVTKOpenGLNativeWidget *SagittalPlane_2;
+    QVTKOpenGLNativeWidget *SagittalSegment_2;
     QVBoxLayout *SagittalSub_2;
     QSlider *SagittalSlider_2;
     QLabel *SagittalLabel_2;
     QHBoxLayout *Transverse_2;
     QVTKOpenGLNativeWidget *TransversePlane_2;
+    QVTKOpenGLNativeWidget *TransverseSegment_2;
     QVBoxLayout *TransverseSub_2;
     QSlider *TransverseSlider_2;
     QLabel *TransverseLabel_2;
@@ -67,7 +71,7 @@ public:
     {
         if (RoutePlan->objectName().isEmpty())
             RoutePlan->setObjectName("RoutePlan");
-        RoutePlan->resize(1080, 688);
+        RoutePlan->resize(1046, 661);
         verticalLayout = new QVBoxLayout(RoutePlan);
         verticalLayout->setObjectName("verticalLayout");
         Title = new QGroupBox(RoutePlan);
@@ -117,6 +121,13 @@ public:
 
         horizontalLayout_2->addWidget(Refresh_2);
 
+        Segment_2 = new QPushButton(Title);
+        Segment_2->setObjectName("Segment_2");
+        sizePolicy1.setHeightForWidth(Segment_2->sizePolicy().hasHeightForWidth());
+        Segment_2->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_2->addWidget(Segment_2);
+
         horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer_6);
@@ -156,6 +167,11 @@ public:
 
         Coronal_2->addWidget(CoronalPlane_2);
 
+        CoronalSegment_2 = new QVTKOpenGLNativeWidget(Visualize);
+        CoronalSegment_2->setObjectName("CoronalSegment_2");
+
+        Coronal_2->addWidget(CoronalSegment_2);
+
         CoronalSub_2 = new QVBoxLayout();
         CoronalSub_2->setObjectName("CoronalSub_2");
         CoronalSlider_2 = new QSlider(Visualize);
@@ -189,6 +205,11 @@ public:
 
         Sagittal_2->addWidget(SagittalPlane_2);
 
+        SagittalSegment_2 = new QVTKOpenGLNativeWidget(Visualize);
+        SagittalSegment_2->setObjectName("SagittalSegment_2");
+
+        Sagittal_2->addWidget(SagittalSegment_2);
+
         SagittalSub_2 = new QVBoxLayout();
         SagittalSub_2->setObjectName("SagittalSub_2");
         SagittalSlider_2 = new QSlider(Visualize);
@@ -218,6 +239,11 @@ public:
         TransversePlane_2->setSizePolicy(sizePolicy3);
 
         Transverse_2->addWidget(TransversePlane_2);
+
+        TransverseSegment_2 = new QVTKOpenGLNativeWidget(Visualize);
+        TransverseSegment_2->setObjectName("TransverseSegment_2");
+
+        Transverse_2->addWidget(TransverseSegment_2);
 
         TransverseSub_2 = new QVBoxLayout();
         TransverseSub_2->setObjectName("TransverseSub_2");
@@ -283,6 +309,7 @@ public:
         Title->setTitle(QString());
         label->setText(QCoreApplication::translate("RoutePlan", "\346\244\216\351\227\264\345\255\224\351\200\232\351\201\223\345\205\245\350\267\257\345\256\232\344\275\215", nullptr));
         Refresh_2->setText(QCoreApplication::translate("RoutePlan", "\345\210\267\346\226\260", nullptr));
+        Segment_2->setText(QCoreApplication::translate("RoutePlan", "\345\210\206\345\211\262\344\277\241\346\201\257", nullptr));
         Visualize->setTitle(QCoreApplication::translate("RoutePlan", "Visualize", nullptr));
         CoronalLabel_2->setText(QCoreApplication::translate("RoutePlan", "N", nullptr));
         SagittalLabel_2->setText(QCoreApplication::translate("RoutePlan", "N", nullptr));

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>688</height>
+    <width>1046</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -117,6 +117,19 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="Segment_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>分割信息</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer_6">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -180,6 +193,9 @@
          </widget>
         </item>
         <item>
+         <widget class="QVTKOpenGLNativeWidget" name="CoronalSegment_2" native="true"/>
+        </item>
+        <item>
          <layout class="QVBoxLayout" name="CoronalSub_2">
           <item>
            <widget class="QSlider" name="CoronalSlider_2">
@@ -218,6 +234,9 @@
          </widget>
         </item>
         <item>
+         <widget class="QVTKOpenGLNativeWidget" name="SagittalSegment_2" native="true"/>
+        </item>
+        <item>
          <layout class="QVBoxLayout" name="SagittalSub_2">
           <item>
            <widget class="QSlider" name="SagittalSlider_2">
@@ -254,6 +273,9 @@
            </sizepolicy>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QVTKOpenGLNativeWidget" name="TransverseSegment_2" native="true"/>
         </item>
         <item>
          <layout class="QVBoxLayout" name="TransverseSub_2">

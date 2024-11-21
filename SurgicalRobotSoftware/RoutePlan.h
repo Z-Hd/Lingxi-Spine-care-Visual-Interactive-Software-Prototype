@@ -22,6 +22,7 @@ private slots:
     void on_Refresh_2_clicked();
     void on_Next_2_clicked();
     void on_Previous_2_clicked();
+    void on_Segment_2_clicked();
     void TransverseSliderChange(int value);
     void CoronalSliderChange(int value);
     void SagittalSliderChange(int value);
@@ -34,6 +35,8 @@ private:
     Ui::RoutePlan *ui;
     vtkImageData* imageData;
     ResliceTool resliceTool;
+    vtkImageData* imageSegment;
+    bool isSegment=false;
 };
 
 #endif // ROUTEPLAN_H

@@ -42,7 +42,46 @@
        </widget>
       </item>
       <item>
-       <widget class="QVTKOpenGLNativeWidget" name="endoscopyLabel" native="true"/>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QVideoWidget" name="endoscope" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="actStartCamera">
+              <property name="text">
+               <string>开启摄像头</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="actStopCamera">
+              <property name="text">
+               <string>关闭摄像头</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -54,6 +93,12 @@
    <class>QVTKOpenGLNativeWidget</class>
    <extends>QWidget</extends>
    <header>qvtkopenglnativewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">&lt;QVideoWidget&gt;</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

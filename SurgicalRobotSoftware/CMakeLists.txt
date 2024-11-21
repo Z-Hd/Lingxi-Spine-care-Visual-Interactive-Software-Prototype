@@ -35,7 +35,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         RoutePlan.cpp
         RoutePlan.ui
         mainwidget.h mainwidget.cpp mainwidget.ui
-        reslicetool.h reslicetool.cpp
+        visualizeTool.h visualizeTool.cpp
 
 
     )

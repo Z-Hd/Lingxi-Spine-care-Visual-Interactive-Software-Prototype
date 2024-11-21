@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <vtkImageData.h>
-#include "reslicetool.h"
+#include "visualizeTool.h"
 
 namespace Ui {
 class SpinalImage;
@@ -17,6 +17,8 @@ public:
     explicit SpinalImage(QWidget *parent = nullptr);
     ~SpinalImage();
     void initImage();
+    vtkImageData* getImageData(){return this->imageData;};
+    vtkImageData* getImageSegment(){return this->imageSegment;};
 
 private slots:
     void on_previousStep1_clicked();
@@ -37,7 +39,7 @@ private:
     Ui::SpinalImage *ui;
     vtkImageData* imageData;
     vtkImageData* imageSegment;
-    ResliceTool resliceTool;
+    VisualizeTool visualizeTool;
     bool isSegment=false;
 };
 

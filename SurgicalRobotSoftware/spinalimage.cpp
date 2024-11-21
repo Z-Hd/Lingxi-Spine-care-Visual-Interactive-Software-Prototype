@@ -23,7 +23,7 @@
 #include <vtkDataSet.h>
 #include <vtkPointData.h>
 #include <QVTKOpenGLNativeWidget.h>
-#include "mainwidget.h"
+#include "visualizeTool.h"
 
 
 
@@ -34,6 +34,59 @@ SpinalImage::SpinalImage(QWidget *parent)
     ui->setupUi(this);
 }
 
+// void SpinalImage::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow){
+//     auto renderer = vtkSmartPointer<vtkRenderer>::New();
+//     vtkRenderWindowInteractor* ir = renderWindow->GetInteractor();
+//     renderWindow->AddRenderer(renderer);
+//     auto style = vtkSmartPointer<vtkInteractorStyleTrackballCamera>::New();
+//     ir->SetInteractorStyle(style);
+//     // 通过过滤器从数据中抽取一系列等值面
+//     auto volumeMapper = vtkSmartPointer<vtkSmartVolumeMapper>::New();
+//     volumeMapper->SetInputData(imageSegment);
+
+//     // 创建体积对象
+//     auto volume = vtkSmartPointer<vtkVolume>::New();
+//     volume->SetMapper(volumeMapper);
+
+//     // 创建转移函数
+//     auto volumeColor = vtkSmartPointer<vtkColorTransferFunction>::New();
+//     volumeColor->AddRGBPoint(0, 0.0, 0.0, 0.0);    // 背景透明
+//     volumeColor->AddRGBPoint(1, 1.0, 0.0, 0.0);    // 红色
+//     volumeColor->AddRGBPoint(2, 0.0, 1.0, 0.0);    // 绿色
+//     volumeColor->AddRGBPoint(3, 0.0, 0.0, 1.0);    // 蓝色
+//     volumeColor->AddRGBPoint(4, 1.0, 1.0, 0.0);    // 黄色
+
+//     auto volumeScalarOpacity = vtkSmartPointer<vtkPiecewiseFunction>::New();
+//     volumeScalarOpacity->AddPoint(0, 0.0);
+//     volumeScalarOpacity->AddPoint(1, 1.0);
+//     volumeScalarOpacity->AddPoint(2, 1.0);
+//     volumeScalarOpacity->AddPoint(3, 1.0);
+//     volumeScalarOpacity->AddPoint(4, 1.0);
+
+//     // 应用转移组和不透明度
+//     volume->GetProperty()->SetColor(volumeColor);
+//     volume->GetProperty()->SetScalarOpacity(volumeScalarOpacity);
+
+//     // 添加演员至场景
+//     renderer->AddVolume(volume);
+//     auto boxFilter = vtkSmartPointer<vtkOutlineFilter>::New();
+//     boxFilter->SetInputData(imageSegment);
+//     auto boxMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+//     boxMapper->SetInputConnection(boxFilter->GetOutputPort());
+//     auto boxActor = vtkSmartPointer<vtkActor>::New();
+//     boxActor->SetMapper(boxMapper);
+//     boxActor->GetProperty()->SetColor(0,1,0);
+
+//     auto camera = vtkSmartPointer<vtkCamera>::New();
+//     camera->SetViewUp(0,0,-1);
+//     camera->SetPosition(0,1,0);
+//     camera->SetFocalPoint(0,0,0);
+//     camera->ComputeViewPlaneNormal();
+//     camera->Dolly(1.5);
+//     renderer->SetActiveCamera(camera);
+//     renderer->ResetCamera();
+//     renderWindow->SetMultiSamples(0);
+// }
 void SpinalImage::initImage(){
     int extent[6];
     double spacing[3];
@@ -84,9 +137,9 @@ void SpinalImage::axialSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->axialPlane1->renderWindow();
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->axialSegment->renderWindow();
-        resliceTool.showReslice(imageSegment,axialSegmentRender,ResliceTool::Axial,value,true);
+        visualizeTool.showReslice(imageSegment,axialSegmentRender,VisualizeTool::Axial,value,true);
     }
-    resliceTool.showReslice(imageData,axialRenderWindow,ResliceTool::Axial,value,false);
+    visualizeTool.showReslice(imageData,axialRenderWindow,VisualizeTool::Axial,value,false);
     ui->axialIndex1->setText(QString::number(value));
 }
 
@@ -94,9 +147,9 @@ void SpinalImage::coronalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->coronalPlane1->renderWindow();
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->coronalSegment->renderWindow();
-        resliceTool.showReslice(imageSegment,coronalSegmentRender,ResliceTool::Coronal,value,true);
+        visualizeTool.showReslice(imageSegment,coronalSegmentRender,VisualizeTool::Coronal,value,true);
     }
-    resliceTool.showReslice(imageData,coronalRenderWindow,ResliceTool::Coronal,value,false);
+    visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
     ui->coronalIndex1->setText(QString::number(value));
 }
 
@@ -104,9 +157,9 @@ void SpinalImage::sagittalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->sagittalPlane1->renderWindow();
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->sagittalSegment->renderWindow();
-        resliceTool.showReslice(imageSegment,sagittalSegmentRender,ResliceTool::Sagittal,value,true);
+        visualizeTool.showReslice(imageSegment,sagittalSegmentRender,VisualizeTool::Sagittal,value,true);
     }
-    resliceTool.showReslice(imageData,sagittalRenderWindow,ResliceTool::Sagittal,value,false);
+    visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
     ui->sagittalIndex1->setText(QString::number(value));
 }
 
@@ -141,5 +194,7 @@ void SpinalImage::on_segment_clicked()
     ui->coronalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->sagittalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     initImage();
+    vtkSmartPointer<vtkRenderWindow> threeDimensiona1Render = ui->threeDimensiona1->renderWindow();
+    visualizeTool.show3D(threeDimensiona1Render,imageSegment);
 }
 

@@ -84,9 +84,9 @@ void RoutePlan::TransverseSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->TransversePlane_2->renderWindow();
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->TransverseSegment_2->renderWindow();
-        resliceTool.showReslice(imageSegment,axialSegmentRender,ResliceTool::Axial,value,true);
+        visualizeTool.showReslice(imageSegment,axialSegmentRender,VisualizeTool::Axial,value,true);
     }
-    resliceTool.showReslice(imageData,axialRenderWindow,ResliceTool::Axial,value,false);
+    visualizeTool.showReslice(imageData,axialRenderWindow,VisualizeTool::Axial,value,false);
     ui->TransverseLabel_2->setText(QString::number(value));
 }
 
@@ -94,9 +94,9 @@ void RoutePlan::CoronalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->CoronalPlane_2->renderWindow();
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->CoronalSegment_2->renderWindow();
-        resliceTool.showReslice(imageSegment,coronalSegmentRender,ResliceTool::Coronal,value,true);
+        visualizeTool.showReslice(imageSegment,coronalSegmentRender,VisualizeTool::Coronal,value,true);
     }
-    resliceTool.showReslice(imageData,coronalRenderWindow,ResliceTool::Coronal,value,false);
+    visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
     ui->CoronalLabel_2->setText(QString::number(value));
 }
 
@@ -104,9 +104,9 @@ void RoutePlan::SagittalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->SagittalPlane_2->renderWindow();
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->SagittalSegment_2->renderWindow();
-        resliceTool.showReslice(imageSegment,sagittalSegmentRender,ResliceTool::Sagittal,value,true);
+        visualizeTool.showReslice(imageSegment,sagittalSegmentRender,VisualizeTool::Sagittal,value,true);
     }
-    resliceTool.showReslice(imageData,sagittalRenderWindow,ResliceTool::Sagittal,value,false);
+    visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
     ui->SagittalLabel_2->setText(QString::number(value));
 }
 
@@ -137,4 +137,6 @@ void RoutePlan::on_Segment_2_clicked()
     ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->SagittalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     initImage();
+    vtkSmartPointer<vtkRenderWindow> Model3D_2 = ui->Model3D_2->renderWindow();
+    visualizeTool.show3D(Model3D_2,imageSegment);
 }

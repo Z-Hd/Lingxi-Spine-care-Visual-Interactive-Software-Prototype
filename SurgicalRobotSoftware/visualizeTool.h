@@ -1,5 +1,5 @@
-#ifndef RESLICETOOL_H
-#define RESLICETOOL_H
+#ifndef VISUALIZETOOL_H
+#define VISUALIZETOOL_H
 #include "vtkAutoInit.h"
 #include <vtkImageReslice.h>
 #include <vtkImageData.h>
@@ -9,7 +9,7 @@ VTK_MODULE_INIT(vtkInteractionStyle);
 VTK_MODULE_INIT(vtkRenderingVolumeOpenGL2);
 VTK_MODULE_INIT(vtkRenderingFreeType);
 
-class ResliceTool
+class VisualizeTool
 {
 public:
     enum Type{
@@ -17,10 +17,11 @@ public:
         Coronal,
         Sagittal
     };
-    ResliceTool(){};
-    ~ResliceTool(){};
+    VisualizeTool(){};
+    ~VisualizeTool(){};
     vtkSmartPointer<vtkImageReslice> getReslice(vtkImageData* imageData, Type type, double index);
     void showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRenderWindow>& renderWindow,Type type,double index,bool isSegment);
+    void show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkImageData* imageSegment);
 private:
     // 平行于XY平面的切片
     double axialElements[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 };
@@ -31,4 +32,4 @@ private:
 
 };
 
-#endif // RESLICETOOL_H
+#endif // VISUALIZETOOL_H

@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <vtkImageData.h>
-#include "reslicetool.h"
+#include "visualizeTool.h"
 
 namespace Ui {
 class RoutePlan;
@@ -17,6 +17,7 @@ public:
     explicit RoutePlan(QWidget *parent = nullptr);
     ~RoutePlan();
     void initImage();
+    void setImageData(vtkImageData* imageData, vtkImageData* imageSegment){this->imageData=imageData; this->imageSegment = imageSegment;}
 
 private slots:
     void on_Refresh_2_clicked();
@@ -34,7 +35,7 @@ signals:
 private:
     Ui::RoutePlan *ui;
     vtkImageData* imageData;
-    ResliceTool resliceTool;
+    VisualizeTool visualizeTool;
     vtkImageData* imageSegment;
     bool isSegment=false;
 };

@@ -4,6 +4,10 @@
 #include <QWidget>
 #include <QtMultimedia>
 #include <QLabel>
+#include <vtkImageData.h>
+#include "visualizeTool.h"
+
+
 
 namespace Ui {
 class IntraoperativeImage;
@@ -27,6 +31,11 @@ private:
     QLabel   *labFormatInfo;
     bool    m_isWorking=false;  //是否已开启摄像头
 
+    vtkImageData* imageData;
+    VisualizeTool visualizeTool;
+    vtkImageData* imageSegment;
+    bool isSegment=false;
+
     //    void    iniCamera();//初始化
     //    void    iniImageCapture();//初始化静态画图
     //    void    iniVideoRecorder();//初始化视频录制
@@ -38,6 +47,8 @@ private:
 public:
     explicit IntraoperativeImage(QWidget *parent = nullptr);
     ~IntraoperativeImage();
+    void initImage();
+    void setImageData(vtkImageData* imageData, vtkImageData* imageSegment){this->imageData=imageData; this->imageSegment = imageSegment;}
 
 private slots:
     //void do_camera_changed(int index);  //与摄像头下拉列表框的信号关联
@@ -66,6 +77,15 @@ private slots:
     // void on_actVideoStop_triggered();
 
     // void on_btnVideoFile_clicked();
+
+    void TransverseSliderChange(int value);
+    void CoronalSliderChange(int value);
+    void SagittalSliderChange(int value);
+
+    //void on_Refresh_3_clicked();
+    void on_Segment_3_clicked();
+
+    void on_refresh_3_clicked();
 
 private:
     Ui::IntraoperativeImage *ui;

@@ -36,6 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         RoutePlan.ui
         mainwidget.h mainwidget.cpp mainwidget.ui
         visualizeTool.h visualizeTool.cpp
+        GlobalVTKDataManager.h
 
 
     )

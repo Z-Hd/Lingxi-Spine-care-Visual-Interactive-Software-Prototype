@@ -26,6 +26,7 @@
 #include <vtkPointData.h>
 #include <QVTKOpenGLNativeWidget.h>
 #include <QScreen.h>
+#include "GlobalVTKDataManager.h"
 
 RoutePlan::RoutePlan(QWidget *parent)
     : QWidget(parent)
@@ -112,11 +113,8 @@ void RoutePlan::SagittalSliderChange(int value){
 
 void RoutePlan::on_Refresh_2_clicked()
 {
-    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/raw/spine_007.nii.gz"));
-    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
-    reader->SetFileName(str.toStdString().c_str());
-    reader->Update();
-    imageData = reader->GetOutput();
+    imageData = GlobalVTKDataManager::instance().getImage();
+    imageSegment = GlobalVTKDataManager::instance().getSegment();
     isSegment=false;
     ui->TransverseSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
@@ -127,11 +125,6 @@ void RoutePlan::on_Refresh_2_clicked()
 
 void RoutePlan::on_Segment_2_clicked()
 {
-    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/segment/spine_007.nii.gz"));
-    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
-    reader->SetFileName(str.toStdString().c_str());
-    reader->Update();
-    imageSegment = reader->GetOutput();
     isSegment=true;
     ui->TransverseSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));

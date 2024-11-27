@@ -24,6 +24,7 @@
 #include <vtkPointData.h>
 #include <QVTKOpenGLNativeWidget.h>
 #include "visualizeTool.h"
+#include "GlobalVTKDataManager.h"
 
 
 
@@ -173,6 +174,7 @@ void SpinalImage::on_loadImage_clicked()
     reader->SetFileName(str.toStdString().c_str());
     reader->Update();
     imageData = reader->GetOutput();
+    GlobalVTKDataManager::instance().setImage(imageData);
     isSegment=false;
     ui->axialSegment->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     ui->coronalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
@@ -189,6 +191,7 @@ void SpinalImage::on_segment_clicked()
     reader->SetFileName(str.toStdString().c_str());
     reader->Update();
     imageSegment = reader->GetOutput();
+    GlobalVTKDataManager::instance().setSegment(imageSegment);
     isSegment=true;
     ui->axialSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->coronalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));

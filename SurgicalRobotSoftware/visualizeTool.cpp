@@ -27,6 +27,7 @@
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
 #include <vtkOutlineFilter.h>
+#include <vtkImageFlip.h>
 #include <vtkCamera.h>
 
 vtkSmartPointer<vtkImageReslice> VisualizeTool::getReslice(vtkImageData* imageData, Type type, double index){
@@ -72,7 +73,11 @@ vtkSmartPointer<vtkImageReslice> VisualizeTool::getReslice(vtkImageData* imageDa
 void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRenderWindow>& renderWindow,Type type,double index,bool isSegment){
     auto ImageReslice=getReslice(imageData,type,index);
     ImageReslice->Update();
-    vtkImageData* outputImagedata = ImageReslice->GetOutput();
+    vtkSmartPointer<vtkImageFlip> flipFilter = vtkSmartPointer<vtkImageFlip>::New();
+    flipFilter->SetInputData(ImageReslice->GetOutput());
+    flipFilter->SetFilteredAxes(1); //1表示y轴翻转
+    flipFilter->Update();
+    vtkImageData* outputImagedata = flipFilter->GetOutput();
     double range[2];
     outputImagedata->GetScalarRange(range);
     auto lookupTable = vtkSmartPointer<vtkLookupTable>::New();
@@ -93,7 +98,7 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
     lookupTable->Build();
     auto mapToColors = vtkSmartPointer<vtkImageMapToColors>::New();
     mapToColors->SetLookupTable(lookupTable);
-    mapToColors->SetInputConnection(ImageReslice->GetOutputPort());
+    mapToColors->SetInputConnection(flipFilter->GetOutputPort());
     mapToColors->Update();
     auto imageActor = vtkSmartPointer<vtkImageActor>::New();
     imageActor->GetMapper()->SetInputConnection(mapToColors->GetOutputPort());

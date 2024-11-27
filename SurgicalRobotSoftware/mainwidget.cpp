@@ -27,7 +27,6 @@ mainWidget::mainWidget(QWidget *parent)
         login->show();
     });
     connect(spinalImage,&SpinalImage::nextButton_pressed,[=](){
-        routeplan->setImageData(spinalImage->getImageData(),spinalImage->getImageSegment());
         ui->stackedWidget->setCurrentIndex(1);
     });
     connect(routeplan,&RoutePlan::preButton_pressed,[=](){

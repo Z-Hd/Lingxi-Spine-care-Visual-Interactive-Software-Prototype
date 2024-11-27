@@ -17,10 +17,6 @@ public:
     explicit RoutePlan(QWidget *parent = nullptr);
     ~RoutePlan();
     void initImage();
-    void setImageData(vtkImageData* imageData, vtkImageData* imageSegment){
-        this->imageData=imageData;
-        this->imageSegment = imageSegment;
-    }
 
 private slots:
     void on_Refresh_2_clicked();

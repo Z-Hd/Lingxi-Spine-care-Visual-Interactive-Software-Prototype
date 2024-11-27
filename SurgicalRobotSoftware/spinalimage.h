@@ -17,8 +17,6 @@ public:
     explicit SpinalImage(QWidget *parent = nullptr);
     ~SpinalImage();
     void initImage();
-    vtkImageData* getImageData(){return this->imageData;};
-    vtkImageData* getImageSegment(){return this->imageSegment;};
 
 private slots:
     void on_previousStep1_clicked();

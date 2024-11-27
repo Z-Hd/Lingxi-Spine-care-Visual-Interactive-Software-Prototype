@@ -48,7 +48,6 @@ public:
     explicit IntraoperativeImage(QWidget *parent = nullptr);
     ~IntraoperativeImage();
     void initImage();
-    void setImageData(vtkImageData* imageData, vtkImageData* imageSegment){this->imageData=imageData; this->imageSegment = imageSegment;}
 
 private slots:
     //void do_camera_changed(int index);  //与摄像头下拉列表框的信号关联

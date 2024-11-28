@@ -7,7 +7,18 @@
 #include <vtkImageData.h>
 #include "visualizeTool.h"
 
-
+#include <vtkSmartPointer.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkNamedColors.h>
+#include <vtkSphereSource.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkActor.h>
+#include <vtkRenderWindowInteractor.h>
+#include <vtkInteractorStyleTrackballActor.h>
+#include <vtkPropPicker.h>
+#include <vtkCallbackCommand.h>
+#include <vtkRenderWindowInteractor.h>  // Qt6 用 QVTKRenderWindowInteractor
 
 namespace Ui {
 class IntraoperativeImage;
@@ -36,7 +47,7 @@ private:
     vtkImageData* imageSegment;
     bool isSegment=false;
 
-    //    void    iniCamera();//初始化
+    void    initCamera();//初始化
     //    void    iniImageCapture();//初始化静态画图
     //    void    iniVideoRecorder();//初始化视频录制
 
@@ -48,6 +59,7 @@ public:
     explicit IntraoperativeImage(QWidget *parent = nullptr);
     ~IntraoperativeImage();
     void initImage();
+    void createSphereForTest();
 
 private slots:
     //void do_camera_changed(int index);  //与摄像头下拉列表框的信号关联
@@ -65,10 +77,6 @@ private slots:
     // void do_recorder_stateChanged(QMediaRecorder::RecorderState state);
     // void do_recorder_error(QMediaRecorder::Error error, const QString &errorString);
 
-    void on_actStartCamera_triggered();
-
-    void on_actStopCamera_triggered();
-
     // void on_actCapture_triggered();
 
     // void on_actVideoRecord_triggered();
@@ -85,6 +93,10 @@ private slots:
     void on_Segment_3_clicked();
 
     void on_refresh_3_clicked();
+
+    void on_actStartCamera_clicked();
+
+    void on_actStopCamera_clicked();
 
 private:
     Ui::IntraoperativeImage *ui;

@@ -26,50 +26,10 @@
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="3">
-          <widget class="QGroupBox" name="transverseGroupBox">
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <widget class="QVTKOpenGLNativeWidget" name="TransversePlane_3" native="true">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QVTKOpenGLNativeWidget" name="TransverseSegment_3" native="true"/>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="TransverseSub_3">
-              <item>
-               <widget class="QSlider" name="TransverseSlider_3">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="TransverseLabel_3">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>N</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
+         <item row="1" column="1">
+          <widget class="QVTKOpenGLNativeWidget" name="model3D" native="true"/>
          </item>
-         <item row="0" column="0">
+         <item row="1" column="0">
           <widget class="QGroupBox" name="sagittalGroupBox">
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
@@ -112,7 +72,50 @@
            </layout>
           </widget>
          </item>
-         <item row="1" column="0">
+         <item row="0" column="0">
+          <widget class="QGroupBox" name="transverseGroupBox">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QVTKOpenGLNativeWidget" name="TransversePlane_3" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QVTKOpenGLNativeWidget" name="TransverseSegment_3" native="true"/>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="TransverseSub_3">
+              <item>
+               <widget class="QSlider" name="TransverseSlider_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="TransverseLabel_3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>N</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="1">
           <widget class="QGroupBox" name="coronalGroupBox">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
@@ -154,9 +157,6 @@
             </item>
            </layout>
           </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QVTKOpenGLNativeWidget" name="model3D" native="true"/>
          </item>
         </layout>
        </widget>

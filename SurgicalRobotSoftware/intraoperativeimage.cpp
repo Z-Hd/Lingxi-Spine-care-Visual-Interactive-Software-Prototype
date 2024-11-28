@@ -1,7 +1,7 @@
 #include "intraoperativeimage.h"
 #include "ui_intraoperativeimage.h"
-#include <QScreen.h>
 
+#include <QScreen.h>
 #include <QDir>
 #include <vtkActor.h>
 #include <vtkRenderer.h>

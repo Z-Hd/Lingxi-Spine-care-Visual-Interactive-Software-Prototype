@@ -28,6 +28,49 @@
 #include <QScreen.h>
 #include "GlobalVTKDataManager.h"
 
+#include <vtkCylinderSource.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkInteractorStyleTrackballCamera.h>
+#include <vtkNamedColors.h>
+#include <vtkSphereSource.h>
+#include <vtkActor.h>
+#include <vtkRenderer.h>
+#include <vtkSphereSource.h>
+#include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkProperty.h>
+#include <vtkInteractorStyleTrackballActor.h>
+#include <QVTKOpenGLNativeWidget.h>
+#include <vtkRendererCollection.h>
+#include <vtkSphereWidget.h>
+#include <vtkSphereRepresentation.h>
+#include <vtkCamera.h>
+
+#include <QScreen.h>
+#include <QDir>
+#include <vtkActor.h>
+#include <vtkRenderer.h>
+#include <QScreen.h>
+#include <vtkNIFTIImageReader.h>
+#include <vtkImageData.h>
+#include <vtkSmartPointer.h>
+#include <vtkImageData.h>
+#include <vtkImageReslice.h>
+#include <vtkMatrix4x4.h>
+#include <QApplication>
+#include <QLabel>
+#include <QImage>
+#include <QPixmap>
+#include <vtkLookupTable.h>
+#include <vtkImageMapToColors.h>
+#include <vtkImageActor.h>
+#include <vtkImageMapper3D.h>
+#include <vtkRenderWindow.h>
+#include <vtkInteractorStyleImage.h>
+#include <vtkDataSet.h>
+#include <vtkPointData.h>
+#include <QVTKOpenGLNativeWidget.h>
+#include <QScreen.h>
+
 RoutePlan::RoutePlan(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RoutePlan)
@@ -130,6 +173,59 @@ void RoutePlan::on_Segment_2_clicked()
     ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->SagittalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     initImage();
+    //vtkSmartPointer<vtkRenderWindow> Model3D_2 = ui->Model3D_2->renderWindow();
+    //visualizeTool.show3D(Model3D_2,imageSegment);
+    createCylinderForTest();
+}
+
+void RoutePlan::createCylinderForTest(){
+
+    QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+
+    // 获取渲染窗口
     vtkSmartPointer<vtkRenderWindow> Model3D_2 = ui->Model3D_2->renderWindow();
     visualizeTool.show3D(Model3D_2,imageSegment);
+    // vtkSmartPointer<vtkRenderer> renderer = Model3D_3->GetRenderers();
+
+    // 获取渲染器
+    vtkRendererCollection *renderers = Model3D_2->GetRenderers();
+    auto smartRenderer =renderers->GetFirstRenderer();
+    // if (renderers->GetNumberOfItems() > 0) {
+    //     // 获取第一个渲染器
+    //     smartRenderer =renderers->GetFirstRenderer();
+    // }
+
+    // 创建颜色对象
+    vtkSmartPointer<vtkNamedColors> colors = vtkSmartPointer<vtkNamedColors>::New();
+
+    // 创建圆柱体
+    vtkSmartPointer<vtkCylinderSource> cylinderSource = vtkSmartPointer<vtkCylinderSource>::New();
+    cylinderSource->SetHeight(66.0);
+    cylinderSource->SetCenter(0.0, 0.0, 0.0);
+    cylinderSource->SetRadius(3.0);
+    cylinderSource->SetResolution(50);
+
+    // 创建圆柱体映射器
+    vtkSmartPointer<vtkPolyDataMapper> cylinderMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+    cylinderMapper->SetInputConnection(cylinderSource->GetOutputPort());
+
+    // 创建圆柱体执行器
+    vtkSmartPointer<vtkActor> cylinderActor = vtkSmartPointer<vtkActor>::New();
+    cylinderActor->SetMapper(cylinderMapper);
+    cylinderActor->GetProperty()->SetColor(colors->GetColor4d("yellow").GetData());
+    cylinderActor->SetPosition(60.0, 100.0, 30.0); // x, y, z 坐标
+
+    smartRenderer->AddActor(cylinderActor);
+
+    // 创建交互器
+    vtkSmartPointer<vtkRenderWindowInteractor> interactor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
+    interactor->SetRenderWindow(Model3D_2);
+
+    // 设置交互风格为允许控制Actor的移动
+    vtkSmartPointer<vtkInteractorStyleTrackballActor> style = vtkSmartPointer<vtkInteractorStyleTrackballActor>::New();
+    interactor->SetInteractorStyle(style);
+
+    // 启动交互器
+    interactor->Initialize();
+    interactor->Start();
 }

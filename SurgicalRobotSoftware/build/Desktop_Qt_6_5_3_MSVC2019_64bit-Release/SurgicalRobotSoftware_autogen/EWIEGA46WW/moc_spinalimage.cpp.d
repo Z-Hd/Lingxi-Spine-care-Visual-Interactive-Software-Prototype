@@ -192,4 +192,4 @@ E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt
   D:/vtk_pix/include/vtk-9.4/vtksys/Configure.hxx \
   D:/vtk_pix/include/vtk-9.4/vtksys/Status.hxx \
   D:/vtk_pix/include/vtk-9.4/vtksys/SystemTools.hxx \
-  E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/reslicetool.h
+  E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/visualizeTool.h

@@ -17,6 +17,8 @@ public:
     explicit RoutePlan(QWidget *parent = nullptr);
     ~RoutePlan();
     void initImage();
+    // 创建测试圆柱体
+    void createCylinderForTest();
 
 private slots:
     void on_Refresh_2_clicked();

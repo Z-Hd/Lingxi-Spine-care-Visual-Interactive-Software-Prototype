@@ -54,3 +54,13 @@
 137	4346	7545055979967968	CMakeFiles/SurgicalRobotSoftware.dir/intraoperativeimage.cpp.obj	17b7c44758d33d95
 143	4403	7545055980545106	CMakeFiles/SurgicalRobotSoftware.dir/RoutePlan.cpp.obj	a52ecfeb202fcc3c
 4403	4567	7545055982136898	SurgicalRobotSoftware.exe	620a18898d38c3c2
+11	168	7545061643374044	SurgicalRobotSoftware_autogen/timestamp	ae92c751c316c91
+11	168	7545061643374044	SurgicalRobotSoftware_autogen/mocs_compilation.cpp	ae92c751c316c91
+11	168	7545061643374044	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/SurgicalRobotSoftware_autogen/timestamp	ae92c751c316c91
+11	168	7545061643374044	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/SurgicalRobotSoftware_autogen/mocs_compilation.cpp	ae92c751c316c91
+172	1567	7545061720402864	CMakeFiles/SurgicalRobotSoftware.dir/login.cpp.obj	8bbf9288b2e5525d
+177	2540	7545061730114484	CMakeFiles/SurgicalRobotSoftware.dir/spinalimage.cpp.obj	e24e6a0772103653
+195	4160	7545061746279384	CMakeFiles/SurgicalRobotSoftware.dir/mainwidget.cpp.obj	7ba3d5e659b08fb
+189	4322	7545061747883517	CMakeFiles/SurgicalRobotSoftware.dir/RoutePlan.cpp.obj	a52ecfeb202fcc3c
+184	4445	7545061749135361	CMakeFiles/SurgicalRobotSoftware.dir/intraoperativeimage.cpp.obj	17b7c44758d33d95
+4446	4612	7545061750739069	SurgicalRobotSoftware.exe	620a18898d38c3c2

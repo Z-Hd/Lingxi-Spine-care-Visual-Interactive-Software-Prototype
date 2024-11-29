@@ -209,14 +209,11 @@ void IntraoperativeImage::createSphereForTest(){
     vtkSmartPointer<vtkRenderWindowInteractor> interactor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
     interactor->SetRenderWindow(Model3D_3);
 
-    // vtkSmartPointer<vtkSphereRepresentation> sphereRep = vtkSmartPointer<vtkSphereRepresentation>::New();
-    // sphereRep->SetRadius(3.0); // 设置球体半径
+    // vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
 
-    vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
-
-    //sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
-    sphereWidget->SetInteractor(interactor);
-    sphereWidget->On();  // 激活球体小部件
+    // sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
+    // sphereWidget->SetInteractor(interactor);
+    // sphereWidget->On();  // 激活球体小部件
 
     // 设置交互风格为允许控制Actor的移动
     vtkSmartPointer<vtkInteractorStyleTrackballActor> style = vtkSmartPointer<vtkInteractorStyleTrackballActor>::New();

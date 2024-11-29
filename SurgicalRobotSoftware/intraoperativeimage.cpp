@@ -212,6 +212,9 @@ void IntraoperativeImage::createSphereForTest(){
     // vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
 
     // sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
+    // vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
+
+    // sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
     // sphereWidget->SetInteractor(interactor);
     // sphereWidget->On();  // 激活球体小部件
 

@@ -184,10 +184,7 @@ void RoutePlan::createCylinderForTest(){
 
     // 获取渲染窗口
     vtkSmartPointer<vtkRenderWindow> Model3D_2 = ui->Model3D_2->renderWindow();
-<<<<<<< HEAD
     visualizeTool.show3D(Model3D_2,imageSegment,false);
-=======
-    visualizeTool.show3D(Model3D_2,imageSegment);
     // vtkSmartPointer<vtkRenderer> renderer = Model3D_3->GetRenderers();
 
     // 获取渲染器
@@ -231,5 +228,4 @@ void RoutePlan::createCylinderForTest(){
     // 启动交互器
     interactor->Initialize();
     interactor->Start();
->>>>>>> 55d01b73b9153590e4ac398f4d1a05d763aac009
 }

@@ -131,5 +131,5 @@ void RoutePlan::on_Segment_2_clicked()
     ui->SagittalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     initImage();
     vtkSmartPointer<vtkRenderWindow> Model3D_2 = ui->Model3D_2->renderWindow();
-    visualizeTool.show3D(Model3D_2,imageSegment);
+    visualizeTool.show3D(Model3D_2,imageSegment,false);
 }

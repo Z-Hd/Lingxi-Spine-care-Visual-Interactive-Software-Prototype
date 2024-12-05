@@ -198,6 +198,6 @@ void SpinalImage::on_segment_clicked()
     ui->sagittalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     initImage();
     vtkSmartPointer<vtkRenderWindow> threeDimensiona1Render = ui->threeDimensiona1->renderWindow();
-    visualizeTool.show3D(threeDimensiona1Render,imageSegment);
+    visualizeTool.show3D(threeDimensiona1Render,imageSegment,true);
 }
 

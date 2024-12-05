@@ -29,6 +29,7 @@
 #include <vtkOutlineFilter.h>
 #include <vtkImageFlip.h>
 #include <vtkCamera.h>
+#include "GlobalVTKDataManager.h"
 
 vtkSmartPointer<vtkImageReslice> VisualizeTool::getReslice(vtkImageData* imageData, Type type, double index){
     int extent[6];
@@ -110,28 +111,33 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
     renderWindow->Render();
 }
 
-void VisualizeTool::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkImageData* imageSegment){
+void VisualizeTool::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkImageData* imageSegment,bool update){
     auto renderer = vtkSmartPointer<vtkRenderer>::New();
     vtkRenderWindowInteractor* ir = renderWindow->GetInteractor();
     renderWindow->AddRenderer(renderer);
     auto style = vtkSmartPointer<vtkInteractorStyleTrackballCamera>::New();
     ir->SetInteractorStyle(style);
-    // 通过过滤器从数据中抽取一系列等值面
-    vtkSmartPointer<vtkContourFilter> contourFilter = vtkSmartPointer<vtkContourFilter>::New();
-    contourFilter->SetInputData(imageSegment);
-    contourFilter->SetNumberOfContours(5);
-    contourFilter->SetValue(0,0);
-    contourFilter->SetValue(1,1);
-    contourFilter->SetValue(2,2);
-    contourFilter->SetValue(3,3);
-    contourFilter->SetValue(4,4);
-    // 光滑图像
-    auto smooth = vtkSmartPointer<vtkSmoothPolyDataFilter>::New();
-    smooth->SetInputConnection(contourFilter->GetOutputPort());
-    smooth->SetNumberOfIterations(300);
+    if(update){
+        // 通过过滤器从数据中抽取一系列等值面
+        vtkSmartPointer<vtkContourFilter> contourFilter = vtkSmartPointer<vtkContourFilter>::New();
+        contourFilter->SetInputData(imageSegment);
+        contourFilter->SetNumberOfContours(5);
+        contourFilter->SetValue(0,0);
+        contourFilter->SetValue(1,1);
+        contourFilter->SetValue(2,2);
+        contourFilter->SetValue(3,3);
+        contourFilter->SetValue(4,4);
+        // 光滑图像
+        auto smooth = vtkSmartPointer<vtkSmoothPolyDataFilter>::New();
+        smooth->SetInputConnection(contourFilter->GetOutputPort());
+        smooth->SetNumberOfIterations(300);
+        smooth->Update();
+        GlobalVTKDataManager::instance().setData3D(smooth->GetOutput());
+    }
     // 法线
     auto normal = vtkSmartPointer<vtkPolyDataNormals>::New();
-    normal->SetInputConnection(smooth->GetOutputPort());
+    auto data3D = GlobalVTKDataManager::instance().getData3D();
+    normal->SetInputData(data3D);
     normal->SetFeatureAngle(60);
     // 颜色映射表
     auto lookupTable = vtkSmartPointer<vtkLookupTable>::New();

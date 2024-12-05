@@ -21,7 +21,7 @@ public:
     ~VisualizeTool(){};
     vtkSmartPointer<vtkImageReslice> getReslice(vtkImageData* imageData, Type type, double index);
     void showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRenderWindow>& renderWindow,Type type,double index,bool isSegment);
-    void show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkImageData* imageSegment);
+    void show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkImageData* imageSegment,bool update);
 private:
     // 平行于XY平面的切片
     double axialElements[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 };

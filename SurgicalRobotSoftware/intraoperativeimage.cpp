@@ -173,7 +173,7 @@ void IntraoperativeImage::createSphereForTest(){
 
     // 获取渲染窗口
     vtkSmartPointer<vtkRenderWindow> Model3D_3 = ui->model3D->renderWindow();
-    visualizeTool.show3D(Model3D_3,imageSegment);
+    visualizeTool.show3D(Model3D_3,imageSegment,false);
     //vtkSmartPointer<vtkRenderer> renderer = Model3D_3->GetRenderers();
 
     // 获取渲染器

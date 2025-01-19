@@ -29,6 +29,7 @@
 #include <vtkOutlineFilter.h>
 #include <vtkImageFlip.h>
 #include <vtkCamera.h>
+#include <vtkRendererCollection.h>
 #include "GlobalVTKDataManager.h"
 
 vtkSmartPointer<vtkImageReslice> VisualizeTool::getReslice(vtkImageData* imageData, Type type, double index){
@@ -103,6 +104,8 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
     mapToColors->Update();
     auto imageActor = vtkSmartPointer<vtkImageActor>::New();
     imageActor->GetMapper()->SetInputConnection(mapToColors->GetOutputPort());
+    auto renderCollection = renderWindow->GetRenderers();
+    renderCollection->RemoveAllItems();
     auto renderer = vtkSmartPointer<vtkRenderer>::New();
     renderer->AddActor(imageActor);
     renderWindow->AddRenderer(renderer);
@@ -178,4 +181,18 @@ void VisualizeTool::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkIma
     renderer->SetActiveCamera(camera);
     renderer->ResetCamera();
     renderWindow->SetMultiSamples(0);
+}
+void VisualizeTool::zoom(vtkSmartPointer<vtkRenderWindow>& renderWindow,double scaleFactor){
+    vtkCamera* camera = renderWindow->GetRenderers()->GetFirstRenderer()->GetActiveCamera();
+    // 获取当前相机的位置和焦点
+    double position[3];
+    double focalPoint[3];
+    camera->GetPosition(position);
+    camera->GetFocalPoint(focalPoint);
+    // 缩放相机
+    camera->Zoom(scaleFactor);  // 放大或缩小
+    // 确保焦点位置与相机同步
+    camera->SetFocalPoint(focalPoint);
+    renderWindow->Render();
+    renderWindow->GetInteractor()->Render();
 }

@@ -19,9 +19,14 @@ public:
     };
     VisualizeTool(){};
     ~VisualizeTool(){};
+    // 获得图像切片
     vtkSmartPointer<vtkImageReslice> getReslice(vtkImageData* imageData, Type type, double index);
+    // 在窗口中显示切片
     void showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRenderWindow>& renderWindow,Type type,double index,bool isSegment);
+    // 在窗口中显示3d医学模型
     void show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkImageData* imageSegment,bool update);
+    // 对图片进行缩放
+    void zoom(vtkSmartPointer<vtkRenderWindow>& renderWindow,double scaleFactor);
 private:
     // 平行于XY平面的切片
     double axialElements[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 };
@@ -29,7 +34,6 @@ private:
     double coronalElements[16] = { 1, 0, 0, 0, 0, 0, 1, 0, 0,-1, 0, 0, 0, 0, 0, 1 };
     // 平行于YZ平面的切片
     double sagittalElements[16] = { 0, 0,-1, 0, 1, 0, 0, 0, 0,-1, 0, 0, 0, 0, 0, 1 };
-    //
 
 };
 

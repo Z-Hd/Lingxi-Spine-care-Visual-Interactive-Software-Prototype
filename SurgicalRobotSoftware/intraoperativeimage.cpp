@@ -43,6 +43,7 @@
 #include <vtkRendererCollection.h>
 #include <vtkSphereWidget.h>
 #include <vtkSphereRepresentation.h>
+#include <QTimer.h>
 #include <vtkCamera.h>
 
 IntraoperativeImage::IntraoperativeImage(QWidget *parent)
@@ -122,9 +123,11 @@ void IntraoperativeImage::CoronalSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->CoronalSegment_3->renderWindow();
         visualizeTool.showReslice(imageSegment,coronalSegmentRender,VisualizeTool::Coronal,value,true);
+        visualizeTool.zoom(coronalSegmentRender,1.7);
     }
     visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
     ui->CoronalLabel_3->setText(QString::number(value));
+    visualizeTool.zoom(coronalRenderWindow,1.7);
 }
 
 void IntraoperativeImage::SagittalSliderChange(int value){
@@ -132,9 +135,11 @@ void IntraoperativeImage::SagittalSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->SagittalSegment_3->renderWindow();
         visualizeTool.showReslice(imageSegment,sagittalSegmentRender,VisualizeTool::Sagittal,value,true);
+        visualizeTool.zoom(sagittalSegmentRender,3);
     }
     visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
     ui->SagittalLabel_3->setText(QString::number(value));
+    visualizeTool.zoom(sagittalRenderWindow,3);
 }
 
 void IntraoperativeImage::TransverseSliderChange(int value){
@@ -142,9 +147,11 @@ void IntraoperativeImage::TransverseSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->TransverseSegment_3->renderWindow();
         visualizeTool.showReslice(imageSegment,axialSegmentRender,VisualizeTool::Axial,value,true);
+        visualizeTool.zoom(axialSegmentRender,2);
     }
     visualizeTool.showReslice(imageData,axialRenderWindow,VisualizeTool::Axial,value,false);
     ui->TransverseLabel_3->setText(QString::number(value));
+    visualizeTool.zoom(axialRenderWindow,2);
 }
 
 void IntraoperativeImage::on_Segment_3_clicked()
@@ -153,7 +160,9 @@ void IntraoperativeImage::on_Segment_3_clicked()
     ui->TransverseSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->CoronalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->SagittalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
-    initImage();
+    QTimer::singleShot(0, this, [&]() {
+        initImage();
+    });
     createSphereForTest();
 }
 void IntraoperativeImage::on_refresh_3_clicked()
@@ -164,7 +173,9 @@ void IntraoperativeImage::on_refresh_3_clicked()
     ui->TransverseSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     ui->CoronalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     ui->SagittalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
-    initImage();
+    QTimer::singleShot(0, this, [&]() {
+        initImage();
+    });
 }
 
 void IntraoperativeImage::createSphereForTest(){

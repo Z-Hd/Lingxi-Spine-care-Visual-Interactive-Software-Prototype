@@ -70,6 +70,7 @@
 #include <vtkPointData.h>
 #include <QVTKOpenGLNativeWidget.h>
 #include <QScreen.h>
+#include <QTimer.h>
 
 RoutePlan::RoutePlan(QWidget *parent)
     : QWidget(parent)
@@ -129,9 +130,11 @@ void RoutePlan::TransverseSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->TransverseSegment_2->renderWindow();
         visualizeTool.showReslice(imageSegment,axialSegmentRender,VisualizeTool::Axial,value,true);
+        visualizeTool.zoom(axialSegmentRender,2);
     }
     visualizeTool.showReslice(imageData,axialRenderWindow,VisualizeTool::Axial,value,false);
     ui->TransverseLabel_2->setText(QString::number(value));
+    visualizeTool.zoom(axialRenderWindow,2);
 }
 
 void RoutePlan::CoronalSliderChange(int value){
@@ -139,9 +142,11 @@ void RoutePlan::CoronalSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->CoronalSegment_2->renderWindow();
         visualizeTool.showReslice(imageSegment,coronalSegmentRender,VisualizeTool::Coronal,value,true);
+        visualizeTool.zoom(coronalSegmentRender,1.7);
     }
     visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
     ui->CoronalLabel_2->setText(QString::number(value));
+    visualizeTool.zoom(coronalRenderWindow,1.7);
 }
 
 void RoutePlan::SagittalSliderChange(int value){
@@ -149,9 +154,11 @@ void RoutePlan::SagittalSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->SagittalSegment_2->renderWindow();
         visualizeTool.showReslice(imageSegment,sagittalSegmentRender,VisualizeTool::Sagittal,value,true);
+        visualizeTool.zoom(sagittalSegmentRender,3);
     }
     visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
     ui->SagittalLabel_2->setText(QString::number(value));
+    visualizeTool.zoom(sagittalRenderWindow,3);
 }
 
 void RoutePlan::on_Refresh_2_clicked()
@@ -162,7 +169,9 @@ void RoutePlan::on_Refresh_2_clicked()
     ui->TransverseSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     ui->SagittalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
-    initImage();
+    QTimer::singleShot(0, this, [&]() {
+        initImage();
+    });
 }
 
 
@@ -172,7 +181,9 @@ void RoutePlan::on_Segment_2_clicked()
     ui->TransverseSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->CoronalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->SagittalSegment_2->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
-    initImage();
+    QTimer::singleShot(0, this, [&]() {
+        initImage();
+    });
     //vtkSmartPointer<vtkRenderWindow> Model3D_2 = ui->Model3D_2->renderWindow();
     //visualizeTool.show3D(Model3D_2,imageSegment);
     createCylinderForTest();

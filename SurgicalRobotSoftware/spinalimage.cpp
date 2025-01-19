@@ -23,6 +23,9 @@
 #include <vtkDataSet.h>
 #include <vtkPointData.h>
 #include <QVTKOpenGLNativeWidget.h>
+#include <vtkRendererCollection.h>
+#include <vtkCamera.h>
+#include <QTimer.h>
 #include "visualizeTool.h"
 #include "GlobalVTKDataManager.h"
 
@@ -139,8 +142,10 @@ void SpinalImage::axialSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->axialSegment->renderWindow();
         visualizeTool.showReslice(imageSegment,axialSegmentRender,VisualizeTool::Axial,value,true);
+        visualizeTool.zoom(axialSegmentRender,2);
     }
     visualizeTool.showReslice(imageData,axialRenderWindow,VisualizeTool::Axial,value,false);
+    visualizeTool.zoom(axialRenderWindow,2);
     ui->axialIndex1->setText(QString::number(value));
 }
 
@@ -149,8 +154,10 @@ void SpinalImage::coronalSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->coronalSegment->renderWindow();
         visualizeTool.showReslice(imageSegment,coronalSegmentRender,VisualizeTool::Coronal,value,true);
+        visualizeTool.zoom(coronalSegmentRender,1.7);
     }
     visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
+    visualizeTool.zoom(coronalRenderWindow,1.7);
     ui->coronalIndex1->setText(QString::number(value));
 }
 
@@ -159,8 +166,10 @@ void SpinalImage::sagittalSliderChange(int value){
     if(isSegment){
         vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->sagittalSegment->renderWindow();
         visualizeTool.showReslice(imageSegment,sagittalSegmentRender,VisualizeTool::Sagittal,value,true);
+        visualizeTool.zoom(sagittalSegmentRender,3);
     }
     visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
+    visualizeTool.zoom(sagittalRenderWindow,3);
     ui->sagittalIndex1->setText(QString::number(value));
 }
 
@@ -196,7 +205,9 @@ void SpinalImage::on_segment_clicked()
     ui->axialSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->coronalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
     ui->sagittalSegment->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
-    initImage();
+    QTimer::singleShot(0, this, [&]() {
+        initImage();
+    });
     vtkSmartPointer<vtkRenderWindow> threeDimensiona1Render = ui->threeDimensiona1->renderWindow();
     visualizeTool.show3D(threeDimensiona1Render,imageSegment,true);
 }

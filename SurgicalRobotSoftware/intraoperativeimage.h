@@ -24,6 +24,10 @@ namespace Ui {
 class IntraoperativeImage;
 }
 
+struct Vector3D {
+    double x, y, z;
+};
+
 class IntraoperativeImage : public QWidget
 {
     Q_OBJECT
@@ -59,7 +63,8 @@ public:
     explicit IntraoperativeImage(QWidget *parent = nullptr);
     ~IntraoperativeImage();
     void initImage();
-    void createSphereForTest();
+    void createSphereForTest(Vector3D vec);
+    void updateSpherePosition(Vector3D newVec);
 
 private slots:
     //void do_camera_changed(int index);  //与摄像头下拉列表框的信号关联
@@ -67,7 +72,7 @@ private slots:
     //与QCamera的信号关联
     //void do_camera_activeChanged(bool active);
 
-    // //与QImageCapture的信号关联
+    // //与QImageCapture的信号关联vector
     // void do_image_readyForCapture(bool ready);
     // void do_image_captured(int id, const QImage &preview);
     // void do_image_saved(int id, const QString &fileName);
@@ -97,6 +102,13 @@ private slots:
     void on_actStartCamera_clicked();
 
     void on_actStopCamera_clicked();
+
+    void on_updatePositionButton_clicked();
+
+    void on_previousPage_clicked();
+
+signals:
+    void preButton_pressed();
 
 private:
     Ui::IntraoperativeImage *ui;

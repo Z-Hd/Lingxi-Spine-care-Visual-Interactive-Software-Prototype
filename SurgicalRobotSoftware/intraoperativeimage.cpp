@@ -43,8 +43,9 @@
 #include <vtkRendererCollection.h>
 #include <vtkSphereWidget.h>
 #include <vtkSphereRepresentation.h>
-#include <QTimer.h>
 #include <vtkCamera.h>
+
+vtkSmartPointer<vtkActor> sphereActor;
 
 IntraoperativeImage::IntraoperativeImage(QWidget *parent)
     : QWidget(parent)
@@ -120,83 +121,58 @@ void IntraoperativeImage::initImage(){
 
 void IntraoperativeImage::CoronalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->CoronalPlane_3->renderWindow();
-    if(isSegment){
-        vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->CoronalSegment_3->renderWindow();
-        visualizeTool.showReslice(imageSegment,coronalSegmentRender,VisualizeTool::Coronal,value,true);
-        visualizeTool.zoom(coronalSegmentRender,1.7);
-    }
+    // if(isSegment){
+    //     vtkSmartPointer<vtkRenderWindow> coronalSegmentRender = ui->CoronalSegment_3->renderWindow();
+    //     visualizeTool.showReslice(imageSegment,coronalSegmentRender,VisualizeTool::Coronal,value,true);
+    // }
     visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
     ui->CoronalLabel_3->setText(QString::number(value));
-    visualizeTool.zoom(coronalRenderWindow,1.7);
 }
 
 void IntraoperativeImage::SagittalSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->SagittalPlane_3->renderWindow();
-    if(isSegment){
-        vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->SagittalSegment_3->renderWindow();
-        visualizeTool.showReslice(imageSegment,sagittalSegmentRender,VisualizeTool::Sagittal,value,true);
-        visualizeTool.zoom(sagittalSegmentRender,3);
-    }
+    // if(isSegment){
+    //     vtkSmartPointer<vtkRenderWindow> sagittalSegmentRender = ui->SagittalSegment_3->renderWindow();
+    //     visualizeTool.showReslice(imageSegment,sagittalSegmentRender,VisualizeTool::Sagittal,value,true);
+    // }
     visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
     ui->SagittalLabel_3->setText(QString::number(value));
-    visualizeTool.zoom(sagittalRenderWindow,3);
 }
 
 void IntraoperativeImage::TransverseSliderChange(int value){
     vtkSmartPointer<vtkRenderWindow> axialRenderWindow = ui->TransversePlane_3->renderWindow();
-    if(isSegment){
-        vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->TransverseSegment_3->renderWindow();
-        visualizeTool.showReslice(imageSegment,axialSegmentRender,VisualizeTool::Axial,value,true);
-        visualizeTool.zoom(axialSegmentRender,2);
-    }
+    // if(isSegment){
+    //     vtkSmartPointer<vtkRenderWindow> axialSegmentRender = ui->TransverseSegment_3->renderWindow();
+    //     visualizeTool.showReslice(imageSegment,axialSegmentRender,VisualizeTool::Axial,value,true);
+    // }
     visualizeTool.showReslice(imageData,axialRenderWindow,VisualizeTool::Axial,value,false);
     ui->TransverseLabel_3->setText(QString::number(value));
-    visualizeTool.zoom(axialRenderWindow,2);
 }
 
 void IntraoperativeImage::on_Segment_3_clicked()
 {
     isSegment=true;
-    ui->TransverseSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
-    ui->CoronalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
-    ui->SagittalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
-    QTimer::singleShot(0, this, [&]() {
-        initImage();
-    });
-    createSphereForTest();
+    // ui->TransverseSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    // ui->CoronalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    // ui->SagittalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding));
+    initImage();
+    Vector3D vec = {60, 100, 60};
+    createSphereForTest(vec);
 }
 void IntraoperativeImage::on_refresh_3_clicked()
 {
     imageData = GlobalVTKDataManager::instance().getImage();
     imageSegment = GlobalVTKDataManager::instance().getSegment();
     isSegment=false;
-    ui->TransverseSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
-    ui->CoronalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
-    ui->SagittalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
-    QTimer::singleShot(0, this, [&]() {
-        initImage();
-    });
+    // ui->TransverseSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    // ui->CoronalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    // ui->SagittalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
+    initImage();
 }
 
-void IntraoperativeImage::createSphereForTest(){
+void IntraoperativeImage::createSphereForTest(Vector3D vec){
 
     QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
-
-    // 获取渲染窗口
-    vtkSmartPointer<vtkRenderWindow> Model3D_3 = ui->model3D->renderWindow();
-    visualizeTool.show3D(Model3D_3,imageSegment,false);
-    //vtkSmartPointer<vtkRenderer> renderer = Model3D_3->GetRenderers();
-
-    // 获取渲染器
-    vtkRendererCollection *renderers = Model3D_3->GetRenderers();
-    auto smartRenderer =renderers->GetFirstRenderer();
-    // if (renderers->GetNumberOfItems() > 0) {
-    //     // 获取第一个渲染器
-    //     smartRenderer =renderers->GetFirstRenderer();
-    // }
-
-    // 创建颜色对象
-    vtkSmartPointer<vtkNamedColors> colors = vtkSmartPointer<vtkNamedColors>::New();
 
     // 创建球体
     vtkSmartPointer<vtkSphereSource> sphereSource = vtkSmartPointer<vtkSphereSource>::New();
@@ -208,40 +184,67 @@ void IntraoperativeImage::createSphereForTest(){
     vtkSmartPointer<vtkPolyDataMapper> sphereMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
     sphereMapper->SetInputConnection(sphereSource->GetOutputPort());
 
+    // 创建颜色对象
+    vtkSmartPointer<vtkNamedColors> colors = vtkSmartPointer<vtkNamedColors>::New();
+
     // 创建球体执行器
-    vtkSmartPointer<vtkActor> sphereActor = vtkSmartPointer<vtkActor>::New();
+    sphereActor = vtkSmartPointer<vtkActor>::New();
     sphereActor->SetMapper(sphereMapper);
     sphereActor->GetProperty()->SetColor(colors->GetColor4d("blue").GetData());
-    sphereActor->SetPosition(60.0, 100.0, 60.0); // x, y, z 坐标
+    sphereActor->SetPosition(vec.x, vec.y, vec.z); // x, y, z 坐标
+
+    // 获取渲染窗口
+    vtkSmartPointer<vtkRenderWindow> Model3D_3 = ui->model3D->renderWindow();
+    visualizeTool.show3D(Model3D_3,imageSegment,false);
+
+    // 获取渲染器
+    vtkRendererCollection *renderers = Model3D_3->GetRenderers();
+    auto smartRenderer =renderers->GetFirstRenderer();
 
     smartRenderer->AddActor(sphereActor);
+    smartRenderer->Render();
+    Model3D_3->Render();
 
-    // 创建交互器
-    vtkSmartPointer<vtkRenderWindowInteractor> interactor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
-    interactor->SetRenderWindow(Model3D_3);
+    // // 创建交互器
+    // vtkSmartPointer<vtkRenderWindowInteractor> interactor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
+    // interactor->SetRenderWindow(Model3D_3);
 
-    // vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
+    // // vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
 
-    // sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
-    // vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
+    // // sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
+    // // vtkSmartPointer<vtkSphereWidget> sphereWidget = vtkSmartPointer<vtkSphereWidget>::New();
 
-    // sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
-    // sphereWidget->SetInteractor(interactor);
-    // sphereWidget->On();  // 激活球体小部件
+    // // sphereWidget->SetRepresentation(sphereRep); // 绑定表示对象到小部件
+    // // sphereWidget->SetInteractor(interactor);
+    // // sphereWidget->On();  // 激活球体小部件
 
-    // 设置交互风格为允许控制Actor的移动
-    vtkSmartPointer<vtkInteractorStyleTrackballActor> style = vtkSmartPointer<vtkInteractorStyleTrackballActor>::New();
-    interactor->SetInteractorStyle(style);
+    // // 设置交互风格为允许控制Actor的移动
+    // vtkSmartPointer<vtkInteractorStyleTrackballActor> style = vtkSmartPointer<vtkInteractorStyleTrackballActor>::New();
+    // interactor->SetInteractorStyle(style);
 
-    // 创建并设置相机（确保球体和脊柱模型都能显示）
-    // vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
-    // camera->SetPosition(0, 0, 0);  // 设置相机位置
-    // camera->SetFocalPoint(0, 0, 0);      // 设置相机焦点
-    // smartRenderer->SetActiveCamera(camera);
+    // // 创建并设置相机（确保球体和脊柱模型都能显示）
+    // // vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
+    // // camera->SetPosition(0, 0, 0);  // 设置相机位置
+    // // camera->SetFocalPoint(0, 0, 0);      // 设置相机焦点
+    // // smartRenderer->SetActiveCamera(camera);
 
-    // 启动交互器
-    interactor->Initialize();
-    interactor->Start();
+    // // 启动交互器
+    // interactor->Initialize();
+    // interactor->Start();
+}
+
+void IntraoperativeImage::updateSpherePosition(Vector3D newVec) {
+    if (sphereActor) {
+        // 更新位置
+        sphereActor->SetPosition(newVec.x, newVec.y, newVec.z);
+
+        // 刷新渲染窗口
+        vtkSmartPointer<vtkRenderWindow> Model3D_3 = ui->model3D->renderWindow();
+        Model3D_3->Render();
+    } else {
+        // 如果小球未初始化，创建小球
+        createSphereForTest(newVec);
+    }
 }
 
 void IntraoperativeImage::on_actStartCamera_clicked()
@@ -259,4 +262,33 @@ void IntraoperativeImage::on_actStopCamera_clicked()
     ui->actStopCamera->setEnabled(false); // 禁用停止按钮
 }
 
+void IntraoperativeImage::on_updatePositionButton_clicked()
+{
+    bool ok;
+    double x = ui->xLineEdit->text().toDouble(&ok);
+    if (!ok) {
+        // 处理错误：x不是有效的数字
+        return;
+    }
+    double y = ui->yLineEdit->text().toDouble(&ok);
+    if (!ok) {
+        // 处理错误：y不是有效的数字
+        return;
+    }
+    double z = ui->zLineEdit->text().toDouble(&ok);
+    if (!ok) {
+        // 处理错误：z不是有效的数字
+        return;
+    }
+
+    Vector3D newPosition = {x, y, z};
+    //initImage();
+    updateSpherePosition(newPosition);
+}
+
+
+void IntraoperativeImage::on_previousPage_clicked()
+{
+    emit preButton_pressed();
+}
 

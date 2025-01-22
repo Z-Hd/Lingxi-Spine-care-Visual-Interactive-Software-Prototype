@@ -43,9 +43,6 @@
              </widget>
             </item>
             <item>
-             <widget class="QVTKOpenGLNativeWidget" name="SagittalSegment_3" native="true"/>
-            </item>
-            <item>
              <layout class="QVBoxLayout" name="SagittalSub_3">
               <item>
                <widget class="QSlider" name="SagittalSlider_3">
@@ -86,9 +83,6 @@
              </widget>
             </item>
             <item>
-             <widget class="QVTKOpenGLNativeWidget" name="TransverseSegment_3" native="true"/>
-            </item>
-            <item>
              <layout class="QVBoxLayout" name="TransverseSub_3">
               <item>
                <widget class="QSlider" name="TransverseSlider_3">
@@ -127,9 +121,6 @@
                </sizepolicy>
               </property>
              </widget>
-            </item>
-            <item>
-             <widget class="QVTKOpenGLNativeWidget" name="CoronalSegment_3" native="true"/>
             </item>
             <item>
              <layout class="QVBoxLayout" name="CoronalSub_3">
@@ -211,6 +202,47 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QPushButton" name="previousPage">
+              <property name="text">
+               <string>上一页</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QWidget" name="widget_2" native="true">
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QLineEdit" name="xLineEdit"/>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="yLineEdit"/>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="zLineEdit"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_3" native="true">
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QPushButton" name="updatePositionButton">
+                 <property name="text">
+                  <string>UpdatePosition</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
@@ -226,7 +258,7 @@
   <customwidget>
    <class>QVTKOpenGLNativeWidget</class>
    <extends>QWidget</extends>
-   <header>qvtkopenglnativewidget.h</header>
+   <header>QVTKOpenGLNativeWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

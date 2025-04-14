@@ -4,9 +4,12 @@
 #include <QWidget>
 #include <QtMultimedia>
 #include <QLabel>
+
+#include "roboticArmThread.h"
+#include <QThread>
+
 #include <vtkImageData.h>
 #include "visualizeTool.h"
-
 #include <vtkSmartPointer.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
@@ -65,6 +68,7 @@ public:
     void initImage();
     void createSphereForTest(Vector3D vec);
     void updateSpherePosition(Vector3D newVec);
+    void buildAndRespondMonitor();
 
 private slots:
     //void do_camera_changed(int index);  //与摄像头下拉列表框的信号关联
@@ -109,9 +113,13 @@ private slots:
 
 signals:
     void preButton_pressed();
+    void buildArmMonitor(int num);
 
 private:
     Ui::IntraoperativeImage *ui;
+
+    QThread *monitor = new QThread;
+    LocationMonitor *monitorWork = new LocationMonitor;
 };
 
 #endif // INTRAOPERATIVEIMAGE_H

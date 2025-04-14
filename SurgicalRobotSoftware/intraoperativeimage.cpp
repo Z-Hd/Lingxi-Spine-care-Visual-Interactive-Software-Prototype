@@ -1,6 +1,6 @@
 #include "intraoperativeimage.h"
 #include "ui_intraoperativeimage.h"
-
+#include <QDebug>
 #include <QScreen.h>
 #include <QDir>
 #include <vtkActor.h>
@@ -45,7 +45,8 @@
 #include <vtkSphereRepresentation.h>
 #include <vtkCamera.h>
 
-vtkSmartPointer<vtkActor> sphereActor;
+vtkSmartPointer<vtkActor> sphereActor;  //TODO：设置在头文件中
+Vector3D spherePosition = {0, 0, 0};
 
 IntraoperativeImage::IntraoperativeImage(QWidget *parent)
     : QWidget(parent)
@@ -61,6 +62,22 @@ IntraoperativeImage::IntraoperativeImage(QWidget *parent)
     layoutOfImageGroupBox->setStretchFactor(ui->groupBox, 3);
 
     initCamera();
+
+    // monitorWork->moveToThread(monitor);
+
+    // connect(this, &IntraoperativeImage::buildArmMonitor, monitorWork, &LocationMonitor::begin);
+
+    // connect(monitorWork, &LocationMonitor::working, this, [=](double l){
+    //     spherePosition = {l, 100, 100};
+    //     //sphereActor->SetPosition(l, 100, 100);
+    // });
+
+    // connect(monitorWork, &LocationMonitor::finish, this, [=](QString s){
+    //     qDebug() << s;
+    // });
+
+    // emit buildArmMonitor(100);
+    // monitor->start();
 }
 
 IntraoperativeImage::~IntraoperativeImage()
@@ -158,6 +175,7 @@ void IntraoperativeImage::on_Segment_3_clicked()
     initImage();
     Vector3D vec = {60, 100, 60};
     createSphereForTest(vec);
+    ui->Segment_3->setEnabled(false); // 禁用按钮
 }
 void IntraoperativeImage::on_refresh_3_clicked()
 {
@@ -168,6 +186,25 @@ void IntraoperativeImage::on_refresh_3_clicked()
     // ui->CoronalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     // ui->SagittalSegment_3->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
     initImage();
+}
+
+void IntraoperativeImage::buildAndRespondMonitor(){
+    monitorWork->moveToThread(monitor);
+
+    connect(this, &IntraoperativeImage::buildArmMonitor, monitorWork, &LocationMonitor::begin);
+
+    connect(monitorWork, &LocationMonitor::working, this, [=](double l){
+        spherePosition = {l, 100, 100};
+        updateSpherePosition(spherePosition);
+        //sphereActor->SetPosition(l, 100, 100);
+    });
+
+    connect(monitorWork, &LocationMonitor::finish, this, [=](QString s){
+        qDebug() << s;
+    });
+
+    emit buildArmMonitor(100);
+    monitor->start();
 }
 
 void IntraoperativeImage::createSphereForTest(Vector3D vec){
@@ -204,6 +241,8 @@ void IntraoperativeImage::createSphereForTest(Vector3D vec){
     smartRenderer->AddActor(sphereActor);
     smartRenderer->Render();
     Model3D_3->Render();
+
+    buildAndRespondMonitor();
 
     // // 创建交互器
     // vtkSmartPointer<vtkRenderWindowInteractor> interactor = vtkSmartPointer<vtkRenderWindowInteractor>::New();

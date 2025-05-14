@@ -47,18 +47,18 @@ vtkSmartPointer<vtkImageReslice> VisualizeTool::getReslice(vtkImageData* imageDa
     center[2] = origin[2] + spacing[2] * 0.5 * (extent[4] + extent[5]);
     auto resliceAxes = vtkSmartPointer<vtkMatrix4x4>::New();
     switch(type){
-        case Axial:
-            resliceAxes->DeepCopy(axialElements);
-            center[2] = index;
-            break;
-        case Coronal:
-            resliceAxes->DeepCopy(coronalElements);
-            center[1] = index;
-            break;
-        case Sagittal:
-            resliceAxes->DeepCopy(sagittalElements);
-            center[0] = index;
-            break;
+    case Axial:
+        resliceAxes->DeepCopy(axialElements);
+        center[2] = index;
+        break;
+    case Coronal:
+        resliceAxes->DeepCopy(coronalElements);
+        center[1] = index;
+        break;
+    case Sagittal:
+        resliceAxes->DeepCopy(sagittalElements);
+        center[0] = index;
+        break;
     }
     resliceAxes->SetElement(0, 3, center[0]);
     resliceAxes->SetElement(1, 3, center[1]);
@@ -182,6 +182,7 @@ void VisualizeTool::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkIma
     renderer->ResetCamera();
     renderWindow->SetMultiSamples(0);
 }
+
 void VisualizeTool::zoom(vtkSmartPointer<vtkRenderWindow>& renderWindow,double scaleFactor){
     vtkCamera* camera = renderWindow->GetRenderers()->GetFirstRenderer()->GetActiveCamera();
     // 获取当前相机的位置和焦点
@@ -195,4 +196,81 @@ void VisualizeTool::zoom(vtkSmartPointer<vtkRenderWindow>& renderWindow,double s
     camera->SetFocalPoint(focalPoint);
     renderWindow->Render();
     renderWindow->GetInteractor()->Render();
+}
+
+void VisualizeTool::showImageData(vtkImageData* imageData, vtkRenderWindow* renderWindow, bool useColorMap)
+{
+    if (!imageData || !renderWindow)
+        return;
+
+    // 保留交互器
+    vtkRenderWindowInteractor* interactor = renderWindow->GetInteractor();
+    vtkInteractorStyle* style = nullptr;
+    if (interactor) {
+        style = vtkInteractorStyle::SafeDownCast(interactor->GetInteractorStyle());
+    }
+
+    // 清除现有渲染器
+    renderWindow->GetRenderers()->RemoveAllItems();
+
+    // 创建新的渲染器
+    vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
+    renderer->SetBackground(0.0, 0.0, 0.0); // 黑色背景
+
+    // 获取图像范围
+    double range[2];
+    imageData->GetScalarRange(range);
+
+    // 创建查找表
+    vtkSmartPointer<vtkLookupTable> lookupTable = vtkSmartPointer<vtkLookupTable>::New();
+    if (useColorMap) {
+        // 使用彩色映射
+        lookupTable->SetNumberOfTableValues(256);
+        lookupTable->SetHueRange(0.0, 0.667);
+        lookupTable->SetSaturationRange(0.0, 1.0);
+        lookupTable->SetValueRange(0.0, 1.0);
+        lookupTable->SetTableRange(range[0], range[1]);
+    } else {
+        // 使用灰度映射
+        lookupTable->SetNumberOfTableValues(256);
+        lookupTable->SetRange(range[0], range[1]);
+        lookupTable->SetValueRange(0.0, 1.0);
+        lookupTable->SetSaturationRange(0.0, 0.0);
+        lookupTable->SetRampToLinear();
+    }
+    lookupTable->Build();
+
+    // 创建颜色映射
+    vtkSmartPointer<vtkImageMapToColors> mapToColors = vtkSmartPointer<vtkImageMapToColors>::New();
+    mapToColors->SetLookupTable(lookupTable);
+    mapToColors->SetInputData(imageData);
+    mapToColors->Update();
+
+    // 创建图像Actor
+    vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
+    imageActor->GetMapper()->SetInputConnection(mapToColors->GetOutputPort());
+
+    // 添加Actor到渲染器
+    renderer->AddActor(imageActor);
+
+    // 设置相机为平行投影
+    vtkCamera* camera = renderer->GetActiveCamera();
+    camera->ParallelProjectionOn();
+
+    // 添加渲染器到渲染窗口
+    renderWindow->AddRenderer(renderer);
+
+    // 恢复交互器样式
+    if (interactor && style) {
+        interactor->SetInteractorStyle(style);
+    }
+
+    // 重置相机并渲染
+    renderer->ResetCamera();
+
+    // 调整相机视角，使图像更大
+    double zoom = 1.5;  // 增大图像尺寸的系数
+    camera->Zoom(zoom);
+
+    renderWindow->Render();
 }

@@ -18,6 +18,7 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QSizeF \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QString \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QStringList \
+	D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QThread \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QUrl \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QVariant \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QtCore \
@@ -1333,16 +1334,36 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake \
 	D:/SoftWare/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessTargets.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCompilerIdDetection.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineCompileFeatures.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineRCCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindBinUtils.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeNinjaFindMake.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeParseImplicitIncludeInfo.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeParseImplicitLinkInfo.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeParseLibraryArchitecture.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCCompiler.cmake.in \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystem.cmake.in \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeTestCompilerCommon.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeTestRCCompiler.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCCompilerFlag.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake \
@@ -1351,9 +1372,48 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckSourceCompiles.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Cray-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GHS-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/IAR-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Intel-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/MSVC-CXX.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/MSVC-DetermineCompiler.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/MSVC.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/PGI-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/SCO-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/TI-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/TIClang-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/ExternalData.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageMessage.cmake \
@@ -1361,9 +1421,12 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindVulkan.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GenerateExportHeader.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/FeatureTesting.cmake \
+	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Determine-CXX.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-MSVC-CXX.cmake \
 	D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-MSVC.cmake \
@@ -1400,6 +1463,7 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	D:/vtk_pix/include/vtk-9.4/vtkCommonCoreModule.h \
 	D:/vtk_pix/include/vtk-9.4/vtkCommonDataModelModule.h \
 	D:/vtk_pix/include/vtk-9.4/vtkCommonExecutionModelModule.h \
+	D:/vtk_pix/include/vtk-9.4/vtkCommonMathModule.h \
 	D:/vtk_pix/include/vtk-9.4/vtkCompiler.h \
 	D:/vtk_pix/include/vtk-9.4/vtkDataArray.h \
 	D:/vtk_pix/include/vtk-9.4/vtkDataArrayAccessor.h \
@@ -1425,20 +1489,28 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	D:/vtk_pix/include/vtk-9.4/vtkIOStream.h \
 	D:/vtk_pix/include/vtk-9.4/vtkIdList.h \
 	D:/vtk_pix/include/vtk-9.4/vtkIdTypeArray.h \
+	D:/vtk_pix/include/vtk-9.4/vtkImageActor.h \
 	D:/vtk_pix/include/vtk-9.4/vtkImageAlgorithm.h \
 	D:/vtk_pix/include/vtk-9.4/vtkImageData.h \
+	D:/vtk_pix/include/vtk-9.4/vtkImageMapToColors.h \
 	D:/vtk_pix/include/vtk-9.4/vtkImageReslice.h \
+	D:/vtk_pix/include/vtk-9.4/vtkImageSlice.h \
 	D:/vtk_pix/include/vtk-9.4/vtkImagingCoreModule.h \
 	D:/vtk_pix/include/vtk-9.4/vtkIndent.h \
 	D:/vtk_pix/include/vtk-9.4/vtkIntArray.h \
 	D:/vtk_pix/include/vtk-9.4/vtkInteractionStyleModule.h \
 	D:/vtk_pix/include/vtk-9.4/vtkInteractorObserver.h \
 	D:/vtk_pix/include/vtk-9.4/vtkInteractorStyle.h \
+	D:/vtk_pix/include/vtk-9.4/vtkInteractorStyleImage.h \
 	D:/vtk_pix/include/vtk-9.4/vtkInteractorStyleTrackballActor.h \
+	D:/vtk_pix/include/vtk-9.4/vtkInteractorStyleTrackballCamera.h \
+	D:/vtk_pix/include/vtk-9.4/vtkLine.h \
+	D:/vtk_pix/include/vtk-9.4/vtkLineSource.h \
 	D:/vtk_pix/include/vtk-9.4/vtkMapper.h \
 	D:/vtk_pix/include/vtk-9.4/vtkMath.h \
 	D:/vtk_pix/include/vtk-9.4/vtkMathConfigure.h \
 	D:/vtk_pix/include/vtk-9.4/vtkMathPrivate.hxx \
+	D:/vtk_pix/include/vtk-9.4/vtkMatrix4x4.h \
 	D:/vtk_pix/include/vtk-9.4/vtkMatrixUtilities.h \
 	D:/vtk_pix/include/vtk-9.4/vtkMeta.h \
 	D:/vtk_pix/include/vtk-9.4/vtkNamedColors.h \
@@ -1460,6 +1532,7 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	D:/vtk_pix/include/vtk-9.4/vtkProp3D.h \
 	D:/vtk_pix/include/vtk-9.4/vtkPropCollection.h \
 	D:/vtk_pix/include/vtk-9.4/vtkPropPicker.h \
+	D:/vtk_pix/include/vtk-9.4/vtkProperty.h \
 	D:/vtk_pix/include/vtk-9.4/vtkRenderWindow.h \
 	D:/vtk_pix/include/vtk-9.4/vtkRenderWindowInteractor.h \
 	D:/vtk_pix/include/vtk-9.4/vtkRenderer.h \
@@ -1539,10 +1612,14 @@ SurgicalRobotSoftware_autogen/timestamp: \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/main.cpp \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/mainwidget.cpp \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/mainwidget.h \
+	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/roboticArmThread.cpp \
+	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/roboticArmThread.h \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/spinalimage.cpp \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/spinalimage.h \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/visualizeTool.cpp \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/visualizeTool.h \
+	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/vtkMPRInteractorStyle.cpp \
+	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/vtkMPRInteractorStyle.h \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/RoutePlan.ui \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/intraoperativeimage.ui \
 	E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/login.ui \

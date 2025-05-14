@@ -16,11 +16,12 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "qvtkopenglnativewidget.h"
+#include "QVTKOpenGLNativeWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -36,21 +37,18 @@ public:
     QGroupBox *sagittalGroupBox;
     QHBoxLayout *horizontalLayout_4;
     QVTKOpenGLNativeWidget *SagittalPlane_3;
-    QVTKOpenGLNativeWidget *SagittalSegment_3;
     QVBoxLayout *SagittalSub_3;
     QSlider *SagittalSlider_3;
     QLabel *SagittalLabel_3;
     QGroupBox *transverseGroupBox;
     QHBoxLayout *horizontalLayout_5;
     QVTKOpenGLNativeWidget *TransversePlane_3;
-    QVTKOpenGLNativeWidget *TransverseSegment_3;
     QVBoxLayout *TransverseSub_3;
     QSlider *TransverseSlider_3;
     QLabel *TransverseLabel_3;
     QGroupBox *coronalGroupBox;
     QHBoxLayout *horizontalLayout_3;
     QVTKOpenGLNativeWidget *CoronalPlane_3;
-    QVTKOpenGLNativeWidget *CoronalSegment_3;
     QVBoxLayout *CoronalSub_3;
     QSlider *CoronalSlider_3;
     QLabel *CoronalLabel_3;
@@ -63,6 +61,17 @@ public:
     QPushButton *Segment_3;
     QPushButton *actStartCamera;
     QPushButton *actStopCamera;
+    QPushButton *previousPage;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_2;
+    QWidget *widget_2;
+    QHBoxLayout *horizontalLayout_7;
+    QLineEdit *xLineEdit;
+    QLineEdit *yLineEdit;
+    QLineEdit *zLineEdit;
+    QWidget *widget_3;
+    QHBoxLayout *horizontalLayout_6;
+    QPushButton *updatePositionButton;
 
     void setupUi(QWidget *IntraoperativeImage)
     {
@@ -97,11 +106,6 @@ public:
         SagittalPlane_3->setSizePolicy(sizePolicy);
 
         horizontalLayout_4->addWidget(SagittalPlane_3);
-
-        SagittalSegment_3 = new QVTKOpenGLNativeWidget(sagittalGroupBox);
-        SagittalSegment_3->setObjectName("SagittalSegment_3");
-
-        horizontalLayout_4->addWidget(SagittalSegment_3);
 
         SagittalSub_3 = new QVBoxLayout();
         SagittalSub_3->setObjectName("SagittalSub_3");
@@ -138,11 +142,6 @@ public:
 
         horizontalLayout_5->addWidget(TransversePlane_3);
 
-        TransverseSegment_3 = new QVTKOpenGLNativeWidget(transverseGroupBox);
-        TransverseSegment_3->setObjectName("TransverseSegment_3");
-
-        horizontalLayout_5->addWidget(TransverseSegment_3);
-
         TransverseSub_3 = new QVBoxLayout();
         TransverseSub_3->setObjectName("TransverseSub_3");
         TransverseSlider_3 = new QSlider(transverseGroupBox);
@@ -174,11 +173,6 @@ public:
         CoronalPlane_3->setSizePolicy(sizePolicy);
 
         horizontalLayout_3->addWidget(CoronalPlane_3);
-
-        CoronalSegment_3 = new QVTKOpenGLNativeWidget(coronalGroupBox);
-        CoronalSegment_3->setObjectName("CoronalSegment_3");
-
-        horizontalLayout_3->addWidget(CoronalSegment_3);
 
         CoronalSub_3 = new QVBoxLayout();
         CoronalSub_3->setObjectName("CoronalSub_3");
@@ -242,8 +236,54 @@ public:
 
         horizontalLayout_2->addWidget(actStopCamera);
 
+        previousPage = new QPushButton(groupBox_2);
+        previousPage->setObjectName("previousPage");
+
+        horizontalLayout_2->addWidget(previousPage);
+
 
         verticalLayout->addWidget(groupBox_2);
+
+        widget = new QWidget(groupBox);
+        widget->setObjectName("widget");
+        verticalLayout_2 = new QVBoxLayout(widget);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        widget_2 = new QWidget(widget);
+        widget_2->setObjectName("widget_2");
+        horizontalLayout_7 = new QHBoxLayout(widget_2);
+        horizontalLayout_7->setObjectName("horizontalLayout_7");
+        xLineEdit = new QLineEdit(widget_2);
+        xLineEdit->setObjectName("xLineEdit");
+
+        horizontalLayout_7->addWidget(xLineEdit);
+
+        yLineEdit = new QLineEdit(widget_2);
+        yLineEdit->setObjectName("yLineEdit");
+
+        horizontalLayout_7->addWidget(yLineEdit);
+
+        zLineEdit = new QLineEdit(widget_2);
+        zLineEdit->setObjectName("zLineEdit");
+
+        horizontalLayout_7->addWidget(zLineEdit);
+
+
+        verticalLayout_2->addWidget(widget_2);
+
+        widget_3 = new QWidget(widget);
+        widget_3->setObjectName("widget_3");
+        horizontalLayout_6 = new QHBoxLayout(widget_3);
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        updatePositionButton = new QPushButton(widget_3);
+        updatePositionButton->setObjectName("updatePositionButton");
+
+        horizontalLayout_6->addWidget(updatePositionButton);
+
+
+        verticalLayout_2->addWidget(widget_3);
+
+
+        verticalLayout->addWidget(widget);
 
 
         horizontalLayout->addWidget(groupBox);
@@ -271,6 +311,8 @@ public:
         Segment_3->setText(QCoreApplication::translate("IntraoperativeImage", "\345\210\206\345\211\262\344\277\241\346\201\257", nullptr));
         actStartCamera->setText(QCoreApplication::translate("IntraoperativeImage", "\345\274\200\345\220\257\346\221\204\345\203\217\345\244\264", nullptr));
         actStopCamera->setText(QCoreApplication::translate("IntraoperativeImage", "\345\205\263\351\227\255\346\221\204\345\203\217\345\244\264", nullptr));
+        previousPage->setText(QCoreApplication::translate("IntraoperativeImage", "\344\270\212\344\270\200\351\241\265", nullptr));
+        updatePositionButton->setText(QCoreApplication::translate("IntraoperativeImage", "UpdatePosition", nullptr));
     } // retranslateUi
 
 };

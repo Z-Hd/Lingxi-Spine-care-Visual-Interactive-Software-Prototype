@@ -3,4 +3,6 @@
 #include "EWIEGA46WW/moc_intraoperativeimage.cpp"
 #include "EWIEGA46WW/moc_login.cpp"
 #include "EWIEGA46WW/moc_mainwidget.cpp"
+#include "EWIEGA46WW/moc_roboticArmThread.cpp"
 #include "EWIEGA46WW/moc_spinalimage.cpp"
+#include "EWIEGA46WW/moc_vtkMPRInteractorStyle.cpp"

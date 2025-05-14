@@ -18,6 +18,7 @@ E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QSizeF \
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QString \
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QStringList \
+  D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QThread \
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QUrl \
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QVariant \
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtCore/QtCore \
@@ -616,4 +617,5 @@ E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt
   D:/vtk_pix/include/vtk-9.4/vtksys/Configure.hxx \
   D:/vtk_pix/include/vtk-9.4/vtksys/Status.hxx \
   D:/vtk_pix/include/vtk-9.4/vtksys/SystemTools.hxx \
+  E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/roboticArmThread.h \
   E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/visualizeTool.h

@@ -22,7 +22,3 @@ void LocationMonitor::begin(int num)
     qDebug() <<"线程1，共耗时： "<<time.elapsed() <<" ms。";
     emit finish(QString::number(time.elapsed()));
 }
-
-
-\
-

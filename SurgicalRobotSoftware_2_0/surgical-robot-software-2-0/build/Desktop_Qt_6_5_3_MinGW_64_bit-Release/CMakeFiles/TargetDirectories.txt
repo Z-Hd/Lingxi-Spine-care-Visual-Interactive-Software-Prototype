@@ -1,0 +1,9 @@
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/surgical-robot-software-2-0.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/edit_cache.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/rebuild_cache.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/list_install_components.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/install.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/install/local.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/install/strip.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/surgical-robot-software-2-0_autogen_timestamp_deps.dir
+E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/CMakeFiles/surgical-robot-software-2-0_autogen.dir

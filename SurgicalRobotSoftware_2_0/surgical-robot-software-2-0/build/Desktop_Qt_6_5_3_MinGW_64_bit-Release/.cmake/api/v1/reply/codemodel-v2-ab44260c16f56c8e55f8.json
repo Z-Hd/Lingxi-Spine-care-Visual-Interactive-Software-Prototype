@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-8acbf0cb597c2dedf04f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "surgical-robot-software-2-0",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "surgical-robot-software-2-0::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-surgical-robot-software-2-0-Release-e7b0a0a5870877421451.json",
+					"name" : "surgical-robot-software-2-0",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "surgical-robot-software-2-0_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-surgical-robot-software-2-0_autogen-Release-fb0b0f86feb7f04e7376.json",
+					"name" : "surgical-robot-software-2-0_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "surgical-robot-software-2-0_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-surgical-robot-software-2-0_autogen_timestamp_deps-Release-78dd2b95a28c64ac05ec.json",
+					"name" : "surgical-robot-software-2-0_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release",
+		"source" : "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

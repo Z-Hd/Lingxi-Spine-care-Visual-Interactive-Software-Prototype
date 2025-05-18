@@ -1,5 +1,7 @@
 #include "mainwidget.h"
 #include "./ui_mainwidget.h"
+#include <iostream>
+using namespace std;
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -34,9 +36,26 @@ MainWidget::MainWidget(QWidget *parent)
     connect(image_display_widget, &ImageDisplayWidget::simulationButton_pressed,[=](){
         ui->centralWidget->setCurrentWidget(simulation_widget);
     });
+    connect(this, &MainWidget::ndiPageButton_pressed,[=](){
+        ui->centralWidget->setCurrentWidget(ndi_widget);
+    });
+    connect(this, &MainWidget::armPageButton_pressed,[=](){
+        ui->centralWidget->setCurrentWidget(arm_control_widget);
+    });
 }
 
 MainWidget::~MainWidget()
 {
     delete ui;
+}
+
+void MainWidget::on_ndiPageButton_clicked()
+{
+    cout<<"ndiPageButton_pressed"<<endl;
+    emit ndiPageButton_pressed();
+}
+
+void MainWidget::on_armPageButton_clicked()
+{
+    emit armPageButton_pressed();
 }

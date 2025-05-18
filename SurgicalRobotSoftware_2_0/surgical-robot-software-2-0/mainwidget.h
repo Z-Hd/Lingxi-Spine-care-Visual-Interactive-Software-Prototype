@@ -25,6 +25,13 @@ public:
     MainWidget(QWidget *parent = nullptr);
     ~MainWidget();
 
+private slots:
+    void on_ndiPageButton_clicked();
+    void on_armPageButton_clicked();
+
+signals:
+    void ndiPageButton_pressed();
+    void armPageButton_pressed();
 private:
     Ui::MainWidget *ui;
 

@@ -32,6 +32,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         imageinputwidget.h imageinputwidget.cpp imageinputwidget.ui
         armcontrolwidget.h armcontrolwidget.cpp armcontrolwidget.ui
         ndiwidget.h ndiwidget.cpp ndiwidget.ui
+        image.qrc
 
 
     )

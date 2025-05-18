@@ -6,6 +6,10 @@ EquipInfoWidget::EquipInfoWidget(QWidget *parent)
     , ui(new Ui::EquipInfoWidget)
 {
     ui->setupUi(this);
+    ui->tool->setFixedSize(300,300);
+    ui->backButton->setFixedSize(100,30);
+    ui->confirmButton->setFixedSize(100,30);
+
 }
 
 EquipInfoWidget::~EquipInfoWidget()

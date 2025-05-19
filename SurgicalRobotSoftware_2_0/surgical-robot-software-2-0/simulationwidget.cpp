@@ -14,3 +14,15 @@ SimulationWidget::~SimulationWidget()
 {
     delete ui;
 }
+
+void SimulationWidget::on_backButton_clicked()
+{
+    emit back_to_imagedisPlayWidget();
+}
+
+
+void SimulationWidget::on_confirmButton_clicked()
+{
+    emit back_to_imagedisPlayWidget();
+}
+

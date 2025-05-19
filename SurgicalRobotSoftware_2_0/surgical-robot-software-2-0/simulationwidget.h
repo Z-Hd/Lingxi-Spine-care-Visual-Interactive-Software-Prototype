@@ -15,6 +15,14 @@ public:
     explicit SimulationWidget(QWidget *parent = nullptr);
     ~SimulationWidget();
 
+private slots:
+    void on_backButton_clicked();
+
+    void on_confirmButton_clicked();
+
+signals:
+    void back_to_imagedisPlayWidget();
+
 private:
     Ui::SimulationWidget *ui;
 };

@@ -42,6 +42,9 @@ MainWidget::MainWidget(QWidget *parent)
     connect(this, &MainWidget::armPageButton_pressed,[=](){
         ui->centralWidget->setCurrentWidget(arm_control_widget);
     });
+    connect(simulation_widget, &SimulationWidget::back_to_imagedisPlayWidget,[=](){
+        ui->centralWidget->setCurrentWidget(image_display_widget);
+    });
 }
 
 MainWidget::~MainWidget()
@@ -51,7 +54,6 @@ MainWidget::~MainWidget()
 
 void MainWidget::on_ndiPageButton_clicked()
 {
-    cout<<"ndiPageButton_pressed"<<endl;
     emit ndiPageButton_pressed();
 }
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1236</width>
-    <height>770</height>
+    <width>1046</width>
+    <height>564</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -328,6 +328,12 @@ background-repeat: no-repeat;
             </item>
             <item>
              <widget class="QPushButton" name="simulateButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
 background-color: rgb(37, 38, 43);

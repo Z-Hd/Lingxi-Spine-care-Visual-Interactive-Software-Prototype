@@ -307,7 +307,8 @@
 		"D:/SoftWare/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets-debug.cmake",
 		"D:/SoftWare/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets-relwithdebinfo.cmake",
 		"D:/SoftWare/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginAdditionalTargetInfo.cmake",
-		"D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		"D:/SoftWare/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/image.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0",
 	"CROSS_CONFIG" : false,
@@ -325,6 +326,12 @@
 			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/equipinfowidget.h",
 			"MU",
 			"EWIEGA46WW/moc_equipinfowidget.cpp",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/executewidget.h",
+			"MU",
+			"EWIEGA46WW/moc_executewidget.cpp",
 			null
 		],
 		[
@@ -358,9 +365,39 @@
 			null
 		],
 		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/registrationwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_registrationwidget.cpp",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/routeplan1widget.h",
+			"MU",
+			"EWIEGA46WW/moc_routeplan1widget.cpp",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/routeplan2widget.h",
+			"MU",
+			"EWIEGA46WW/moc_routeplan2widget.cpp",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/segmentationwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_segmentationwidget.cpp",
+			null
+		],
+		[
 			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/simulationwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_simulationwidget.cpp",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/vertebraselectionwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_vertebraselectionwidget.cpp",
 			null
 		]
 	],
@@ -430,6 +467,11 @@
 			null
 		],
 		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/executewidget.cpp",
+			"MU",
+			null
+		],
+		[
 			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/imagedisplaywidget.cpp",
 			"MU",
 			null
@@ -460,7 +502,32 @@
 			null
 		],
 		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/registrationwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/routeplan1widget.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/routeplan2widget.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/segmentationwidget.cpp",
+			"MU",
+			null
+		],
+		[
 			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/simulationwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/vertebraselectionwidget.cpp",
 			"MU",
 			null
 		]

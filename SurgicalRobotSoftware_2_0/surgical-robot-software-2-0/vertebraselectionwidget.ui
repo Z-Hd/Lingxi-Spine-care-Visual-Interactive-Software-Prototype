@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VertebraSelectionWidget</class>
+ <widget class="QWidget" name="VertebraSelectionWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>515</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(17, 17, 18);</string>
+  </property>
+  <widget class="QPushButton" name="confirmButton">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>450</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+   </property>
+   <property name="text">
+    <string>确认</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelButton">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>450</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>461</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(23, 23, 26);
+color:rgb(220, 220, 220);
+qproperty-alignment: AlignCenter;
+font-size:20px;
+
+</string>
+   </property>
+   <property name="text">
+    <string>添加入路</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="l5LButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>310</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+   </property>
+   <property name="text">
+    <string>L5-L</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

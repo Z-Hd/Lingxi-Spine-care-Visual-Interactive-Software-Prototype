@@ -33,8 +33,25 @@ MainWidget::MainWidget(QWidget *parent)
     connect(equip_info_widget, &EquipInfoWidget::confirmButton_pressed,[=](){
         ui->centralWidget->setCurrentWidget(image_display_widget);
     });
-    connect(image_display_widget, &ImageDisplayWidget::simulationButton_pressed,[=](){
-        ui->centralWidget->setCurrentWidget(simulation_widget);
+
+    // 这里须要注意：从 SegmentationWidget 到 ImageDisplayWidget 再到 MainWidget 的三层信号传递
+    connect(image_display_widget, &ImageDisplayWidget::imageInputButton_received,[=](){
+        ui->centralWidget->setCurrentWidget(image_input_widget);
+    });
+
+    connect(image_input_widget, &ImageInputWidget::back_to_imageDisplayWidget,[=](){
+        ui->centralWidget->setCurrentWidget(image_display_widget);
+    });
+
+    // 这里须要注意：先回到 ImageDisplayWidget 将右侧 StackedWidget 更换为 RegistrationWidget
+    // 再在 MainWidget 把 centralWidget 更换为 ImageDisplayWidget
+    connect(image_input_widget, &ImageInputWidget::confirmButton_pressed,[=](){
+        void* set_image_display_widget_stacked_widget_as_registration = image_display_widget->setStackedWidgetAsRegistration();
+        ui->centralWidget->setCurrentWidget(image_display_widget);
+    });
+
+    connect(simulation_widget, &SimulationWidget::back_to_imagedisPlayWidget,[=](){
+        ui->centralWidget->setCurrentWidget(image_display_widget);
     });
     connect(this, &MainWidget::ndiPageButton_pressed,[=](){
         ui->centralWidget->setCurrentWidget(ndi_widget);
@@ -42,8 +59,10 @@ MainWidget::MainWidget(QWidget *parent)
     connect(this, &MainWidget::armPageButton_pressed,[=](){
         ui->centralWidget->setCurrentWidget(arm_control_widget);
     });
-    connect(simulation_widget, &SimulationWidget::back_to_imagedisPlayWidget,[=](){
-        ui->centralWidget->setCurrentWidget(image_display_widget);
+
+    // 这里须要注意：从 SegmentationWidget 到 ImageDisplayWidget 再到 MainWidget 的三层信号传递
+    connect(image_display_widget, &ImageDisplayWidget::simulationButton_received,[=](){
+        ui->centralWidget->setCurrentWidget(simulation_widget);
     });
 }
 

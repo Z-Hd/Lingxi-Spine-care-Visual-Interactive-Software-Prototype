@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SegmentationWidget</class>
+ <widget class="QWidget" name="SegmentationWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>276</width>
+    <height>584</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(17, 17, 18);</string>
+  </property>
+  <widget class="QPushButton" name="imageInputButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>40</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+   </property>
+   <property name="text">
+    <string>导入</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

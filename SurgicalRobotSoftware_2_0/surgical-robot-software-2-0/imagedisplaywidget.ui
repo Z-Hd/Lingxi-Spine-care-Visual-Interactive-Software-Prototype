@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1016</width>
-    <height>601</height>
+    <width>1510</width>
+    <height>996</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(28, 29, 33)</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="40,2,14">
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="80,3,32">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -33,7 +33,7 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QWidget" name="visualization" native="true">
+    <widget class="QWidget" name="visualizationWidget" native="true">
      <layout class="QGridLayout" name="gridLayout" rowstretch="0,0">
       <property name="leftMargin">
        <number>0</number>
@@ -55,7 +55,10 @@
         <property name="styleSheet">
          <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="14,3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -63,7 +66,7 @@
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>66</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
@@ -75,6 +78,43 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QWidget" name="transverseTools" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 255, 255);</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QScrollBar" name="transverseScrollBar">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="pageStep">
+               <number>6</number>
+              </property>
+              <property name="sliderPosition">
+               <number>99</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -83,7 +123,10 @@
         <property name="styleSheet">
          <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="14,3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -91,7 +134,7 @@
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>66</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
@@ -103,6 +146,40 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QWidget" name="sagittalTools" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 255, 255);</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QScrollBar" name="sagittalScrollBar">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="pageStep">
+               <number>6</number>
+              </property>
+              <property name="sliderPosition">
+               <number>99</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -111,7 +188,10 @@
         <property name="styleSheet">
          <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="14,3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -119,7 +199,7 @@
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>66</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
@@ -131,6 +211,40 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QWidget" name="coronalTools" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 255, 255);</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QScrollBar" name="coronalScrollBar">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="pageStep">
+               <number>6</number>
+              </property>
+              <property name="sliderPosition">
+               <number>99</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -139,7 +253,10 @@
         <property name="styleSheet">
          <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="28,3,6">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -147,7 +264,7 @@
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>66</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
@@ -159,6 +276,47 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QWidget" name="model3DBody" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 127);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="model3DTools" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 255, 255);</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QScrollBar" name="model3DScrollBar">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="pageStep">
+               <number>6</number>
+              </property>
+              <property name="sliderPosition">
+               <number>99</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -166,7 +324,10 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="addition" native="true">
+    <widget class="QWidget" name="additionWidget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(28, 29, 33);</string>
+     </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="leftMargin">
        <number>6</number>
@@ -354,27 +515,18 @@
    </item>
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(17, 17, 18);</string>
      </property>
-     <widget class="QWidget" name="stackedWidgetPage1">
-      <widget class="QPushButton" name="simulationButton">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>540</y>
-         <width>81</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:rgb(34, 35, 39);color:rgb(115, 118, 125)</string>
-       </property>
-       <property name="text">
-        <string>模拟</string>
-       </property>
-      </widget>
-     </widget>
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
     </widget>
    </item>
   </layout>

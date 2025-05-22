@@ -3,6 +3,12 @@
 
 #include <QWidget>
 
+#include "segmentationwidget.h"
+#include "registrationwidget.h"
+#include "routeplan1widget.h"
+#include "routeplan2widget.h"
+#include "executewidget.h"
+
 namespace Ui {
 class ImageDisplayWidget;
 }
@@ -15,14 +21,25 @@ public:
     explicit ImageDisplayWidget(QWidget *parent = nullptr);
     ~ImageDisplayWidget();
 
-private slots:
-    void on_simulationButton_clicked();
+    void* setStackedWidgetAsRegistration() const;
+    void setStackedWidgetAsRoutePlan2(const QString &vertebra);
 
 signals:
-    void simulationButton_pressed();
+    void imageInputButton_received();
+    void simulationButton_received();
+
+public slots:
+    void onReceivedSignalFromSegmentation();  //小括号里可以放待处理数据
+    void onReceivedSignalFromExecute();
 
 private:
     Ui::ImageDisplayWidget *ui;
+
+    SegmentationWidget *segmentation_widget;
+    RegistrationWidget *registration_widget;
+    RoutePlan1Widget *routeplan1_widget;
+    RoutePlan2Widget *routeplan2_widget;
+    ExecuteWidget *execute_widget;
 };
 
 #endif // IMAGEDISPLAYWIDGET_H

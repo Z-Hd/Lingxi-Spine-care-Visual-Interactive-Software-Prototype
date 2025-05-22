@@ -32,6 +32,7 @@ private slots:
 signals:
     void ndiPageButton_pressed();
     void armPageButton_pressed();
+
 private:
     Ui::MainWidget *ui;
 

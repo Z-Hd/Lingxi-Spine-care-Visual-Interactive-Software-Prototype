@@ -6,13 +6,95 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>858</width>
+    <height>529</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
+  <widget class="QPushButton" name="confirmButton">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>240</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+   </property>
+   <property name="text">
+    <string>确认</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>30</y>
+     <width>746</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(23, 23, 26);
+color:rgb(220, 220, 220);
+qproperty-alignment: AlignCenter;
+font-size:20px;
+
+</string>
+   </property>
+   <property name="text">
+    <string>导入影像</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backButton">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>240</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

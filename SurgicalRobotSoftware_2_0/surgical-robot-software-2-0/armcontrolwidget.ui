@@ -108,14 +108,14 @@ font-size:20px;
           <number>2</number>
          </property>
          <item>
-          <widget class="QWidget" name="widget" native="true"/>
+          <widget class="QWidget" name="widget_left" native="true"/>
          </item>
          <item>
-          <widget class="QWidget" name="widget_2" native="true">
+          <widget class="QWidget" name="widget_mid" native="true">
            <property name="styleSheet">
             <string notr="true">background-color:rgb(95, 95, 95)</string>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,12">
+           <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,10">
             <property name="spacing">
              <number>2</number>
             </property>
@@ -149,7 +149,7 @@ font-size:20px;
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="widget_3" native="true"/>
+          <widget class="QWidget" name="widget_right" native="true"/>
          </item>
         </layout>
        </widget>

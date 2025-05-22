@@ -9,6 +9,7 @@
 #include "imagedisplaywidget.h"
 #include "imageinputwidget.h"
 #include "ndiwidget.h"
+#include "intraoperativewidget.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -43,6 +44,9 @@ private:
     SimulationWidget *simulation_widget;
     ArmControlWidget *arm_control_widget;
     NDIWidget *ndi_widget;
+    IntraoperativeWidget *intraoperative_widget;
 
+    int preIndex = -1;
+    int curIndex = -1;
 };
 #endif // MAINWIDGET_H

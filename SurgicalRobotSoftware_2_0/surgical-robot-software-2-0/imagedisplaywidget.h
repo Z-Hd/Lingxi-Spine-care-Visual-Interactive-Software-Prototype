@@ -27,6 +27,7 @@ public:
 signals:
     void imageInputButton_received();
     void simulationButton_received();
+    void executeWidget_nextButton_pressed();
 
 public slots:
     void onReceivedSignalFromSegmentation();  //小括号里可以放待处理数据

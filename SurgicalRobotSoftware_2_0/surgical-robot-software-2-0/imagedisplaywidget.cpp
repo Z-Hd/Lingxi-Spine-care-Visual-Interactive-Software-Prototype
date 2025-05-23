@@ -6,7 +6,6 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
     , ui(new Ui::ImageDisplayWidget)
 {
     ui->setupUi(this);
-    this->setWindowState(Qt::WindowMaximized); //窗口最大化显示
 
     segmentation_widget = new SegmentationWidget();
     registration_widget = new RegistrationWidget();
@@ -44,6 +43,10 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
 
     connect(execute_widget, &ExecuteWidget::back_to_routePlan2Widget,[=](){
         ui->stackedWidget->setCurrentWidget(routeplan2_widget);
+    });
+
+    connect(execute_widget, &ExecuteWidget::nextButton_pressed,[=](){
+        emit executeWidget_nextButton_pressed();
     });
 
     // 这里涉及到三个级别的界面两道信号的传递

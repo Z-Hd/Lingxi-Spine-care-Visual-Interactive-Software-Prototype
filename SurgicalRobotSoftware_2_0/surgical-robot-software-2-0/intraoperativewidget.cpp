@@ -37,3 +37,8 @@ void IntraoperativeWidget::initCamera(){
 
     camera->start();// 启动摄像头
 }
+
+void IntraoperativeWidget::on_backButton_clicked()
+{
+    emit back_to_imagedisPlayWidget();
+}

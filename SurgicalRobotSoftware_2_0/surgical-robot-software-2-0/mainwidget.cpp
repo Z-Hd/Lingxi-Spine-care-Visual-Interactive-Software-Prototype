@@ -95,6 +95,18 @@ MainWidget::MainWidget(QWidget *parent)
         ui->centralWidget->setCurrentIndex(preIndex);
         curIndex = preIndex;
     });
+
+    connect(image_display_widget, &ImageDisplayWidget::executeWidget_nextButton_pressed, [&, this](){
+        preIndex = curIndex;
+        ui->centralWidget->setCurrentIndex(7);
+        curIndex = 7;
+    });
+
+    connect(intraoperative_widget, &IntraoperativeWidget::back_to_imagedisPlayWidget, [&, this](){
+        preIndex = curIndex;
+        ui->centralWidget->setCurrentIndex(2);
+        curIndex = 2;
+    });
 }
 
 MainWidget::~MainWidget()

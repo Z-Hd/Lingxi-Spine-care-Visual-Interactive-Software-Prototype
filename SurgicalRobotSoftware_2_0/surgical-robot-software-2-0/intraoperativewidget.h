@@ -17,6 +17,12 @@ public:
     explicit IntraoperativeWidget(QWidget *parent = nullptr);
     ~IntraoperativeWidget();
 
+private slots:
+    void on_backButton_clicked();
+
+signals:
+    void back_to_imagedisPlayWidget();
+
 private:
     Ui::IntraoperativeWidget *ui;
 

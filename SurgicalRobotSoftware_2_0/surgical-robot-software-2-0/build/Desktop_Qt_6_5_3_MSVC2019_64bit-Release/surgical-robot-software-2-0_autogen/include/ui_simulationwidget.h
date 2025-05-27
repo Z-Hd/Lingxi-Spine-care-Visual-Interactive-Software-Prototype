@@ -42,7 +42,6 @@ public:
     QWidget *widget_right;
     QVBoxLayout *verticalLayout_5;
     QWidget *widget_3;
-    QLabel *label_2;
     QWidget *widget_4;
     QWidget *displayWidget;
     QGridLayout *gridLayout_3;
@@ -117,14 +116,14 @@ public:
         opButtonWidget = new QWidget(widget_left);
         opButtonWidget->setObjectName("opButtonWidget");
         opButtonWidget->setMinimumSize(QSize(0, 0));
-        opButtonWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        opButtonWidget->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_4->addWidget(opButtonWidget);
 
         angleDisplayWidget = new QWidget(widget_left);
         angleDisplayWidget->setObjectName("angleDisplayWidget");
         angleDisplayWidget->setMinimumSize(QSize(0, 0));
-        angleDisplayWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 255, 255);"));
+        angleDisplayWidget->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_4->addWidget(angleDisplayWidget);
 
@@ -148,17 +147,14 @@ public:
         widget_3->setObjectName("widget_3");
         widget_3->setMinimumSize(QSize(0, 0));
         widget_3->setSizeIncrement(QSize(0, 0));
-        widget_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 170, 255);"));
-        label_2 = new QLabel(widget_3);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(80, 10, 53, 15));
+        widget_3->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_5->addWidget(widget_3);
 
         widget_4 = new QWidget(widget_right);
         widget_4->setObjectName("widget_4");
         widget_4->setMinimumSize(QSize(0, 0));
-        widget_4->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 127);"));
+        widget_4->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_5->addWidget(widget_4);
 
@@ -181,7 +177,7 @@ public:
         widget->setObjectName("widget");
         widget->setStyleSheet(QString::fromUtf8("QWidget#widget\n"
 "{\n"
-"border-image:url(:/image/simulation.png);\n"
+"border-image:url(:/resource/image/simulation.png);\n"
 "background-position: center; \n"
 "background-repeat: no-repeat;\n"
 "}"));
@@ -304,7 +300,6 @@ public:
     {
         SimulationWidget->setWindowTitle(QCoreApplication::translate("SimulationWidget", "Form", nullptr));
         label->setText(QCoreApplication::translate("SimulationWidget", "\346\250\241  \346\213\237", nullptr));
-        label_2->setText(QCoreApplication::translate("SimulationWidget", "TextLabel", nullptr));
         simulateButton->setText(QCoreApplication::translate("SimulationWidget", "\346\250\241\346\213\237", nullptr));
         confirmButton->setText(QCoreApplication::translate("SimulationWidget", "\347\241\256\350\256\244", nullptr));
         backButton->setText(QCoreApplication::translate("SimulationWidget", "\350\277\224\345\233\236", nullptr));

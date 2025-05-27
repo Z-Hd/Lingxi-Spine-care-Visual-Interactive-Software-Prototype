@@ -42,24 +42,30 @@ static constexpr auto qt_meta_stringdata_CLASSRoutePlan2WidgetENDCLASS = QtMocHe
     "back_to_vertebraSelectionWidget",
     "",
     "nextButton_pressed",
+    "back_to_routePlan1Widget",
     "on_addRouteButton_clicked",
     "handleVertebraSelected",
     "vertebra",
     "handleSelectionCanceled",
-    "on_nextButton_clicked"
+    "on_nextButton_clicked",
+    "on_cleanButton_clicked",
+    "on_backButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSRoutePlan2WidgetENDCLASS_t {
-    uint offsetsAndSizes[18];
+    uint offsetsAndSizes[24];
     char stringdata0[17];
     char stringdata1[32];
     char stringdata2[1];
     char stringdata3[19];
-    char stringdata4[26];
-    char stringdata5[23];
-    char stringdata6[9];
-    char stringdata7[24];
-    char stringdata8[22];
+    char stringdata4[25];
+    char stringdata5[26];
+    char stringdata6[23];
+    char stringdata7[9];
+    char stringdata8[24];
+    char stringdata9[22];
+    char stringdata10[23];
+    char stringdata11[22];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSRoutePlan2WidgetENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -69,21 +75,27 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSRoutePlan2WidgetENDCLASS_t qt_m
         QT_MOC_LITERAL(17, 31),  // "back_to_vertebraSelectionWidget"
         QT_MOC_LITERAL(49, 0),  // ""
         QT_MOC_LITERAL(50, 18),  // "nextButton_pressed"
-        QT_MOC_LITERAL(69, 25),  // "on_addRouteButton_clicked"
-        QT_MOC_LITERAL(95, 22),  // "handleVertebraSelected"
-        QT_MOC_LITERAL(118, 8),  // "vertebra"
-        QT_MOC_LITERAL(127, 23),  // "handleSelectionCanceled"
-        QT_MOC_LITERAL(151, 21)   // "on_nextButton_clicked"
+        QT_MOC_LITERAL(69, 24),  // "back_to_routePlan1Widget"
+        QT_MOC_LITERAL(94, 25),  // "on_addRouteButton_clicked"
+        QT_MOC_LITERAL(120, 22),  // "handleVertebraSelected"
+        QT_MOC_LITERAL(143, 8),  // "vertebra"
+        QT_MOC_LITERAL(152, 23),  // "handleSelectionCanceled"
+        QT_MOC_LITERAL(176, 21),  // "on_nextButton_clicked"
+        QT_MOC_LITERAL(198, 22),  // "on_cleanButton_clicked"
+        QT_MOC_LITERAL(221, 21)   // "on_backButton_clicked"
     },
     "RoutePlan2Widget",
     "back_to_vertebraSelectionWidget",
     "",
     "nextButton_pressed",
+    "back_to_routePlan1Widget",
     "on_addRouteButton_clicked",
     "handleVertebraSelected",
     "vertebra",
     "handleSelectionCanceled",
-    "on_nextButton_clicked"
+    "on_nextButton_clicked",
+    "on_cleanButton_clicked",
+    "on_backButton_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -95,30 +107,36 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRoutePlan2WidgetENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x06,    1 /* Public */,
-       3,    0,   51,    2, 0x06,    2 /* Public */,
+       1,    0,   68,    2, 0x06,    1 /* Public */,
+       3,    0,   69,    2, 0x06,    2 /* Public */,
+       4,    0,   70,    2, 0x06,    3 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   52,    2, 0x08,    3 /* Private */,
-       5,    1,   53,    2, 0x08,    4 /* Private */,
-       7,    0,   56,    2, 0x08,    6 /* Private */,
-       8,    0,   57,    2, 0x08,    7 /* Private */,
+       5,    0,   71,    2, 0x08,    4 /* Private */,
+       6,    1,   72,    2, 0x08,    5 /* Private */,
+       8,    0,   75,    2, 0x08,    7 /* Private */,
+       9,    0,   76,    2, 0x08,    8 /* Private */,
+      10,    0,   77,    2, 0x08,    9 /* Private */,
+      11,    0,   78,    2, 0x08,   10 /* Private */,
 
  // signals: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    6,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -138,6 +156,8 @@ Q_CONSTINIT const QMetaObject RoutePlan2Widget::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'nextButton_pressed'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'back_to_routePlan1Widget'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_addRouteButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'handleVertebraSelected'
@@ -146,6 +166,10 @@ Q_CONSTINIT const QMetaObject RoutePlan2Widget::staticMetaObject = { {
         // method 'handleSelectionCanceled'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_nextButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_cleanButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_backButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -159,10 +183,13 @@ void RoutePlan2Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         switch (_id) {
         case 0: _t->back_to_vertebraSelectionWidget(); break;
         case 1: _t->nextButton_pressed(); break;
-        case 2: _t->on_addRouteButton_clicked(); break;
-        case 3: _t->handleVertebraSelected((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 4: _t->handleSelectionCanceled(); break;
-        case 5: _t->on_nextButton_clicked(); break;
+        case 2: _t->back_to_routePlan1Widget(); break;
+        case 3: _t->on_addRouteButton_clicked(); break;
+        case 4: _t->handleVertebraSelected((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 5: _t->handleSelectionCanceled(); break;
+        case 6: _t->on_nextButton_clicked(); break;
+        case 7: _t->on_cleanButton_clicked(); break;
+        case 8: _t->on_backButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -178,6 +205,13 @@ void RoutePlan2Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
             using _t = void (RoutePlan2Widget::*)();
             if (_t _q_method = &RoutePlan2Widget::nextButton_pressed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
+                return;
+            }
+        }
+        {
+            using _t = void (RoutePlan2Widget::*)();
+            if (_t _q_method = &RoutePlan2Widget::back_to_routePlan1Widget; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 2;
                 return;
             }
         }
@@ -203,13 +237,13 @@ int RoutePlan2Widget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }
@@ -224,5 +258,11 @@ void RoutePlan2Widget::back_to_vertebraSelectionWidget()
 void RoutePlan2Widget::nextButton_pressed()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void RoutePlan2Widget::back_to_routePlan1Widget()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP

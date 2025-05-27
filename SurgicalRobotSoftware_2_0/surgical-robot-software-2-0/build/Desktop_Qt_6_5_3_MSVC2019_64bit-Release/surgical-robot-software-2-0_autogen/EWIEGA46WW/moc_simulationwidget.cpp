@@ -39,7 +39,7 @@ namespace {
 struct qt_meta_stringdata_CLASSSimulationWidgetENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSSimulationWidgetENDCLASS = QtMocHelpers::stringData(
     "SimulationWidget",
-    "back_to_imagedisPlayWidget",
+    "back_to_imageDisplayWidget",
     "",
     "on_backButton_clicked",
     "on_confirmButton_clicked"
@@ -58,13 +58,13 @@ struct qt_meta_stringdata_CLASSSimulationWidgetENDCLASS_t {
 Q_CONSTINIT static const qt_meta_stringdata_CLASSSimulationWidgetENDCLASS_t qt_meta_stringdata_CLASSSimulationWidgetENDCLASS = {
     {
         QT_MOC_LITERAL(0, 16),  // "SimulationWidget"
-        QT_MOC_LITERAL(17, 26),  // "back_to_imagedisPlayWidget"
+        QT_MOC_LITERAL(17, 26),  // "back_to_imageDisplayWidget"
         QT_MOC_LITERAL(44, 0),  // ""
         QT_MOC_LITERAL(45, 21),  // "on_backButton_clicked"
         QT_MOC_LITERAL(67, 24)   // "on_confirmButton_clicked"
     },
     "SimulationWidget",
-    "back_to_imagedisPlayWidget",
+    "back_to_imageDisplayWidget",
     "",
     "on_backButton_clicked",
     "on_confirmButton_clicked"
@@ -112,7 +112,7 @@ Q_CONSTINIT const QMetaObject SimulationWidget::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSSimulationWidgetENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<SimulationWidget, std::true_type>,
-        // method 'back_to_imagedisPlayWidget'
+        // method 'back_to_imageDisplayWidget'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_backButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -128,7 +128,7 @@ void SimulationWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         auto *_t = static_cast<SimulationWidget *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->back_to_imagedisPlayWidget(); break;
+        case 0: _t->back_to_imageDisplayWidget(); break;
         case 1: _t->on_backButton_clicked(); break;
         case 2: _t->on_confirmButton_clicked(); break;
         default: ;
@@ -137,7 +137,7 @@ void SimulationWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (SimulationWidget::*)();
-            if (_t _q_method = &SimulationWidget::back_to_imagedisPlayWidget; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &SimulationWidget::back_to_imageDisplayWidget; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -177,7 +177,7 @@ int SimulationWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void SimulationWidget::back_to_imagedisPlayWidget()
+void SimulationWidget::back_to_imageDisplayWidget()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }

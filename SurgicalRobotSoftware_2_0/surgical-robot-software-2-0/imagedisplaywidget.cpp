@@ -6,7 +6,30 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
     , ui(new Ui::ImageDisplayWidget)
 {
     ui->setupUi(this);
-    this->setWindowState(Qt::WindowMaximized); //窗口最大化显示
+
+    average_widget = new AverageWidget();
+    enlarged_widget = new EnlargedWidget();
+    enlargedmodel3D_widget = new EnlargedModel3DWidget();
+
+    ui->visualizationWidget->addWidget(average_widget);
+    ui->visualizationWidget->addWidget(enlarged_widget);
+    ui->visualizationWidget->addWidget(enlargedmodel3D_widget);
+
+    connect(average_widget, &AverageWidget::enlargeButton_pressed,[=](){
+        ui->visualizationWidget->setCurrentWidget(enlarged_widget);
+    });
+
+    connect(enlarged_widget, &EnlargedWidget::reduceButton_pressed,[=](){
+        ui->visualizationWidget->setCurrentWidget(average_widget);
+    });
+
+    connect(average_widget, &AverageWidget::enlarge3DModelButton_pressed,[=](){
+        ui->visualizationWidget->setCurrentWidget(enlargedmodel3D_widget);
+    });
+
+    connect(enlargedmodel3D_widget, &EnlargedModel3DWidget::reduce3DModelButton_pressed,[=](){
+        ui->visualizationWidget->setCurrentWidget(average_widget);
+    });
 
     segmentation_widget = new SegmentationWidget();
     registration_widget = new RegistrationWidget();
@@ -38,6 +61,10 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(routeplan2_widget);
     });
 
+    connect(routeplan2_widget, &RoutePlan2Widget::back_to_routePlan1Widget,[=](){
+        ui->stackedWidget->setCurrentWidget(routeplan1_widget);
+    });
+
     connect(routeplan2_widget, &RoutePlan2Widget::nextButton_pressed,[=](){
         ui->stackedWidget->setCurrentWidget(execute_widget);
     });
@@ -46,11 +73,19 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(routeplan2_widget);
     });
 
+    connect(execute_widget, &ExecuteWidget::nextButton_pressed,[=](){
+        emit executeWidget_nextButton_pressed();
+    });
+
     // 这里涉及到三个级别的界面两道信号的传递
     connect(execute_widget,
             &ExecuteWidget::simulationButton_pressed,
             this,
             &ImageDisplayWidget::onReceivedSignalFromExecute);
+
+    // 如果从 RoutePlan1Widget 添加入路，添加后将 ImageDisplayWidget 的 stackedWidget 更换为 RoutePlan2Widget
+    connect(routeplan1_widget, &RoutePlan1Widget::vertebraSelected,
+            this, &ImageDisplayWidget::setStackedWidgetAsRoutePlan2);
 }
 
 ImageDisplayWidget::~ImageDisplayWidget()
@@ -80,6 +115,12 @@ void ImageDisplayWidget::setStackedWidgetAsRoutePlan2(const QString &vertebra)
     // 切换到RoutePlan2Widget
     if (ui->stackedWidget && routeplan2_widget) {
         ui->stackedWidget->setCurrentWidget(routeplan2_widget);
+
+        // 检查是否为有效的椎骨选择（不是"请选择椎骨"这样的提示信息）
+        if (vertebra != "请选择椎骨" && !vertebra.isEmpty()) {
+            // 添加椎骨到下拉栏
+            routeplan2_widget->addVertebraToComboBox(vertebra);
+        }
 
         // 设置椎骨标签
         routeplan2_widget->setVertebraLabel(vertebra);

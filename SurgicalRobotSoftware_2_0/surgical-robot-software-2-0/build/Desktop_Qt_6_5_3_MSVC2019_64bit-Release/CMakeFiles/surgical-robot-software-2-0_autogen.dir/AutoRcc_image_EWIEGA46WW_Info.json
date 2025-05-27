@@ -9,6 +9,7 @@
 	"INCLUDE_DIR" : "E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/surgical-robot-software-2-0_autogen/include",
 	"INPUTS" : 
 	[
+		"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/resource/image/simulation.png",
 		"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/resource/image/bell.png",
 		"E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/resource/image/tool.png"
 	],

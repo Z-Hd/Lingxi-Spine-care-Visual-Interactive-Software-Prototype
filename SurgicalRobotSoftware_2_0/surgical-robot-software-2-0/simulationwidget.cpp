@@ -17,12 +17,12 @@ SimulationWidget::~SimulationWidget()
 
 void SimulationWidget::on_backButton_clicked()
 {
-    emit back_to_imagedisPlayWidget();
+    emit back_to_imageDisplayWidget();
 }
 
 
 void SimulationWidget::on_confirmButton_clicked()
 {
-    emit back_to_imagedisPlayWidget();
+    emit back_to_imageDisplayWidget();
 }
 

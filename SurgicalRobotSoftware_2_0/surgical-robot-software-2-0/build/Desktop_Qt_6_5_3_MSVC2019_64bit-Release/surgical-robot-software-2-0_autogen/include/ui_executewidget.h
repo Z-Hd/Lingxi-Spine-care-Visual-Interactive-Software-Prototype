@@ -21,6 +21,7 @@ class Ui_ExecuteWidget
 public:
     QPushButton *backButton;
     QPushButton *simulationButton;
+    QPushButton *nextButton;
 
     void setupUi(QWidget *ExecuteWidget)
     {
@@ -62,6 +63,23 @@ public:
 "QPushButton:pressed {\n"
 "background-color: rgb(245, 245, 245);\n"
 "}"));
+        nextButton = new QPushButton(ExecuteWidget);
+        nextButton->setObjectName("nextButton");
+        nextButton->setGeometry(QRect(170, 570, 100, 40));
+        nextButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background-color: rgb(37, 38, 43);\n"
+"color: rgb(192, 192, 192);\n"
+"font-size:15px;\n"
+"border-radius: 5px;\n"
+"min-width: 100px;\n"
+"min-height: 40px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(70, 72, 81);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(245, 245, 245);\n"
+"}"));
 
         retranslateUi(ExecuteWidget);
 
@@ -73,6 +91,7 @@ public:
         ExecuteWidget->setWindowTitle(QCoreApplication::translate("ExecuteWidget", "Form", nullptr));
         backButton->setText(QCoreApplication::translate("ExecuteWidget", "\350\277\224\345\233\236", nullptr));
         simulationButton->setText(QCoreApplication::translate("ExecuteWidget", "\346\250\241\346\213\237", nullptr));
+        nextButton->setText(QCoreApplication::translate("ExecuteWidget", "\344\270\213\344\270\200\346\255\245", nullptr));
     } // retranslateUi
 
 };

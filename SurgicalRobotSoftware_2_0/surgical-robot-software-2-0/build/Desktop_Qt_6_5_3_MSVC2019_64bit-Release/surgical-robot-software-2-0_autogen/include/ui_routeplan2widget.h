@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -24,6 +25,8 @@ public:
     QPushButton *backButton;
     QPushButton *nextButton;
     QLabel *label;
+    QComboBox *vertebraSelected;
+    QPushButton *cleanButton;
 
     void setupUi(QWidget *RoutePlan2Widget)
     {
@@ -84,13 +87,42 @@ public:
 "}"));
         label = new QLabel(RoutePlan2Widget);
         label->setObjectName("label");
-        label->setGeometry(QRect(30, 290, 141, 51));
+        label->setGeometry(QRect(50, 120, 141, 51));
         label->setStyleSheet(QString::fromUtf8("background-color:rgb(23, 23, 26);\n"
 "color:rgb(220, 220, 220);\n"
 "qproperty-alignment: AlignCenter;\n"
 "font-size:20px;\n"
 "\n"
 ""));
+        vertebraSelected = new QComboBox(RoutePlan2Widget);
+        vertebraSelected->setObjectName("vertebraSelected");
+        vertebraSelected->setGeometry(QRect(50, 190, 171, 41));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(vertebraSelected->sizePolicy().hasHeightForWidth());
+        vertebraSelected->setSizePolicy(sizePolicy);
+        vertebraSelected->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 85, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"text-align: center"));
+        cleanButton = new QPushButton(RoutePlan2Widget);
+        cleanButton->setObjectName("cleanButton");
+        cleanButton->setGeometry(QRect(50, 250, 100, 40));
+        cleanButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background-color: rgb(37, 38, 43);\n"
+"color: rgb(192, 192, 192);\n"
+"font-size:15px;\n"
+"border-radius: 5px;\n"
+"min-width: 100px;\n"
+"min-height: 40px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(70, 72, 81);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(245, 245, 245);\n"
+"}"));
 
         retranslateUi(RoutePlan2Widget);
 
@@ -104,6 +136,8 @@ public:
         backButton->setText(QCoreApplication::translate("RoutePlan2Widget", "\350\277\224\345\233\236", nullptr));
         nextButton->setText(QCoreApplication::translate("RoutePlan2Widget", "\344\270\213\344\270\200\346\255\245", nullptr));
         label->setText(QCoreApplication::translate("RoutePlan2Widget", "\347\254\254\345\207\240\350\212\202\346\244\216\351\252\250", nullptr));
+        vertebraSelected->setPlaceholderText(QCoreApplication::translate("RoutePlan2Widget", "\350\242\253\351\200\211\346\213\251\347\232\204\346\244\216\351\252\250", nullptr));
+        cleanButton->setText(QCoreApplication::translate("RoutePlan2Widget", "\346\270\205\347\251\272", nullptr));
     } // retranslateUi
 
 };

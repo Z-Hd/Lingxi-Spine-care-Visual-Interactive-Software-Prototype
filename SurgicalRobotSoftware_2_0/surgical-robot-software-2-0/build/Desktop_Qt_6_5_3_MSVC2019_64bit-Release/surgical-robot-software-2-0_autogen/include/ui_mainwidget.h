@@ -67,7 +67,7 @@ public:
     {
         if (MainWidget->objectName().isEmpty())
             MainWidget->setObjectName("MainWidget");
-        MainWidget->resize(1302, 793);
+        MainWidget->resize(1088, 560);
         MainWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
         verticalLayout = new QVBoxLayout(MainWidget);
         verticalLayout->setSpacing(2);

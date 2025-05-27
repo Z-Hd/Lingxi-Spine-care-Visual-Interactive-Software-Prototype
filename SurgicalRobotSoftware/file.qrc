@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>file/spine_007.nii.gz</file>
+    </qresource>
+</RCC>

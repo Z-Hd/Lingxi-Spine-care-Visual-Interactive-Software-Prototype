@@ -21,7 +21,7 @@ private slots:
     void on_confirmButton_clicked();
 
 signals:
-    void back_to_imageDisplayWidget();
+    void back_to_imagedisPlayWidget();
 
 private:
     Ui::SimulationWidget *ui;

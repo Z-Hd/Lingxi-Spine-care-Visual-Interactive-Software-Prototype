@@ -42,20 +42,18 @@ static constexpr auto qt_meta_stringdata_CLASSImageDisplayWidgetENDCLASS = QtMoc
     "imageInputButton_received",
     "",
     "simulationButton_received",
-    "executeWidget_nextButton_pressed",
     "onReceivedSignalFromSegmentation",
     "onReceivedSignalFromExecute"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSImageDisplayWidgetENDCLASS_t {
-    uint offsetsAndSizes[14];
+    uint offsetsAndSizes[12];
     char stringdata0[19];
     char stringdata1[26];
     char stringdata2[1];
     char stringdata3[26];
     char stringdata4[33];
-    char stringdata5[33];
-    char stringdata6[28];
+    char stringdata5[28];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSImageDisplayWidgetENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -65,15 +63,13 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSImageDisplayWidgetENDCLASS_t qt
         QT_MOC_LITERAL(19, 25),  // "imageInputButton_received"
         QT_MOC_LITERAL(45, 0),  // ""
         QT_MOC_LITERAL(46, 25),  // "simulationButton_received"
-        QT_MOC_LITERAL(72, 32),  // "executeWidget_nextButton_pressed"
-        QT_MOC_LITERAL(105, 32),  // "onReceivedSignalFromSegmentation"
-        QT_MOC_LITERAL(138, 27)   // "onReceivedSignalFromExecute"
+        QT_MOC_LITERAL(72, 32),  // "onReceivedSignalFromSegmentation"
+        QT_MOC_LITERAL(105, 27)   // "onReceivedSignalFromExecute"
     },
     "ImageDisplayWidget",
     "imageInputButton_received",
     "",
     "simulationButton_received",
-    "executeWidget_nextButton_pressed",
     "onReceivedSignalFromSegmentation",
     "onReceivedSignalFromExecute"
 };
@@ -87,24 +83,22 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSImageDisplayWidgetENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       3,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   44,    2, 0x06,    1 /* Public */,
-       3,    0,   45,    2, 0x06,    2 /* Public */,
-       4,    0,   46,    2, 0x06,    3 /* Public */,
+       1,    0,   38,    2, 0x06,    1 /* Public */,
+       3,    0,   39,    2, 0x06,    2 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       5,    0,   47,    2, 0x0a,    4 /* Public */,
-       6,    0,   48,    2, 0x0a,    5 /* Public */,
+       4,    0,   40,    2, 0x0a,    3 /* Public */,
+       5,    0,   41,    2, 0x0a,    4 /* Public */,
 
  // signals: parameters
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -128,8 +122,6 @@ Q_CONSTINIT const QMetaObject ImageDisplayWidget::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'simulationButton_received'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'executeWidget_nextButton_pressed'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onReceivedSignalFromSegmentation'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onReceivedSignalFromExecute'
@@ -146,9 +138,8 @@ void ImageDisplayWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         switch (_id) {
         case 0: _t->imageInputButton_received(); break;
         case 1: _t->simulationButton_received(); break;
-        case 2: _t->executeWidget_nextButton_pressed(); break;
-        case 3: _t->onReceivedSignalFromSegmentation(); break;
-        case 4: _t->onReceivedSignalFromExecute(); break;
+        case 2: _t->onReceivedSignalFromSegmentation(); break;
+        case 3: _t->onReceivedSignalFromExecute(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -164,13 +155,6 @@ void ImageDisplayWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
             using _t = void (ImageDisplayWidget::*)();
             if (_t _q_method = &ImageDisplayWidget::simulationButton_received; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
-                return;
-            }
-        }
-        {
-            using _t = void (ImageDisplayWidget::*)();
-            if (_t _q_method = &ImageDisplayWidget::executeWidget_nextButton_pressed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 2;
                 return;
             }
         }
@@ -197,13 +181,13 @@ int ImageDisplayWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 4;
     }
     return _id;
 }
@@ -218,11 +202,5 @@ void ImageDisplayWidget::imageInputButton_received()
 void ImageDisplayWidget::simulationButton_received()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
-}
-
-// SIGNAL 2
-void ImageDisplayWidget::executeWidget_nextButton_pressed()
-{
-    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP

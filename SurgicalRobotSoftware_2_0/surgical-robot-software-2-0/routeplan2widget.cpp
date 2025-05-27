@@ -67,35 +67,8 @@ void RoutePlan2Widget::handleVertebraSelected(const QString &vertebra)
     // 处理选中的椎骨
     qDebug("已选择椎骨: %s", qPrintable(vertebra));
 
-    // 检查是否为有效的椎骨选择（不是"请选择椎骨"这样的提示信息）
-    if (vertebra != "请选择椎骨" && !vertebra.isEmpty()) {
-        // 添加椎骨到下拉栏
-        addVertebraToComboBox(vertebra);
-    }
-
     // 更新标签内容
     setVertebraLabel(vertebra);
-}
-
-void RoutePlan2Widget::addVertebraToComboBox(const QString &vertebra)
-{
-    if (ui->vertebraSelected) {
-        // 检查是否已经存在相同的椎骨，避免重复添加
-        bool exists = false;
-        for (int i = 0; i < ui->vertebraSelected->count(); ++i) {
-            if (ui->vertebraSelected->itemText(i) == vertebra) {
-                exists = true;
-                break;
-            }
-        }
-
-        // 如果不存在，则添加到下拉栏
-        if (!exists) {
-            ui->vertebraSelected->addItem(vertebra);
-            // 设置新添加的项为当前选中项
-            ui->vertebraSelected->setCurrentText(vertebra);
-        }
-    }
 }
 
 void RoutePlan2Widget::handleSelectionCanceled()
@@ -115,24 +88,5 @@ void RoutePlan2Widget::setVertebraLabel(const QString &text)
 void RoutePlan2Widget::on_nextButton_clicked()
 {
     emit nextButton_pressed();
-}
-
-
-void RoutePlan2Widget::on_cleanButton_clicked()
-{
-    // 清空下拉栏内容
-    if (ui->vertebraSelected) {
-        ui->vertebraSelected->clear();
-    }
-
-    // 同时清空标签内容
-    if (ui->label) {
-        ui->label->setText("第几节椎骨");
-    }
-}
-
-void RoutePlan2Widget::on_backButton_clicked()
-{
-    emit back_to_routePlan1Widget();
 }
 

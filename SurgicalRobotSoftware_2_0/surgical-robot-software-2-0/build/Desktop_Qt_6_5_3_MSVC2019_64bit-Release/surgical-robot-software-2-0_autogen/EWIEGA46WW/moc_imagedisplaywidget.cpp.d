@@ -138,9 +138,6 @@ E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-rob
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/SoftWare/Qt/6.5.3/msvc2019_64/include/QtWidgets/qwidget.h \
-  E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/averagewidget.h \
-  E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/enlargedmodel3dwidget.h \
-  E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/enlargedwidget.h \
   E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/executewidget.h \
   E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/registrationwidget.h \
   E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware_2_0/surgical-robot-software-2-0/routeplan1widget.h \

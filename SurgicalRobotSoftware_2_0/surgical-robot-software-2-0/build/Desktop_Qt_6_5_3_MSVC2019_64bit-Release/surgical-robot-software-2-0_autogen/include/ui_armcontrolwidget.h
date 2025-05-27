@@ -32,12 +32,12 @@ public:
     QLabel *label;
     QWidget *operationWidget;
     QHBoxLayout *horizontalLayout_2;
-    QWidget *widget_left;
-    QWidget *widget_mid;
+    QWidget *widget;
+    QWidget *widget_2;
     QVBoxLayout *verticalLayout_3;
     QWidget *widget_4;
     QWidget *widget_5;
-    QWidget *widget_right;
+    QWidget *widget_3;
     QWidget *jumpButtonWidget;
     QVBoxLayout *verticalLayout;
     QWidget *buttonInnerWidget;
@@ -88,39 +88,39 @@ public:
         horizontalLayout_2->setSpacing(2);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(2, 2, 2, 2);
-        widget_left = new QWidget(operationWidget);
-        widget_left->setObjectName("widget_left");
+        widget = new QWidget(operationWidget);
+        widget->setObjectName("widget");
 
-        horizontalLayout_2->addWidget(widget_left);
+        horizontalLayout_2->addWidget(widget);
 
-        widget_mid = new QWidget(operationWidget);
-        widget_mid->setObjectName("widget_mid");
-        widget_mid->setStyleSheet(QString::fromUtf8("background-color:rgb(95, 95, 95)"));
-        verticalLayout_3 = new QVBoxLayout(widget_mid);
+        widget_2 = new QWidget(operationWidget);
+        widget_2->setObjectName("widget_2");
+        widget_2->setStyleSheet(QString::fromUtf8("background-color:rgb(95, 95, 95)"));
+        verticalLayout_3 = new QVBoxLayout(widget_2);
         verticalLayout_3->setSpacing(2);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(2, 2, 2, 2);
-        widget_4 = new QWidget(widget_mid);
+        widget_4 = new QWidget(widget_2);
         widget_4->setObjectName("widget_4");
         widget_4->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 0);"));
 
         verticalLayout_3->addWidget(widget_4);
 
-        widget_5 = new QWidget(widget_mid);
+        widget_5 = new QWidget(widget_2);
         widget_5->setObjectName("widget_5");
         widget_5->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 0);"));
 
         verticalLayout_3->addWidget(widget_5);
 
         verticalLayout_3->setStretch(0, 1);
-        verticalLayout_3->setStretch(1, 10);
+        verticalLayout_3->setStretch(1, 12);
 
-        horizontalLayout_2->addWidget(widget_mid);
+        horizontalLayout_2->addWidget(widget_2);
 
-        widget_right = new QWidget(operationWidget);
-        widget_right->setObjectName("widget_right");
+        widget_3 = new QWidget(operationWidget);
+        widget_3->setObjectName("widget_3");
 
-        horizontalLayout_2->addWidget(widget_right);
+        horizontalLayout_2->addWidget(widget_3);
 
         horizontalLayout_2->setStretch(0, 3);
         horizontalLayout_2->setStretch(1, 5);

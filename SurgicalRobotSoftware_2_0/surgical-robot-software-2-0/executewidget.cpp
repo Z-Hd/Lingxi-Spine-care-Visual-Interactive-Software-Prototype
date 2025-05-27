@@ -24,7 +24,3 @@ void ExecuteWidget::on_simulationButton_clicked()
     emit simulationButton_pressed();
 }
 
-void ExecuteWidget::on_nextButton_clicked()
-{
-    emit nextButton_pressed();
-}

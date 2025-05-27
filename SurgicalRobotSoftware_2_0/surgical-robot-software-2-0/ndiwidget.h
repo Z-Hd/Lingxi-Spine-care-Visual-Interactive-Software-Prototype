@@ -15,12 +15,6 @@ public:
     explicit NDIWidget(QWidget *parent = nullptr);
     ~NDIWidget();
 
-private slots:
-    void on_backButton_clicked();
-
-signals:
-    void back_to_prepage();
-
 private:
     Ui::NDIWidget *ui;
 };

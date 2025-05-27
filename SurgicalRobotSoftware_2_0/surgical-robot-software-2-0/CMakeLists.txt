@@ -12,9 +12,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-find_package(Qt6 REQUIRED COMPONENTS Multimedia)
-find_package(Qt6 REQUIRED COMPONENTS MultimediaWidgets)
-
 set(PROJECT_SOURCES
         main.cpp
         mainwidget.cpp
@@ -42,11 +39,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         vertebraselectionwidget.h vertebraselectionwidget.cpp vertebraselectionwidget.ui
         routeplan2widget.h routeplan2widget.cpp routeplan2widget.ui
         executewidget.h executewidget.cpp executewidget.ui
-        intraoperativewidget.h intraoperativewidget.cpp intraoperativewidget.ui
-        averagewidget.h averagewidget.cpp averagewidget.ui
-        averagewidget.h averagewidget.cpp averagewidget.ui
-        enlargedwidget.h enlargedwidget.cpp enlargedwidget.ui
-        enlargedmodel3dwidget.h enlargedmodel3dwidget.cpp enlargedmodel3dwidget.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET surgical-robot-software-2-0 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -66,10 +58,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(surgical-robot-software-2-0 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
-                                                          Qt${QT_VERSION_MAJOR}::Multimedia
-                                                          Qt${QT_VERSION_MAJOR}::MultimediaWidgets
-)
+target_link_libraries(surgical-robot-software-2-0 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

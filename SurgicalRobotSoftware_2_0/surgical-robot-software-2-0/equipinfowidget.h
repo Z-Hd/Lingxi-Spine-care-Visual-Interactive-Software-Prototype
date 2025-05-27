@@ -18,6 +18,7 @@ public:
 private slots:
     void on_confirmButton_clicked();
 
+
 signals:
     void confirmButton_pressed();
 

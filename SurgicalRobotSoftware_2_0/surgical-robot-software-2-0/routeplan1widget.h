@@ -29,7 +29,6 @@ private slots:
 signals:
     void back_to_registrationWidget();
     void nextButton_pressed();
-    void vertebraSelected(const QString &vertebra);
 
 private:
     Ui::RoutePlan1Widget *ui;

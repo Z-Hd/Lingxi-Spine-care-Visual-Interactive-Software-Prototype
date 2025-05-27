@@ -3,10 +3,6 @@
 
 #include <QWidget>
 
-#include "averagewidget.h"
-#include "enlargedwidget.h"
-#include "enlargedmodel3dwidget.h"
-
 #include "segmentationwidget.h"
 #include "registrationwidget.h"
 #include "routeplan1widget.h"
@@ -31,7 +27,6 @@ public:
 signals:
     void imageInputButton_received();
     void simulationButton_received();
-    void executeWidget_nextButton_pressed();
 
 public slots:
     void onReceivedSignalFromSegmentation();  //小括号里可以放待处理数据
@@ -39,10 +34,6 @@ public slots:
 
 private:
     Ui::ImageDisplayWidget *ui;
-
-    AverageWidget *average_widget;
-    EnlargedWidget *enlarged_widget;
-    EnlargedModel3DWidget *enlargedmodel3D_widget;
 
     SegmentationWidget *segmentation_widget;
     RegistrationWidget *registration_widget;

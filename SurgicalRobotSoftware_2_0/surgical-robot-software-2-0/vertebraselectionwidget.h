@@ -25,8 +25,6 @@ private slots:
 
     void on_l5LButton_clicked();
 
-    void on_l5RButton_clicked();
-
 signals:
     void confirmButton_pressed(const QString &vertebra);  // 带有变量处理的信号，变量是个字符串
     void cancelButton_pressed();

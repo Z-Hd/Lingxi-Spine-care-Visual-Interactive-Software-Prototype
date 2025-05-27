@@ -33,12 +33,15 @@ void RoutePlan1Widget::on_addRouteButton_clicked()
         // 连接确认按钮信号到 ImageDisplayWidget 的槽
         // 获取父窗口中的 ImageDisplayWidget 实例
         QWidget* parent = this->parentWidget();
-        if (parent && parent->inherits("ImageDisplayWidget")) {
-            ImageDisplayWidget* imageDisplayWidget = qobject_cast<ImageDisplayWidget*>(parent);
-            if (imageDisplayWidget) {
-                connect(vertebraSelectionWidget, &VertebraSelectionWidget::confirmButton_pressed,
-                        imageDisplayWidget, &ImageDisplayWidget::setStackedWidgetAsRoutePlan2);
-            }
+
+        // 使用更直接的方式检查父窗口
+        ImageDisplayWidget* imageDisplayWidget = dynamic_cast<ImageDisplayWidget*>(parent);
+        if (imageDisplayWidget) {
+            qDebug("成功获取到 ImageDisplayWidget 实例");
+            connect(vertebraSelectionWidget, &VertebraSelectionWidget::confirmButton_pressed,
+                    imageDisplayWidget, &ImageDisplayWidget::setStackedWidgetAsRoutePlan2);
+        } else {
+            qDebug("未能获取到 ImageDisplayWidget 实例，父窗口类型: %s", parent ? parent->metaObject()->className() : "nullptr");
         }
     }
 
@@ -70,10 +73,8 @@ void RoutePlan1Widget::on_backButton_clicked()
 void RoutePlan1Widget::handleVertebraSelected(const QString &vertebra)
 {
     // 处理选中的椎骨
+    // 这里可以添加您的业务逻辑，例如将选中的椎骨添加到列表中
     qDebug("已选择椎骨: %s", qPrintable(vertebra));
-
-    // 发送信号，通知 ImageDisplayWidget
-    emit vertebraSelected(vertebra);
 }
 
 void RoutePlan1Widget::handleSelectionCanceled()

@@ -2,6 +2,5 @@
     <qresource prefix="/">
         <file>resource/image/bell.png</file>
         <file>resource/image/tool.png</file>
-        <file>resource/image/simulation.png</file>
     </qresource>
 </RCC>

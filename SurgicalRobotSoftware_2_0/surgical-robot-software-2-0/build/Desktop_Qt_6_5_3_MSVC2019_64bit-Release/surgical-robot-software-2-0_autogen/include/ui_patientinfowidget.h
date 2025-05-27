@@ -86,7 +86,7 @@ public:
     {
         if (PatientInfoWidget->objectName().isEmpty())
             PatientInfoWidget->setObjectName("PatientInfoWidget");
-        PatientInfoWidget->resize(1156, 633);
+        PatientInfoWidget->resize(1224, 770);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

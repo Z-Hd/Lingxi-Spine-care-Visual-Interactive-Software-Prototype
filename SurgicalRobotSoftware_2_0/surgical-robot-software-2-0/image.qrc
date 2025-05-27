@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>resource/image/bell.png</file>
         <file>resource/image/tool.png</file>
+        <file>resource/image/background.jpg</file>
+        <file>resource/image/lock.png</file>
+        <file>resource/image/user.png</file>
     </qresource>
 </RCC>

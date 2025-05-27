@@ -39,6 +39,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         vertebraselectionwidget.h vertebraselectionwidget.cpp vertebraselectionwidget.ui
         routeplan2widget.h routeplan2widget.cpp routeplan2widget.ui
         executewidget.h executewidget.cpp executewidget.ui
+        login.cpp login.h login.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET surgical-robot-software-2-0 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -155,7 +155,7 @@ font-size:20px;
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  <string notr="true"/>
                  </property>
                 </widget>
                </item>
@@ -168,7 +168,7 @@ font-size:20px;
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(85, 255, 255);</string>
+                  <string notr="true"/>
                  </property>
                 </widget>
                </item>
@@ -211,21 +211,8 @@ font-size:20px;
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 170, 255);</string>
+                  <string notr="true"/>
                  </property>
-                 <widget class="QLabel" name="label_2">
-                  <property name="geometry">
-                   <rect>
-                    <x>80</x>
-                    <y>10</y>
-                    <width>53</width>
-                    <height>15</height>
-                   </rect>
-                  </property>
-                  <property name="text">
-                   <string>TextLabel</string>
-                  </property>
-                 </widget>
                 </widget>
                </item>
                <item>
@@ -237,7 +224,7 @@ font-size:20px;
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(170, 255, 127);</string>
+                  <string notr="true"/>
                  </property>
                 </widget>
                </item>
@@ -270,7 +257,7 @@ font-size:20px;
               <property name="styleSheet">
                <string notr="true">QWidget#widget
 {
-border-image:url(:/image/simulation.png);
+border-image:url(:/resource/image/simulation.png);
 background-position: center; 
 background-repeat: no-repeat;
 }</string>

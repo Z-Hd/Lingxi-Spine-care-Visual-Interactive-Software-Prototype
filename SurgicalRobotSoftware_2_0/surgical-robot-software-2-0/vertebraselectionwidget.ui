@@ -124,6 +124,35 @@ background-color: rgb(245, 245, 245);
     <string>L5-L</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="l5RButton">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>310</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+   </property>
+   <property name="text">
+    <string>L5-R</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

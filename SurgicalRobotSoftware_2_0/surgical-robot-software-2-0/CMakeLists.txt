@@ -9,8 +9,13 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(VTK_DIR "path/VTK/lib/cmake/vtk-9.4")
+find_package(VTK 9.4 REQUIRED)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+
+find_package(Qt6 REQUIRED COMPONENTS Multimedia)
+find_package(Qt6 REQUIRED COMPONENTS MultimediaWidgets)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -39,7 +44,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         vertebraselectionwidget.h vertebraselectionwidget.cpp vertebraselectionwidget.ui
         routeplan2widget.h routeplan2widget.cpp routeplan2widget.ui
         executewidget.h executewidget.cpp executewidget.ui
-        login.cpp login.h login.ui
+        intraoperativewidget.h intraoperativewidget.cpp intraoperativewidget.ui
+        averagewidget.h averagewidget.cpp averagewidget.ui
+        averagewidget.h averagewidget.cpp averagewidget.ui
+        enlargedwidget.h enlargedwidget.cpp enlargedwidget.ui
+        enlargedmodel3dwidget.h enlargedmodel3dwidget.cpp enlargedmodel3dwidget.ui
+        login.h login.cpp login.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET surgical-robot-software-2-0 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -59,7 +69,16 @@ else()
     endif()
 endif()
 
-target_link_libraries(surgical-robot-software-2-0 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(surgical-robot-software-2-0 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+                                                          Qt${QT_VERSION_MAJOR}::OpenGL
+                                                          Qt${QT_VERSION_MAJOR}::Multimedia
+                                                          Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+                                                          ${VTK_LIBRARIES}
+                                                          ${PCL_LIBRARIES}
+                                                          ${ITK_LIBRARIES}
+)
+
+vtk_module_autoinit(TARGETS surgical-robot-software-2-0 MODULES ${VTK_LIBRARIES})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

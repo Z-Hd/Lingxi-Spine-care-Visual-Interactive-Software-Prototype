@@ -12,3 +12,9 @@ NDIWidget::~NDIWidget()
 {
     delete ui;
 }
+
+void NDIWidget::on_backButton_clicked()
+{
+    emit back_to_prepage();
+}
+

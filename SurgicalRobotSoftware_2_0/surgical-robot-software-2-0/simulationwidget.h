@@ -25,6 +25,9 @@ signals:
 
 private:
     Ui::SimulationWidget *ui;
+
+    void initDistanceWidget(int curValue);
+    void initAngleWidget(int curValue);
 };
 
 #endif // SIMULATIONWIDGET_H

@@ -8,16 +8,18 @@ ArmControlWidget::ArmControlWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->sliderSpeed->setValue(0);
+    ui->labelSpeedValue->setText("0%");
+    connect(ui->sliderSpeed, &QSlider::valueChanged, this, &ArmControlWidget::onSpeedSliderChanged);
+
     ui->comboBoxPositionType->setEditable(true);
     ui->comboBoxPositionType->lineEdit()->setAlignment(Qt::AlignCenter);
     ui->comboBoxPositionType->lineEdit()->setReadOnly(true);  // 防止手动输入
-
     ui->comboBoxPositionType->addItems({
         "左侧标尺位",
         "右侧标尺位",
         "中心参考位"
     });
-
     // 设置居中代理
     ui->comboBoxPositionType->setItemDelegate(new CenteredItemDelegate(ui->comboBoxPositionType));
 }
@@ -30,4 +32,9 @@ ArmControlWidget::~ArmControlWidget()
 void ArmControlWidget::on_backButton_clicked()
 {
     emit back_to_prepage();
+}
+
+void ArmControlWidget::onSpeedSliderChanged(int value) {
+    ui->labelSpeedValue->setText(QString::number(value) + "%");
+    // TODO: 后续控制逻辑
 }

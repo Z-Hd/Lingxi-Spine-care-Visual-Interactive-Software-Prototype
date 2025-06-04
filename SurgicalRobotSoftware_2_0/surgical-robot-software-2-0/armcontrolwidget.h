@@ -17,6 +17,8 @@ public:
 
 private slots:
     void on_backButton_clicked();
+    void onSpeedSliderChanged(int value);
+
 
 signals:
     void back_to_prepage();
@@ -24,6 +26,8 @@ signals:
 private:
     Ui::ArmControlWidget *ui;
 };
+
+
 
 #include <QStyledItemDelegate>
 #include <QStyleOptionViewItem>
@@ -37,7 +41,5 @@ public:
         option->displayAlignment = Qt::AlignCenter;
     }
 };
-
-
 
 #endif // ARMCONTROLWIDGET_H

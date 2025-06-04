@@ -5,6 +5,14 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    // 全局取消虚线焦点框
+    a.setStyleSheet(R"(
+        *:focus {
+            outline: none;
+        }
+    )");
+
     Login w;
     w.show();
     return a.exec();

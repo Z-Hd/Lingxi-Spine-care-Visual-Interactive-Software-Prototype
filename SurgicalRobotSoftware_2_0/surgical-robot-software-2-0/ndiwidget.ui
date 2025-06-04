@@ -134,7 +134,13 @@ font-size:20px;
             <item>
              <widget class="QWidget" name="frontViewWidget" native="true">
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(17, 17, 18);</string>
+               <string notr="true">QWidget#frontViewWidget
+{
+border-image:url(:/resource/image/zhengshitu.png);
+background-position: center; 
+background-repeat: no-repeat;
+background-color: rgb(17, 17, 18);
+}</string>
               </property>
               <widget class="QLabel" name="label_2">
                <property name="geometry">
@@ -160,7 +166,13 @@ font-size:15px;</string>
             <item>
              <widget class="QWidget" name="topViewWidget" native="true">
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(17, 17, 18);</string>
+               <string notr="true">QWidget#topViewWidget
+{
+border-image:url(:/resource/image/ceshitu.png);
+background-position: center; 
+background-repeat: no-repeat;
+background-color: rgb(17, 17, 18);
+}</string>
               </property>
               <widget class="QLabel" name="label_3">
                <property name="geometry">
@@ -210,7 +222,13 @@ font-size:15px;</string>
             <item>
              <widget class="QWidget" name="leftViewWidget" native="true">
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(17, 17, 18);</string>
+               <string notr="true">QWidget#leftViewWidget
+{
+border-image:url(:/resource/image/zuoshitu.png);
+background-position: center; 
+background-repeat: no-repeat;
+background-color: rgb(17, 17, 18);
+}</string>
               </property>
               <widget class="QLabel" name="label_4">
                <property name="geometry">

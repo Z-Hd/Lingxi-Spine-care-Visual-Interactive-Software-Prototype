@@ -5,5 +5,10 @@
         <file>resource/image/background.jpg</file>
         <file>resource/image/lock.png</file>
         <file>resource/image/user.png</file>
+        <file>resource/image/simulation.png</file>
+        <file>resource/image/ceshitu.png</file>
+        <file>resource/image/zhengshitu.png</file>
+        <file>resource/image/zuoshitu.png</file>
+        <file>resource/image/armctrl.png</file>
     </qresource>
 </RCC>

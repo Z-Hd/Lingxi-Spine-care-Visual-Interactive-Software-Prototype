@@ -25,4 +25,19 @@ private:
     Ui::ArmControlWidget *ui;
 };
 
+#include <QStyledItemDelegate>
+#include <QStyleOptionViewItem>
+
+class CenteredItemDelegate : public QStyledItemDelegate {
+public:
+    using QStyledItemDelegate::QStyledItemDelegate;
+
+    void initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const override {
+        QStyledItemDelegate::initStyleOption(option, index);
+        option->displayAlignment = Qt::AlignCenter;
+    }
+};
+
+
+
 #endif // ARMCONTROLWIDGET_H

@@ -1,0 +1,9 @@
+-rootPath
+D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0
+-cmake-output
+-output-file
+D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/.qt_plugins/Qt6_QmlPlugins_Imports_surgical-robot-software-2-0.cmake
+-importPath
+D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release
+-importPath
+D:/qt/6.5.3/msvc2019_64/./qml

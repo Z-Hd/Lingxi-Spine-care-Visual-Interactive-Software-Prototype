@@ -1,9 +1,0 @@
--rootPath
-D:/qtProjects/SurgicalRobotSoftware
--cmake-output
--output-file
-D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/qtc_Visual_Studio_17_2022/.qt_plugins/Qt6_QmlPlugins_Imports_SurgicalRobotSoftware.cmake
--importPath
-D:/qtProjects/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MinGW_64_bit-Release/qtc_Visual_Studio_17_2022
--importPath
-D:/qt/6.5.3/mingw_64/./qml

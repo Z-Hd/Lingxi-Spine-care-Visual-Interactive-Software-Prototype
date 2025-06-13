@@ -1,9 +1,0 @@
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/SurgicalRobotSoftware.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/SurgicalRobotSoftware_qmlimportscan.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/edit_cache.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/rebuild_cache.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/list_install_components.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/install.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/install/local.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/SurgicalRobotSoftware_autogen_timestamp_deps.dir
-E:/Projects_of_QT/surgical-robot-software/SurgicalRobotSoftware/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/SurgicalRobotSoftware_autogen.dir

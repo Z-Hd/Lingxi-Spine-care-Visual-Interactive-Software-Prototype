@@ -363,7 +363,7 @@ background-color: rgb(245, 245, 245);
              </widget>
             </item>
             <item>
-             <widget class="QWidget" name="widget_mid" native="true"/>
+             <widget class="QWidget" name="directionPadPlaceholder" native="true"/>
             </item>
             <item>
              <widget class="QWidget" name="widget_right" native="true">

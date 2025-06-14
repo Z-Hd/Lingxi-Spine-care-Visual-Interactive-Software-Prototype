@@ -1,7 +1,5 @@
 #include "mainwidget.h"
 #include "./ui_mainwidget.h"
-#include <iostream>
-using namespace std;
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -10,7 +8,7 @@ MainWidget::MainWidget(QWidget *parent)
     ui->setupUi(this);
     this->setWindowState(Qt::WindowMaximized); //窗口最大化显示
     initToolBar();
-
+    initButton();
 
     patient_info_widget = new PatientInfoWidget();
     equip_info_widget = new EquipInfoWidget();
@@ -148,3 +146,35 @@ void MainWidget::changeToolBar(){
     ui->ndiPageButton->show();
     ui->armPageButton->setStyleSheet("QPushButton {width: 40px;height: 25px;border-radius: 10px; background-color: rgb(0, 153, 139);color: white;}");
 }
+
+void MainWidget::initButton()
+{
+    struct ButtonIcon {
+        QPushButton* button;
+        QString iconPath;
+    };
+
+    QList<ButtonIcon> buttons = {
+        { ui->pushButton,   ":/resource/image/pos.png"},
+        { ui->pushButton_8,    ":/resource/image/snapshot.png" },
+        { ui->pushButton_11,        ":/resource/image/setting.png" },
+        { ui->pushButton_9,        ":/resource/image/blok.png" },
+        { ui->pushButton_10,  ":/resource/image/ending.png" },
+        { ui->pushButton_4,  ":/resource/image/arm_1.png" },
+        { ui->pushButton_3,  ":/resource/image/person.png" },
+        { ui->pushButton_2,  ":/resource/image/规则引擎.png" },
+        //{ ui->ndiPageButton,  ":/resource/image/person.png" },
+        { ui->armPageButton,  ":/resource/image/arm_2.png" },
+        { ui->pushButton_7,  ":/resource/image/C.png" }
+    };
+
+    for (const ButtonIcon &b : buttons) {
+        QPixmap pix(b.iconPath);
+        QIcon icon(pix);
+        b.button->setIcon(icon);
+        QSize iconSize = QSize(b.button->width() * 0.7, b.button->height() * 0.7);
+        b.button->setIconSize(iconSize);
+        b.button->setFlat(true);  // 去除边框，选用可选
+    }
+}
+

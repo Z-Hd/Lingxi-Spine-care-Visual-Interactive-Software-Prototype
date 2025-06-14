@@ -26,6 +26,7 @@ public:
     MainWidget(QWidget *parent = nullptr);
     void initToolBar();
     void changeToolBar();
+    void initButton();
     ~MainWidget();
 
 private slots:

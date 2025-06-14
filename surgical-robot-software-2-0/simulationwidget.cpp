@@ -10,6 +10,7 @@ SimulationWidget::SimulationWidget(QWidget *parent)
     ui->setupUi(this);
     initDistanceWidget(0);
     initAngleWidget(0);
+    setupDirectionalPad();
 }
 
 SimulationWidget::~SimulationWidget()
@@ -75,4 +76,12 @@ void SimulationWidget::initAngleWidget(int curValue)
 
     ui->angleSlider->setValue(curValue);
     ui->simulationAngle->setText(QString::number(curValue) + " °");
+}
+
+void SimulationWidget::setupDirectionalPad()
+{
+    auto pad = new DirectionalPadWidget(this);
+    auto layout = new QVBoxLayout(ui->directionPadPlaceholder);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->addWidget(pad);
 }

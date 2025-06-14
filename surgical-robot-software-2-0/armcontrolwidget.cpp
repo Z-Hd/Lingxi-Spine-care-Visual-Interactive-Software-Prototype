@@ -22,6 +22,8 @@ ArmControlWidget::ArmControlWidget(QWidget *parent)
     });
     // 设置居中代理
     ui->comboBoxPositionType->setItemDelegate(new CenteredItemDelegate(ui->comboBoxPositionType));
+
+    setupDirectionalPad();
 }
 
 ArmControlWidget::~ArmControlWidget()
@@ -37,4 +39,12 @@ void ArmControlWidget::on_backButton_clicked()
 void ArmControlWidget::onSpeedSliderChanged(int value) {
     ui->labelSpeedValue->setText(QString::number(value) + "%");
     // TODO: 后续控制逻辑
+}
+
+void ArmControlWidget::setupDirectionalPad()
+{
+    auto pad = new DirectionalPadWidget(this);
+    auto layout = new QVBoxLayout(ui->directionPadPlaceholder);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->addWidget(pad);
 }

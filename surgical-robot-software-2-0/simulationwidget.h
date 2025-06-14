@@ -1,6 +1,7 @@
 #ifndef SIMULATIONWIDGET_H
 #define SIMULATIONWIDGET_H
 
+#include "directionalpadwidget.h"
 #include <QWidget>
 
 namespace Ui {
@@ -28,6 +29,7 @@ private:
 
     void initDistanceWidget(int curValue);
     void initAngleWidget(int curValue);
+    void setupDirectionalPad();
 };
 
 #endif // SIMULATIONWIDGET_H

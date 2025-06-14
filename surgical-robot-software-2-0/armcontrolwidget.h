@@ -1,6 +1,7 @@
 #ifndef ARMCONTROLWIDGET_H
 #define ARMCONTROLWIDGET_H
 
+#include "directionalpadwidget.h"
 #include <QWidget>
 
 namespace Ui {
@@ -25,6 +26,8 @@ signals:
 
 private:
     Ui::ArmControlWidget *ui;
+
+    void setupDirectionalPad();
 };
 
 

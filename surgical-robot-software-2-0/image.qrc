@@ -10,5 +10,15 @@
         <file>resource/image/zhengshitu.png</file>
         <file>resource/image/zuoshitu.png</file>
         <file>resource/image/armctrl.png</file>
+        <file>resource/image/blok.png</file>
+        <file>resource/image/ending.png</file>
+        <file>resource/image/setting.png</file>
+        <file>resource/image/snapshot.png</file>
+        <file>resource/image/pos.png</file>
+        <file>resource/image/person.png</file>
+        <file>resource/image/arm_1.png</file>
+        <file>resource/image/arm_2.png</file>
+        <file>resource/image/C.png</file>
+        <file>resource/image/规则引擎.png</file>
     </qresource>
 </RCC>

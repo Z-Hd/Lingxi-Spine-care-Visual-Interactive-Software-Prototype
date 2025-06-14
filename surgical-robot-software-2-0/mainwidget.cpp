@@ -55,16 +55,21 @@ MainWidget::MainWidget(QWidget *parent)
         curIndex = 3;
     });
 
+    // 这里须要注意：先回到 ImageDisplayWidget 将右侧 StackedWidget 更换为 SegmentationWidget
+    // 再在 MainWidget 把 centralWidget 更换为 ImageDisplayWidget
     connect(image_input_widget, &ImageInputWidget::back_to_imageDisplayWidget,[&, this](){
+        void* set_image_display_widget_stacked_widget_as_segmentation = image_display_widget->setStackedWidgetAsSegmentation();
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(2);//setCurrentWidget(image_display_widget);
         curIndex = 2;
     });
 
     // 这里须要注意：先回到 ImageDisplayWidget 将右侧 StackedWidget 更换为 RegistrationWidget
+    // 将左侧 VisualizationWidget 更换为 AverageWidget
     // 再在 MainWidget 把 centralWidget 更换为 ImageDisplayWidget
     connect(image_input_widget, &ImageInputWidget::confirmButton_pressed,[&, this](){
         void* set_image_display_widget_stacked_widget_as_registration = image_display_widget->setStackedWidgetAsRegistration();
+        void* set_image_display_widget_visualization_widget_as_average = image_display_widget->setVisualizationWidgetAsAverage();
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(2);//setCurrentWidget(image_display_widget);
         curIndex = 2;
@@ -84,7 +89,7 @@ MainWidget::MainWidget(QWidget *parent)
         ui->centralWidget->setCurrentIndex(5);//setCurrentWidget(arm_control_widget);
     });
 
-    // 这里须要注意：从 SegmentationWidget 到 ImageDisplayWidget 再到 MainWidget 的三层界面，两道信号传递
+    // 这里须要注意：从 ExecuteWidget 到 ImageDisplayWidget 再到 MainWidget 的三层界面，两道信号传递
     connect(image_display_widget, &ImageDisplayWidget::simulationButton_received,[&, this](){
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(4);//setCurrentWidget(simulation_widget);

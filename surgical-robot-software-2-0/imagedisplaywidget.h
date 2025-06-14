@@ -13,6 +13,8 @@
 #include "routeplan2widget.h"
 #include "executewidget.h"
 
+#include "imageinputwidget.h"
+
 namespace Ui {
 class ImageDisplayWidget;
 }
@@ -26,11 +28,14 @@ public:
     ~ImageDisplayWidget();
 
     void* setStackedWidgetAsRegistration() const;
+    void* setStackedWidgetAsSegmentation() const;
+    void* setVisualizationWidgetAsAverage() const;
     void setStackedWidgetAsRoutePlan2(const QString &vertebra);
 
 signals:
     void imageInputButton_received();
     void simulationButton_received();
+    void backButton_received();
     void executeWidget_nextButton_pressed();
 
 public slots:
@@ -49,6 +54,8 @@ private:
     RoutePlan1Widget *routeplan1_widget;
     RoutePlan2Widget *routeplan2_widget;
     ExecuteWidget *execute_widget;
+
+    ImageInputWidget *image_input_widget;
 };
 
 #endif // IMAGEDISPLAYWIDGET_H

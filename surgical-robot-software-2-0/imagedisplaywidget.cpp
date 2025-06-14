@@ -57,6 +57,10 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(routeplan1_widget);
     });
 
+    connect(registration_widget, &RegistrationWidget::backButton_pressed,[=](){
+        ui->stackedWidget->setCurrentWidget(segmentation_widget);
+    });
+
     connect(routeplan1_widget, &RoutePlan1Widget::nextButton_pressed,[=](){
         ui->stackedWidget->setCurrentWidget(routeplan2_widget);
     });
@@ -73,7 +77,7 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(routeplan2_widget);
     });
 
-    connect(execute_widget, &ExecuteWidget::nextButton_pressed,[=](){
+    connect(execute_widget, &ExecuteWidget::executeButton_pressed,[=](){
         emit executeWidget_nextButton_pressed();
     });
 
@@ -86,8 +90,13 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
     // 如果从 RoutePlan1Widget 添加入路，添加后将 ImageDisplayWidget 的 stackedWidget 更换为 RoutePlan2Widget
     connect(routeplan1_widget, &RoutePlan1Widget::vertebraSelected,
             this, &ImageDisplayWidget::setStackedWidgetAsRoutePlan2);
-}
 
+    image_input_widget = new ImageInputWidget();
+
+    // 连接DICOM数据加载信号
+    connect(image_input_widget, &ImageInputWidget::dicomDataLoaded,
+            average_widget, &AverageWidget::onDicomDataReceived);
+}
 
 ImageDisplayWidget::~ImageDisplayWidget()
 {
@@ -111,6 +120,16 @@ void* ImageDisplayWidget::setStackedWidgetAsRegistration() const {
     return 0;
 }
 
+void* ImageDisplayWidget::setStackedWidgetAsSegmentation() const {
+    ui->stackedWidget->setCurrentWidget(segmentation_widget);
+    return 0;
+}
+
+void* ImageDisplayWidget::setVisualizationWidgetAsAverage() const {
+    ui->visualizationWidget->setCurrentWidget(average_widget);
+    return 0;
+}
+
 void ImageDisplayWidget::setStackedWidgetAsRoutePlan2(const QString &vertebra)
 {
     // 切换到RoutePlan2Widget
@@ -119,8 +138,7 @@ void ImageDisplayWidget::setStackedWidgetAsRoutePlan2(const QString &vertebra)
 
         // 检查是否为有效的椎骨选择（不是"请选择椎骨"这样的提示信息）
         if (vertebra != "请选择椎骨" && !vertebra.isEmpty()) {
-            // 添加椎骨到下拉栏
-            routeplan2_widget->addVertebraToComboBox(vertebra);
+
         }
 
         // 设置椎骨标签

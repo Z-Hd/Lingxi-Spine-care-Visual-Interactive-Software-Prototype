@@ -17,16 +17,19 @@ public:
 
 private slots:
     void on_backButton_clicked();
-    void on_nextButton_clicked();
+    void on_executeButton_clicked();
     void on_simulationButton_clicked();
 
 signals:
     void back_to_routePlan2Widget();
     void simulationButton_pressed();
-    void nextButton_pressed();
+    void executeButton_pressed();
 
 private:
     Ui::ExecuteWidget *ui;
+
+    void initDistanceWidget(int curValue);
+    void initAngleWidget(int curValue);
 };
 
 #endif // EXECUTEWIDGET_H

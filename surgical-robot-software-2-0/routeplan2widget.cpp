@@ -2,6 +2,9 @@
 #include "ui_routeplan2widget.h"
 #include "imagedisplaywidget.h"
 
+#include <QGuiApplication>
+#include <QScreen>
+
 RoutePlan2Widget::RoutePlan2Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RoutePlan2Widget)
@@ -48,16 +51,13 @@ void RoutePlan2Widget::on_addRouteButton_clicked()
     // 显示弹窗
     vertebraSelectionWidget->show();
 
-    // 将弹窗移动到合适的位置（居中显示并向右偏移）
-    QRect parentGeometry = this->geometry();
+    // 将弹窗移动到屏幕中央
+    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
     QRect dialogGeometry = vertebraSelectionWidget->geometry();
 
-    // 计算居中位置
-    int x = parentGeometry.x() + (parentGeometry.width() - dialogGeometry.width()) / 2;
-    int y = parentGeometry.y() + (parentGeometry.height() - dialogGeometry.height()) / 2;
-
-    // 向右偏移500像素
-    x += 500;
+    // 计算屏幕中央位置
+    int x = (screenGeometry.width() - dialogGeometry.width()) / 2;
+    int y = (screenGeometry.height() - dialogGeometry.height()) / 2;
 
     vertebraSelectionWidget->move(x, y);
 }
@@ -69,33 +69,11 @@ void RoutePlan2Widget::handleVertebraSelected(const QString &vertebra)
 
     // 检查是否为有效的椎骨选择（不是"请选择椎骨"这样的提示信息）
     if (vertebra != "请选择椎骨" && !vertebra.isEmpty()) {
-        // 添加椎骨到下拉栏
-        addVertebraToComboBox(vertebra);
+
     }
 
     // 更新标签内容
     setVertebraLabel(vertebra);
-}
-
-void RoutePlan2Widget::addVertebraToComboBox(const QString &vertebra)
-{
-    if (ui->vertebraSelected) {
-        // 检查是否已经存在相同的椎骨，避免重复添加
-        bool exists = false;
-        for (int i = 0; i < ui->vertebraSelected->count(); ++i) {
-            if (ui->vertebraSelected->itemText(i) == vertebra) {
-                exists = true;
-                break;
-            }
-        }
-
-        // 如果不存在，则添加到下拉栏
-        if (!exists) {
-            ui->vertebraSelected->addItem(vertebra);
-            // 设置新添加的项为当前选中项
-            ui->vertebraSelected->setCurrentText(vertebra);
-        }
-    }
 }
 
 void RoutePlan2Widget::handleSelectionCanceled()
@@ -115,20 +93,6 @@ void RoutePlan2Widget::setVertebraLabel(const QString &text)
 void RoutePlan2Widget::on_nextButton_clicked()
 {
     emit nextButton_pressed();
-}
-
-
-void RoutePlan2Widget::on_cleanButton_clicked()
-{
-    // 清空下拉栏内容
-    if (ui->vertebraSelected) {
-        ui->vertebraSelected->clear();
-    }
-
-    // 同时清空标签内容
-    if (ui->label) {
-        ui->label->setText("第几节椎骨");
-    }
 }
 
 void RoutePlan2Widget::on_backButton_clicked()

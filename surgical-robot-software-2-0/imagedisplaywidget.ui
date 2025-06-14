@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(28, 29, 33)</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="72,3,32">
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="92,6,32">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -222,26 +222,36 @@
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/resource/image/unknow1.png);
+background-position: center; 
+background-repeat: no-repeat;</string>
+        </property>
         <property name="text">
-         <string>PushButton</string>
+         <string/>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton_2">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/resource/image/unknow2.png);
+background-position: center; 
+background-repeat: no-repeat;</string>
+        </property>
         <property name="text">
-         <string>PushButton</string>
+         <string/>
         </property>
        </widget>
       </item>

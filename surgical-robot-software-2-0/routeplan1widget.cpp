@@ -2,6 +2,13 @@
 #include "ui_routeplan1widget.h"
 #include "imagedisplaywidget.h"
 
+#include <QGuiApplication>
+#include <QScreen>
+#include <QWidget>
+#include <QPainter>
+#include <QMouseEvent>
+#include <QWidget>
+
 RoutePlan1Widget::RoutePlan1Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RoutePlan1Widget)
@@ -48,16 +55,13 @@ void RoutePlan1Widget::on_addRouteButton_clicked()
     // 显示弹窗
     vertebraSelectionWidget->show();
 
-    // 将弹窗移动到合适的位置（居中显示并向右偏移）
-    QRect parentGeometry = this->geometry();
+    // 将弹窗移动到屏幕中央
+    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
     QRect dialogGeometry = vertebraSelectionWidget->geometry();
 
-    // 计算居中位置
-    int x = parentGeometry.x() + (parentGeometry.width() - dialogGeometry.width()) / 2;
-    int y = parentGeometry.y() + (parentGeometry.height() - dialogGeometry.height()) / 2;
-
-    // 向右偏移100像素（可根据需要调整偏移量）
-    x += 500;
+    // 计算屏幕中央位置
+    int x = (screenGeometry.width() - dialogGeometry.width()) / 2;
+    int y = (screenGeometry.height() - dialogGeometry.height()) / 2;
 
     vertebraSelectionWidget->move(x, y);
 }

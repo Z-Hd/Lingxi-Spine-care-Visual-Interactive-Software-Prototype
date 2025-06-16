@@ -7,29 +7,29 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    average_widget = new AverageWidget();
-    enlarged_widget = new EnlargedWidget();
-    enlargedmodel3D_widget = new EnlargedModel3DWidget();
+    // average_widget = new AverageWidget();
+    // enlarged_widget = new EnlargedWidget();
+    // enlargedmodel3D_widget = new EnlargedModel3DWidget();
 
-    ui->visualizationWidget->addWidget(average_widget);
-    ui->visualizationWidget->addWidget(enlarged_widget);
-    ui->visualizationWidget->addWidget(enlargedmodel3D_widget);
+    // ui->visualizationWidget->addWidget(average_widget);
+    // ui->visualizationWidget->addWidget(enlarged_widget);
+    // ui->visualizationWidget->addWidget(enlargedmodel3D_widget);
 
-    connect(average_widget, &AverageWidget::enlargeButton_pressed,[=](){
-        ui->visualizationWidget->setCurrentWidget(enlarged_widget);
-    });
+    // connect(average_widget, &AverageWidget::enlargeButton_pressed,[=](){
+    //     ui->visualizationWidget->setCurrentWidget(enlarged_widget);
+    // });
 
-    connect(enlarged_widget, &EnlargedWidget::reduceButton_pressed,[=](){
-        ui->visualizationWidget->setCurrentWidget(average_widget);
-    });
+    // connect(enlarged_widget, &EnlargedWidget::reduceButton_pressed,[=](){
+    //     ui->visualizationWidget->setCurrentWidget(average_widget);
+    // });
 
-    connect(average_widget, &AverageWidget::enlarge3DModelButton_pressed,[=](){
-        ui->visualizationWidget->setCurrentWidget(enlargedmodel3D_widget);
-    });
+    // connect(average_widget, &AverageWidget::enlarge3DModelButton_pressed,[=](){
+    //     ui->visualizationWidget->setCurrentWidget(enlargedmodel3D_widget);
+    // });
 
-    connect(enlargedmodel3D_widget, &EnlargedModel3DWidget::reduce3DModelButton_pressed,[=](){
-        ui->visualizationWidget->setCurrentWidget(average_widget);
-    });
+    // connect(enlargedmodel3D_widget, &EnlargedModel3DWidget::reduce3DModelButton_pressed,[=](){
+    //     ui->visualizationWidget->setCurrentWidget(average_widget);
+    // });
 
     segmentation_widget = new SegmentationWidget();
     registration_widget = new RegistrationWidget();
@@ -51,10 +51,17 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
 
     connect(routeplan1_widget, &RoutePlan1Widget::back_to_registrationWidget,[=](){
         ui->stackedWidget->setCurrentWidget(registration_widget);
+        emit currentWidgetChanged("registration");
     });
 
     connect(registration_widget, &RegistrationWidget::nextButton_pressed,[=](){
         ui->stackedWidget->setCurrentWidget(routeplan1_widget);
+        emit currentWidgetChanged("routeplan");
+    });
+
+    connect(registration_widget, &RegistrationWidget::backButton_pressed,[=](){
+        ui->stackedWidget->setCurrentWidget(segmentation_widget);
+        emit currentWidgetChanged("segmentation");
     });
 
     connect(routeplan1_widget, &RoutePlan1Widget::nextButton_pressed,[=](){
@@ -67,13 +74,15 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
 
     connect(routeplan2_widget, &RoutePlan2Widget::nextButton_pressed,[=](){
         ui->stackedWidget->setCurrentWidget(execute_widget);
+        emit currentWidgetChanged("execute");
     });
 
     connect(execute_widget, &ExecuteWidget::back_to_routePlan2Widget,[=](){
         ui->stackedWidget->setCurrentWidget(routeplan2_widget);
+        emit currentWidgetChanged("routeplan");
     });
 
-    connect(execute_widget, &ExecuteWidget::nextButton_pressed,[=](){
+    connect(execute_widget, &ExecuteWidget::executeButton_pressed,[=](){
         emit executeWidget_nextButton_pressed();
     });
 
@@ -86,8 +95,13 @@ ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
     // 如果从 RoutePlan1Widget 添加入路，添加后将 ImageDisplayWidget 的 stackedWidget 更换为 RoutePlan2Widget
     connect(routeplan1_widget, &RoutePlan1Widget::vertebraSelected,
             this, &ImageDisplayWidget::setStackedWidgetAsRoutePlan2);
-}
 
+    image_input_widget = new ImageInputWidget();
+
+    // 连接DICOM数据加载信号
+    // connect(image_input_widget, &ImageInputWidget::dicomDataLoaded,
+    //         average_widget, &AverageWidget::onDicomDataReceived);
+}
 
 ImageDisplayWidget::~ImageDisplayWidget()
 {
@@ -106,10 +120,22 @@ void ImageDisplayWidget::onReceivedSignalFromExecute() {//小括号里可以放�
     emit simulationButton_received();  // 发出新信号并传递处理后的数据
 }
 
-void* ImageDisplayWidget::setStackedWidgetAsRegistration() const {
+void* ImageDisplayWidget::setStackedWidgetAsRegistration() {
     ui->stackedWidget->setCurrentWidget(registration_widget);
+    emit currentWidgetChanged("registration"); // 发送信号
     return 0;
 }
+
+void* ImageDisplayWidget::setStackedWidgetAsSegmentation() {
+    ui->stackedWidget->setCurrentWidget(segmentation_widget);
+    emit currentWidgetChanged("segmentation"); // 发送信号
+    return 0;
+}
+
+// void* ImageDisplayWidget::setVisualizationWidgetAsAverage() const {
+//     ui->visualizationWidget->setCurrentWidget(average_widget);
+//     return 0;
+// }
 
 void ImageDisplayWidget::setStackedWidgetAsRoutePlan2(const QString &vertebra)
 {
@@ -119,8 +145,7 @@ void ImageDisplayWidget::setStackedWidgetAsRoutePlan2(const QString &vertebra)
 
         // 检查是否为有效的椎骨选择（不是"请选择椎骨"这样的提示信息）
         if (vertebra != "请选择椎骨" && !vertebra.isEmpty()) {
-            // 添加椎骨到下拉栏
-            routeplan2_widget->addVertebraToComboBox(vertebra);
+
         }
 
         // 设置椎骨标签

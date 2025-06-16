@@ -20,5 +20,28 @@
         <file>resource/image/arm_2.png</file>
         <file>resource/image/C.png</file>
         <file>resource/image/规则引擎.png</file>
+        <file>resource/image/down.png</file>
+        <file>resource/image/eye.png</file>
+        <file>resource/image/func1.png</file>
+        <file>resource/image/func2.png</file>
+        <file>resource/image/func3.png</file>
+        <file>resource/image/func4.png</file>
+        <file>resource/image/func5.png</file>
+        <file>resource/image/func6.png</file>
+        <file>resource/image/func7.png</file>
+        <file>resource/image/func8.png</file>
+        <file>resource/image/func9.png</file>
+        <file>resource/image/func10.png</file>
+        <file>resource/image/goforward.png</file>
+        <file>resource/image/littlespine.png</file>
+        <file>resource/image/ndipoints.png</file>
+        <file>resource/image/spinemodel.png</file>
+        <file>resource/image/switchbuttonclose.png</file>
+        <file>resource/image/trash.png</file>
+        <file>resource/image/unknow1.png</file>
+        <file>resource/image/unknow2.png</file>
+        <file>resource/image/up.png</file>
+        <file>resource/image/vertebraselect.png</file>
+        <file>resource/image/withdraw.png</file>
     </qresource>
 </RCC>

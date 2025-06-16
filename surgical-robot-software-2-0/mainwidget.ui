@@ -43,7 +43,7 @@
      <property name="styleSheet">
       <string notr="true">background-color:rgb(28, 29, 33);</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="7,4,4,2,4,2,1,3">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="8,4,5,2,4,2,1,3">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -74,24 +74,24 @@
         <property name="styleSheet">
          <string notr="true">background-color:rgb(28, 29, 33);</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="2,1,2,1,2,1,2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
-          <number>2</number>
+          <number>0</number>
          </property>
          <property name="topMargin">
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>2</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <property name="verticalSpacing">
-          <number>0</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label">
+         <item>
+          <widget class="QLabel" name="segmentationLabel">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(28, 29, 33);
 color:rgb(111, 114, 121);
@@ -99,7 +99,103 @@ qproperty-alignment: AlignCenter;
 font-size:17px;</string>
            </property>
            <property name="text">
-            <string>分割 - 配准 - 规划 - 执行</string>
+            <string>分割</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(28, 29, 33);
+color:rgb(111, 114, 121);
+qproperty-alignment: AlignCenter;
+font-size:17px;</string>
+           </property>
+           <property name="text">
+            <string>—</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="registrationLabel">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(28, 29, 33);
+color:rgb(111, 114, 121);
+qproperty-alignment: AlignCenter;
+font-size:17px;</string>
+           </property>
+           <property name="text">
+            <string>配准</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(28, 29, 33);
+color:rgb(111, 114, 121);
+qproperty-alignment: AlignCenter;
+font-size:17px;</string>
+           </property>
+           <property name="text">
+            <string>—</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="planLabel">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(28, 29, 33);
+color:rgb(111, 114, 121);
+qproperty-alignment: AlignCenter;
+font-size:17px;</string>
+           </property>
+           <property name="text">
+            <string>规划</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(28, 29, 33);
+color:rgb(111, 114, 121);
+qproperty-alignment: AlignCenter;
+font-size:17px;</string>
+           </property>
+           <property name="text">
+            <string>—</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="executeLabel">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(28, 29, 33);
+color:rgb(111, 114, 121);
+qproperty-alignment: AlignCenter;
+font-size:17px;</string>
+           </property>
+           <property name="text">
+            <string>执行</string>
            </property>
           </widget>
          </item>

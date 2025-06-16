@@ -19,9 +19,6 @@ public:
     // 设置标签内容的方法
     void setVertebraLabel(const QString &text);
 
-    // 添加椎骨到下拉栏的方法
-    void addVertebraToComboBox(const QString &vertebra);
-
 private slots:
     void on_addRouteButton_clicked();
 
@@ -29,8 +26,6 @@ private slots:
     void handleSelectionCanceled();
 
     void on_nextButton_clicked();
-
-    void on_cleanButton_clicked();
 
     void on_backButton_clicked();
 

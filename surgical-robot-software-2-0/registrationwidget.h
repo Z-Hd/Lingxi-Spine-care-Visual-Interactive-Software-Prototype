@@ -18,8 +18,11 @@ public:
 private slots:
     void on_nextButton_clicked();
 
+    void on_backButton_clicked();
+
 signals:
     void nextButton_pressed();
+    void backButton_pressed();
 
 private:
     Ui::RegistrationWidget *ui;

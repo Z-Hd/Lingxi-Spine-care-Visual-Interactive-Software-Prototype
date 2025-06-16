@@ -55,16 +55,21 @@ MainWidget::MainWidget(QWidget *parent)
         curIndex = 3;
     });
 
+    // 这里须要注意：先回到 ImageDisplayWidget 将右侧 StackedWidget 更换为 SegmentationWidget
+    // 再在 MainWidget 把 centralWidget 更换为 ImageDisplayWidget
     connect(image_input_widget, &ImageInputWidget::back_to_imageDisplayWidget,[&, this](){
+        void* set_image_display_widget_stacked_widget_as_segmentation = image_display_widget->setStackedWidgetAsSegmentation();
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(2);//setCurrentWidget(image_display_widget);
         curIndex = 2;
     });
 
     // 这里须要注意：先回到 ImageDisplayWidget 将右侧 StackedWidget 更换为 RegistrationWidget
+    // 将左侧 VisualizationWidget 更换为 AverageWidget
     // 再在 MainWidget 把 centralWidget 更换为 ImageDisplayWidget
     connect(image_input_widget, &ImageInputWidget::confirmButton_pressed,[&, this](){
         void* set_image_display_widget_stacked_widget_as_registration = image_display_widget->setStackedWidgetAsRegistration();
+        // void* set_image_display_widget_visualization_widget_as_average = image_display_widget->setVisualizationWidgetAsAverage();
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(2);//setCurrentWidget(image_display_widget);
         curIndex = 2;
@@ -84,7 +89,7 @@ MainWidget::MainWidget(QWidget *parent)
         ui->centralWidget->setCurrentIndex(5);//setCurrentWidget(arm_control_widget);
     });
 
-    // 这里须要注意：从 SegmentationWidget 到 ImageDisplayWidget 再到 MainWidget 的三层界面，两道信号传递
+    // 这里须要注意：从 ExecuteWidget 到 ImageDisplayWidget 再到 MainWidget 的三层界面，两道信号传递
     connect(image_display_widget, &ImageDisplayWidget::simulationButton_received,[&, this](){
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(4);//setCurrentWidget(simulation_widget);
@@ -112,6 +117,17 @@ MainWidget::MainWidget(QWidget *parent)
         ui->centralWidget->setCurrentIndex(2);
         curIndex = 2;
     });
+
+    // 添加连接，监听ImageDisplayWidget的currentWidgetChanged信号
+    // 用于 toolBar label 高亮
+    connect(image_display_widget, &ImageDisplayWidget::currentWidgetChanged,
+            this, &MainWidget::onCurrentWidgetChanged);
+
+    connect(equip_info_widget, &EquipInfoWidget::currentWidgetChanged,
+            this, &MainWidget::onCurrentWidgetChanged);
+
+    connect(image_input_widget, &ImageInputWidget::currentWidgetChanged,
+            this, &MainWidget::onCurrentWidgetChanged);
 }
 
 MainWidget::~MainWidget()
@@ -132,7 +148,7 @@ void MainWidget::on_armPageButton_clicked()
 
 void MainWidget::initToolBar(){
     ui->label_2->hide();
-    ui->label->hide();
+    ui->stepWidget->hide();
     ui->infoInnerWidget->hide();
     ui->pushButton->hide();
     ui->ndiPageButton->hide();
@@ -140,7 +156,7 @@ void MainWidget::initToolBar(){
 }
 
 void MainWidget::changeToolBar(){
-    ui->label->show();
+    ui->stepWidget->show();
     ui->infoInnerWidget->show();
     ui->pushButton->show();
     ui->ndiPageButton->show();
@@ -178,3 +194,91 @@ void MainWidget::initButton()
     }
 }
 
+void MainWidget::onCurrentWidgetChanged(const QString &widgetName)
+{
+    if (widgetName == "segmentation") {
+        // 当显示SegmentationWidget时，修改"分割"文字样式
+        ui->segmentationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                 "color:rgb(225, 225, 225);"
+                                 "qproperty-alignment: AlignCenter;"
+                                 "font-size:21px;");
+        // RegistrationWidget 恢复默认样式
+        ui->registrationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+        // RoutePlanWidget 恢复默认样式
+        ui->planLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+        // ExecuteWidget 恢复默认样式
+        ui->executeLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                     "color:rgb(111, 114, 121);"
+                                     "qproperty-alignment: AlignCenter;"
+                                     "font-size:17px;");
+    } else if (widgetName == "registration") {
+        // 当显示RegistrationWidget时，修改"配准"文字样式
+        ui->registrationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(225, 225, 225);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:21px;");
+        // SegmentationWidget 恢复默认样式
+        ui->segmentationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+        // RoutePlanWidget 恢复默认样式
+        ui->planLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                     "color:rgb(111, 114, 121);"
+                                     "qproperty-alignment: AlignCenter;"
+                                     "font-size:17px;");
+        // ExecuteWidget 恢复默认样式
+        ui->executeLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                        "color:rgb(111, 114, 121);"
+                                        "qproperty-alignment: AlignCenter;"
+                                        "font-size:17px;");
+    } else if (widgetName == "routeplan") {
+        // 当显示RoutePlanWidget时，修改"规划"文字样式
+        ui->planLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(225, 225, 225);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:21px;");
+        // SegmentationWidget 恢复默认样式
+        ui->segmentationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+        // RegistrationWidget 恢复默认样式
+        ui->registrationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+        // ExecuteWidget 恢复默认样式
+        ui->executeLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                        "color:rgb(111, 114, 121);"
+                                        "qproperty-alignment: AlignCenter;"
+                                        "font-size:17px;");
+    } else if (widgetName == "execute") {
+        // 当显示ExecuteWidget时，修改"执行"文字样式
+        ui->executeLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                     "color:rgb(225, 225, 225);"
+                                     "qproperty-alignment: AlignCenter;"
+                                     "font-size:21px;");
+        // SegmentationWidget 恢复默认样式
+        ui->segmentationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+        // RegistrationWidget 恢复默认样式
+        ui->registrationLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+        // RoutePlanWidget 恢复默认样式
+        ui->planLabel->setStyleSheet("background-color: rgb(28, 29, 33);"
+                                             "color:rgb(111, 114, 121);"
+                                             "qproperty-alignment: AlignCenter;"
+                                             "font-size:17px;");
+    }
+}

@@ -26,6 +26,8 @@ signals:
     void confirmButton_pressed();
     void itemNameSelected(const QString &itemName);
 
+    void currentWidgetChanged(const QString &widgetName);
+
 private:
     Ui::EquipInfoWidget *ui;
 };

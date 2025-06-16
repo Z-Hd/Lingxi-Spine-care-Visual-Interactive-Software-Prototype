@@ -32,6 +32,7 @@ public:
 private slots:
     void on_ndiPageButton_clicked();
     void on_armPageButton_clicked();
+    void onCurrentWidgetChanged(const QString &widgetName); // 用于 toolBar label 高亮显示槽函数
 
 signals:
     void ndiPageButton_pressed();

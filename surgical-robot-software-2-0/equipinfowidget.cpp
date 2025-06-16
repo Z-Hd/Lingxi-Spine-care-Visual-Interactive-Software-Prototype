@@ -100,6 +100,7 @@ EquipInfoWidget::~EquipInfoWidget()
 void EquipInfoWidget::on_confirmButton_clicked()
 {
     emit confirmButton_pressed();
+    emit currentWidgetChanged("segmentation"); // 发送信号
 }
 
 

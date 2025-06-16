@@ -26,6 +26,7 @@ void ImageInputWidget::on_confirmButton_clicked()
         emit dicomDataLoaded(dicomFolderPath);
     }
     emit confirmButton_pressed();
+    emit currentWidgetChanged("registraion"); // 发送信号用于 toolBar 文字高亮
 }
 
 void ImageInputWidget::on_addButton_clicked()

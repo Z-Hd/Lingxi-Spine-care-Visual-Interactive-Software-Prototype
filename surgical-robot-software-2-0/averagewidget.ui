@@ -54,7 +54,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QVTKOpenGLNativeWidget" name="transversePlate" native="true">
+       <widget class="QWidget" name="transversePlate" native="true">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(85, 255, 127);</string>
         </property>
@@ -63,72 +63,38 @@
       <item>
        <widget class="QWidget" name="transverseTools" native="true">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(0, 0, 0);</string>
+         <string notr="true">background-color: rgb(170, 255, 255);</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
          <property name="topMargin">
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>0</number>
+          <number>9</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
           <widget class="QPushButton" name="enlargeButton">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>30</width>
-             <height>30</height>
-            </size>
-           </property>
            <property name="text">
             <string>扩大</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSlider" name="transverseSlider">
-           <property name="styleSheet">
-            <string notr="true">QSlider::groove:vertical {
-    background: #000000;    /* 黑色滑轨 */
-    width: 10px;            /* 滑轨宽度 */
-    border-radius: 5px;     /* 圆角 */
-    margin: 0px;
-}
-
-QSlider::handle:vertical {
-    background: #8A2BE2;    /* 紫色滑块 */
-    border: none;           /* 无边框 */
-    width: 16px;            /* 滑块宽度 */
-    height: 30px;           /* 缩短的滑块长度 */
-    margin: 0px 0;         /* 调整滑块位置 */
-    border-radius: 5px;     /* 圆角 */
-}
-
-QSlider::handle:vertical:hover {
-    background: #9C4DE8;    /* 悬停时亮紫色 */
-}
-
-QSlider::handle:vertical:pressed {
-    background: #7B17D9;    /* 按下时深紫色 */
-}</string>
+          <widget class="QScrollBar" name="transverseScrollBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="pageStep">
+            <number>6</number>
+           </property>
+           <property name="sliderPosition">
+            <number>99</number>
            </property>
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -163,7 +129,7 @@ QSlider::handle:vertical:pressed {
        <number>0</number>
       </property>
       <item>
-       <widget class="QVTKOpenGLNativeWidget" name="sagittalPlate" native="true">
+       <widget class="QWidget" name="sagittalPlate" native="true">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(85, 255, 127);</string>
         </property>
@@ -172,50 +138,28 @@ QSlider::handle:vertical:pressed {
       <item>
        <widget class="QWidget" name="sagittalTools" native="true">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(0, 0, 0);</string>
+         <string notr="true">background-color: rgb(170, 255, 255);</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
          <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
           <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
-          <widget class="QSlider" name="sagittalSlider">
-           <property name="styleSheet">
-            <string notr="true">QSlider::groove:vertical {
-    background: #000000;    /* 黑色滑轨 */
-    width: 10px;            /* 滑轨宽度 */
-    border-radius: 5px;     /* 圆角 */
-    margin: 0px;
-}
-
-QSlider::handle:vertical {
-    background: #FFB74D;    /* 橙黄色滑块 */
-    border: none;           /* 无边框 */
-    width: 16px;            /* 滑块宽度 */
-    height: 30px;           /* 滑块长度 */
-    margin: 0px 0;          /* 滑块位置 */
-    border-radius: 5px;     /* 圆角 */
-}
-
-QSlider::handle:vertical:hover {
-    background: #FFCC80;    /* 悬停时浅橙黄色 */
-}
-
-QSlider::handle:vertical:pressed {
-    background: #FFA726;    /* 按下时深橙黄色 */
-}</string>
+          <widget class="QScrollBar" name="sagittalScrollBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="pageStep">
+            <number>6</number>
+           </property>
+           <property name="sliderPosition">
+            <number>99</number>
            </property>
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -250,7 +194,7 @@ QSlider::handle:vertical:pressed {
        <number>0</number>
       </property>
       <item>
-       <widget class="QVTKOpenGLNativeWidget" name="coronalPlate" native="true">
+       <widget class="QWidget" name="coronalPlate" native="true">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(85, 255, 127);</string>
         </property>
@@ -259,50 +203,28 @@ QSlider::handle:vertical:pressed {
       <item>
        <widget class="QWidget" name="coronalTools" native="true">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(0, 0, 0);</string>
+         <string notr="true">background-color: rgb(170, 255, 255);</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
          <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
           <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
-          <widget class="QSlider" name="coronalSlider">
-           <property name="styleSheet">
-            <string notr="true">QSlider::groove:vertical {
-    background: #000000;    /* 黑色滑轨 */
-    width: 10px;            /* 滑轨宽度 */
-    border-radius: 5px;     /* 圆角 */
-    margin: 0px;
-}
-
-QSlider::handle:vertical {
-    background: #1E88E5;    /* 深蓝色滑块 (非墨蓝) */
-    border: none;           /* 无边框 */
-    width: 16px;            /* 滑块宽度 */
-    height: 30px;           /* 滑块长度 */
-    margin: 0px 0;          /* 滑块位置 */
-    border-radius: 5px;     /* 圆角 */
-}
-
-QSlider::handle:vertical:hover {
-    background: #42A5F5;    /* 悬停时亮深蓝色 */
-}
-
-QSlider::handle:vertical:pressed {
-    background: #0D47A1;    /* 按下时更深蓝色 */
-}</string>
+          <widget class="QScrollBar" name="coronalScrollBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="pageStep">
+            <number>6</number>
+           </property>
+           <property name="sliderPosition">
+            <number>99</number>
            </property>
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -337,14 +259,14 @@ QSlider::handle:vertical:pressed {
        <number>0</number>
       </property>
       <item>
-       <widget class="QVTKOpenGLNativeWidget" name="model3DPlate" native="true">
+       <widget class="QWidget" name="model3DPlate" native="true">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(85, 255, 127);</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QVTKOpenGLNativeWidget" name="model3DBody" native="true">
+       <widget class="QWidget" name="model3DBody" native="true">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 127);</string>
         </property>
@@ -353,19 +275,10 @@ QSlider::handle:vertical:pressed {
       <item>
        <widget class="QWidget" name="model3DTools" native="true">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(0, 0, 0);</string>
+         <string notr="true">background-color: rgb(170, 255, 255);</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
          <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
           <number>0</number>
          </property>
          <property name="bottomMargin">
@@ -373,21 +286,6 @@ QSlider::handle:vertical:pressed {
          </property>
          <item>
           <widget class="QPushButton" name="enlarge3DModelButton">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>30</width>
-             <height>30</height>
-            </size>
-           </property>
            <property name="text">
             <string>扩大</string>
            </property>
@@ -401,14 +299,6 @@ QSlider::handle:vertical:pressed {
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QVTKOpenGLNativeWidget</class>
-   <extends>QWidget</extends>
-   <header>QVTKOpenGLNativeWidget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

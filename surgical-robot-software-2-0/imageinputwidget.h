@@ -35,6 +35,8 @@ signals:
     void confirmButton_pressed();
     void dicomDataLoaded(const QString &folderPath);
 
+    void currentWidgetChanged(const QString &widgetName);  // 用于文字高亮
+
 private:
     Ui::ImageInputWidget *ui;
     QString dicomFolderPath;

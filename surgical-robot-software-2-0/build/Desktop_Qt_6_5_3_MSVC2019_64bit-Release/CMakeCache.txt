@@ -14,9 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Build VTK with shared libraries.
-BUILD_SHARED_LIBS:BOOL=ON
-
 //Path to a program.
 CMAKE_AR:FILEPATH=D:/vs2022/CommunityIDE/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe
 
@@ -262,6 +259,12 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//OpenGL library for win32
+OPENGL_gl_LIBRARY:STRING=opengl32
+
+//GLU library for win32
+OPENGL_glu_LIBRARY:STRING=glu32
+
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
 QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
@@ -342,7 +345,7 @@ Qt6ZlibPrivate_DIR:PATH=D:/qt/6.5.3/msvc2019_64/lib/cmake/Qt6ZlibPrivate
 Qt6_DIR:PATH=D:/qt/6.5.3/msvc2019_64/lib/cmake/Qt6
 
 //The directory containing a CMake configuration file for VTK.
-VTK_DIR:PATH=D:/VTK/vtk_pix/lib/cmake/vtk-9.4
+VTK_DIR:PATH=D:/qtProjects/surgical-robot-software_1/VTK/lib/cmake/vtk-9.2
 
 //Path to a program.
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-NOTFOUND
@@ -529,12 +532,18 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[opengl32][cfound components: OpenGL ][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding WrapAtomic
 FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic:INTERNAL=[1][v()]
 //Test HAVE_STDATOMIC
 HAVE_STDATOMIC:INTERNAL=1
+//ADVANCED property for variable: OPENGL_gl_LIBRARY
+OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_glu_LIBRARY
+OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
 //Qt feature: abstractbutton (from target Qt6::Widgets)
 QT_FEATURE_abstractbutton:INTERNAL=ON
 //Qt feature: abstractslider (from target Qt6::Widgets)

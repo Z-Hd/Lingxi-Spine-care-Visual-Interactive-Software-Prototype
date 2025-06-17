@@ -2,6 +2,7 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtCore/QByteArray \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/QCryptographicHash \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/QDeadlineTimer \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/QDir \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/QEvent \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/QFlags \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/QHash \
@@ -470,7 +471,9 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtNetwork/qtnetworkglobal.h \
   D:/qt/6.5.3/msvc2019_64/include/QtNetwork/qtnetworkversion.h \
   D:/qt/6.5.3/msvc2019_64/include/QtNetwork/qudpsocket.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QFileDialog \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QListWidgetItem \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QMessageBox \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QStyleOptionViewItem \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QStyledItemDelegate \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QWidget \
@@ -479,10 +482,13 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qabstractscrollarea.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qabstractslider.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qabstractspinbox.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qdialog.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qfiledialog.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qframe.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qlabel.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qlistview.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qlistwidget.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qmessagebox.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qrubberband.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qsizepolicy.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qslider.h \
@@ -495,8 +501,63 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qwidget.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkABI.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkAlgorithm.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkAutoInit.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkBuild.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkCommand.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkCommonCoreModule.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkCommonDataModelModule.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkCommonExecutionModelModule.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkCompiler.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkDataObject.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkDataSet.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkDebugLeaksManager.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkDeprecation.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkEventData.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkFeatures.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkFiltersCoreModule.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkIOStream.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkImageAlgorithm.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkImageData.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkImageReslice.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkImagingCoreModule.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkIndent.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkLegacy.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkMeta.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkNew.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkOStrStreamWrapper.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkOStreamWrapper.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkObject.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkObjectBase.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkOptions.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkPlatform.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkRenderWindow.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkRenderingCoreModule.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkSetGet.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkSmartPointer.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkSmartPointerBase.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkStructuredData.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkSystemIncludes.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkThreadedImageAlgorithm.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkThreads.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkTimeStamp.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkType.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkVersionMacros.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkWeakPointerBase.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkWin32Header.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkWindow.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkWrappingHints.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtk_kwiml.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkkwiml/abi.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtkkwiml/int.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtksys/Configure.h \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtksys/Configure.hxx \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtksys/Status.hxx \
+  D:/qtProjects/surgical-robot-software_1/VTK/include/vtk-9.2/vtksys/SystemTools.hxx \
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/armcontrolwidget.h \
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/averagewidget.h \
+  D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/directionalpadwidget.h \
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/enlargedmodel3dwidget.h \
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/enlargedwidget.h \
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/equipinfowidget.h \
@@ -511,4 +572,5 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/routeplan2widget.h \
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/segmentationwidget.h \
   D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/simulationwidget.h \
-  D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/vertebraselectionwidget.h
+  D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/vertebraselectionwidget.h \
+  D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/visualizetool.h

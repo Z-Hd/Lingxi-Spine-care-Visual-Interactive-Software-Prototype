@@ -12,6 +12,8 @@
 #include "routeplan1widget.h"
 #include "routeplan2widget.h"
 #include "executewidget.h"
+#include "visualizetool.h"
+#include <vtkImageData.h>
 
 #include "imageinputwidget.h"
 
@@ -30,8 +32,8 @@ public:
     void* setStackedWidgetAsRegistration();
     void* setStackedWidgetAsSegmentation();
     void* setVisualizationWidgetAsAverage() const;
+    void initImage();
     void setStackedWidgetAsRoutePlan2(const QString &vertebra);
-
 signals:
     void imageInputButton_received();
     void simulationButton_received();
@@ -42,6 +44,13 @@ signals:
 public slots:
     void onReceivedSignalFromSegmentation();  //小括号里可以放待处理数据
     void onReceivedSignalFromExecute();
+
+private slots:
+    void on_coronalSlider_valueChanged(int value);
+
+    void on_sagittalSlider_valueChanged(int value);
+
+    void on_transverseSlider_valueChanged(int value);
 
 private:
     Ui::ImageDisplayWidget *ui;
@@ -55,6 +64,8 @@ private:
     RoutePlan1Widget *routeplan1_widget;
     RoutePlan2Widget *routeplan2_widget;
     ExecuteWidget *execute_widget;
+    VisualizeTool visualizeTool;
+    vtkImageData* imageData;
 
     ImageInputWidget *image_input_widget;
 };

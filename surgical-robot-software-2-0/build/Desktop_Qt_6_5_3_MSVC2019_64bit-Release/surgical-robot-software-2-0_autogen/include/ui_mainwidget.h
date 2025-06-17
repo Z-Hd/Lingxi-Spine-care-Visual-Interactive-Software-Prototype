@@ -29,8 +29,14 @@ public:
     QHBoxLayout *horizontalLayout;
     QWidget *trademarkWidget;
     QWidget *stepWidget;
-    QGridLayout *gridLayout;
-    QLabel *label;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *segmentationLabel;
+    QLabel *label_5;
+    QLabel *registrationLabel;
+    QLabel *label_3;
+    QLabel *planLabel;
+    QLabel *label_4;
+    QLabel *executeLabel;
     QWidget *EquipNameWidget;
     QGridLayout *gridLayout_2;
     QLabel *label_2;
@@ -60,7 +66,7 @@ public:
     QPushButton *pushButton_8;
     QPushButton *pushButton_11;
     QPushButton *pushButton_9;
-    QPushButton *pushButton_10;
+    QPushButton *exitButton;
     QStackedWidget *centralWidget;
 
     void setupUi(QWidget *MainWidget)
@@ -94,19 +100,86 @@ public:
         stepWidget = new QWidget(toolBarWidget);
         stepWidget->setObjectName("stepWidget");
         stepWidget->setStyleSheet(QString::fromUtf8("background-color:rgb(28, 29, 33);"));
-        gridLayout = new QGridLayout(stepWidget);
-        gridLayout->setObjectName("gridLayout");
-        gridLayout->setVerticalSpacing(0);
-        gridLayout->setContentsMargins(2, 0, 2, 0);
-        label = new QLabel(stepWidget);
-        label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
+        horizontalLayout_6 = new QHBoxLayout(stepWidget);
+        horizontalLayout_6->setSpacing(0);
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
+        segmentationLabel = new QLabel(stepWidget);
+        segmentationLabel->setObjectName("segmentationLabel");
+        segmentationLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
 "color:rgb(111, 114, 121);\n"
 "qproperty-alignment: AlignCenter;\n"
 "font-size:17px;"));
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
+        horizontalLayout_6->addWidget(segmentationLabel);
 
+        label_5 = new QLabel(stepWidget);
+        label_5->setObjectName("label_5");
+        sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+        label_5->setSizePolicy(sizePolicy);
+        label_5->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
+"color:rgb(111, 114, 121);\n"
+"qproperty-alignment: AlignCenter;\n"
+"font-size:17px;"));
+
+        horizontalLayout_6->addWidget(label_5);
+
+        registrationLabel = new QLabel(stepWidget);
+        registrationLabel->setObjectName("registrationLabel");
+        registrationLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
+"color:rgb(111, 114, 121);\n"
+"qproperty-alignment: AlignCenter;\n"
+"font-size:17px;"));
+
+        horizontalLayout_6->addWidget(registrationLabel);
+
+        label_3 = new QLabel(stepWidget);
+        label_3->setObjectName("label_3");
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
+        label_3->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
+"color:rgb(111, 114, 121);\n"
+"qproperty-alignment: AlignCenter;\n"
+"font-size:17px;"));
+
+        horizontalLayout_6->addWidget(label_3);
+
+        planLabel = new QLabel(stepWidget);
+        planLabel->setObjectName("planLabel");
+        planLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
+"color:rgb(111, 114, 121);\n"
+"qproperty-alignment: AlignCenter;\n"
+"font-size:17px;"));
+
+        horizontalLayout_6->addWidget(planLabel);
+
+        label_4 = new QLabel(stepWidget);
+        label_4->setObjectName("label_4");
+        sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy);
+        label_4->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
+"color:rgb(111, 114, 121);\n"
+"qproperty-alignment: AlignCenter;\n"
+"font-size:17px;"));
+
+        horizontalLayout_6->addWidget(label_4);
+
+        executeLabel = new QLabel(stepWidget);
+        executeLabel->setObjectName("executeLabel");
+        executeLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(28, 29, 33);\n"
+"color:rgb(111, 114, 121);\n"
+"qproperty-alignment: AlignCenter;\n"
+"font-size:17px;"));
+
+        horizontalLayout_6->addWidget(executeLabel);
+
+        horizontalLayout_6->setStretch(0, 2);
+        horizontalLayout_6->setStretch(1, 1);
+        horizontalLayout_6->setStretch(2, 2);
+        horizontalLayout_6->setStretch(3, 1);
+        horizontalLayout_6->setStretch(4, 2);
+        horizontalLayout_6->setStretch(5, 1);
+        horizontalLayout_6->setStretch(6, 2);
 
         horizontalLayout->addWidget(stepWidget);
 
@@ -306,6 +379,7 @@ public:
 "    border-radius: 10px; /* \345\234\206\350\247\222\345\215\212\345\276\204\350\256\276\347\275\256\344\270\272\345\256\275\345\272\246\346\210\226\351\253\230\345\272\246\347\232\204\344\270\200\345\215\212 */\n"
 "    background-color: rgb(46, 48, 54);\n"
 "    color: white;\n"
+"	/*border-image:url(:/resource/image/snapshot.png);*/\n"
 "}"));
 
         horizontalLayout_5->addWidget(pushButton_8);
@@ -340,27 +414,33 @@ public:
 
         horizontalLayout_5->addWidget(pushButton_9);
 
-        pushButton_10 = new QPushButton(settingWidget);
-        pushButton_10->setObjectName("pushButton_10");
-        sizePolicy1.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
-        pushButton_10->setSizePolicy(sizePolicy1);
-        pushButton_10->setMinimumSize(QSize(30, 30));
-        pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        exitButton = new QPushButton(settingWidget);
+        exitButton->setObjectName("exitButton");
+        sizePolicy1.setHeightForWidth(exitButton->sizePolicy().hasHeightForWidth());
+        exitButton->setSizePolicy(sizePolicy1);
+        exitButton->setMinimumSize(QSize(30, 30));
+        exitButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    width: 35px;\n"
 "    height: 35px;\n"
 "    border-radius: 10px; /* \345\234\206\350\247\222\345\215\212\345\276\204\350\256\276\347\275\256\344\270\272\345\256\275\345\272\246\346\210\226\351\253\230\345\272\246\347\232\204\344\270\200\345\215\212 */\n"
 "    background-color: rgb(46, 48, 54);\n"
 "    color: white;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(70, 72, 81);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(245, 245, 245);\n"
 "}"));
 
-        horizontalLayout_5->addWidget(pushButton_10);
+        horizontalLayout_5->addWidget(exitButton);
 
 
         horizontalLayout->addWidget(settingWidget);
 
-        horizontalLayout->setStretch(0, 7);
+        horizontalLayout->setStretch(0, 8);
         horizontalLayout->setStretch(1, 4);
-        horizontalLayout->setStretch(2, 4);
+        horizontalLayout->setStretch(2, 5);
         horizontalLayout->setStretch(3, 2);
         horizontalLayout->setStretch(4, 4);
         horizontalLayout->setStretch(5, 2);
@@ -393,19 +473,25 @@ public:
     void retranslateUi(QWidget *MainWidget)
     {
         MainWidget->setWindowTitle(QCoreApplication::translate("MainWidget", "MainWidget", nullptr));
-        label->setText(QCoreApplication::translate("MainWidget", "\345\210\206\345\211\262 - \351\205\215\345\207\206 - \350\247\204\345\210\222 - \346\211\247\350\241\214", nullptr));
+        segmentationLabel->setText(QCoreApplication::translate("MainWidget", "\345\210\206\345\211\262", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWidget", "\342\200\224", nullptr));
+        registrationLabel->setText(QCoreApplication::translate("MainWidget", "\351\205\215\345\207\206", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWidget", "\342\200\224", nullptr));
+        planLabel->setText(QCoreApplication::translate("MainWidget", "\350\247\204\345\210\222", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWidget", "\342\200\224", nullptr));
+        executeLabel->setText(QCoreApplication::translate("MainWidget", "\346\211\247\350\241\214", nullptr));
         label_2->setText(QCoreApplication::translate("MainWidget", "2S-0084", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWidget", "P", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWidget", "1", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWidget", "2", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWidget", "3", nullptr));
-        ndiPageButton->setText(QCoreApplication::translate("MainWidget", "5", nullptr));
-        armPageButton->setText(QCoreApplication::translate("MainWidget", "6", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("MainWidget", "7", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("MainWidget", "C", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("MainWidget", "S", nullptr));
-        pushButton_9->setText(QCoreApplication::translate("MainWidget", "L", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("MainWidget", "E", nullptr));
+        pushButton->setText(QString());
+        pushButton_4->setText(QString());
+        pushButton_3->setText(QString());
+        pushButton_2->setText(QString());
+        ndiPageButton->setText(QCoreApplication::translate("MainWidget", "NDI", nullptr));
+        armPageButton->setText(QString());
+        pushButton_7->setText(QString());
+        pushButton_8->setText(QString());
+        pushButton_11->setText(QString());
+        pushButton_9->setText(QString());
+        exitButton->setText(QString());
     } // retranslateUi
 
 };

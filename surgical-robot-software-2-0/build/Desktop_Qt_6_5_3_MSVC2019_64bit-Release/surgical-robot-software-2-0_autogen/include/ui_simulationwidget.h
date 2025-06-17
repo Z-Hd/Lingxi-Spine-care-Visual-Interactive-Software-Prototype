@@ -48,7 +48,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
-    QWidget *widget_mid;
+    QWidget *directionPadPlaceholder;
     QWidget *widget_right;
     QVBoxLayout *verticalLayout_5;
     QWidget *widget_3;
@@ -287,10 +287,10 @@ public:
 
         horizontalLayout_2->addWidget(widget_left);
 
-        widget_mid = new QWidget(paramWidget);
-        widget_mid->setObjectName("widget_mid");
+        directionPadPlaceholder = new QWidget(paramWidget);
+        directionPadPlaceholder->setObjectName("directionPadPlaceholder");
 
-        horizontalLayout_2->addWidget(widget_mid);
+        horizontalLayout_2->addWidget(directionPadPlaceholder);
 
         widget_right = new QWidget(paramWidget);
         widget_right->setObjectName("widget_right");

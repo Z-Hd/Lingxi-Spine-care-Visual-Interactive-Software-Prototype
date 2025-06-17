@@ -9,8 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(VTK_DIR "path/VTK/lib/cmake/vtk-9.4")
-find_package(VTK 9.4 REQUIRED)
+set(VTK_DIR "path/VTK/lib/cmake/vtk-9.2")
+find_package(VTK 9.2 REQUIRED)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
@@ -51,6 +51,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         enlargedmodel3dwidget.h enlargedmodel3dwidget.cpp enlargedmodel3dwidget.ui
         login.h login.cpp login.ui
         directionalpadwidget.cpp directionalpadwidget.h
+        GlobalVTKDataManager.h visualizetool.cpp visualizetool.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET surgical-robot-software-2-0 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

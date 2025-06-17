@@ -1,6 +1,12 @@
 #include "imageinputwidget.h"
 #include "ui_imageinputwidget.h"
-
+#include <vtkDICOMReader.h>
+#include <vtkSmartPointer.h>
+#include <vtkStringArray.h>
+#include <vtkDICOMMetaData.h>
+#include "GlobalVTKDataManager.h"
+#include <QFileDialog.h>
+namespace fs = std::filesystem;
 ImageInputWidget::ImageInputWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ImageInputWidget)
@@ -101,38 +107,87 @@ bool ImageInputWidget::validateDicomFolder(const QString &folderPath)
         return false;
     }
 
-    // 检查文件夹中是否包含DICOM文件
-    QStringList filters;
-    filters << "*.dcm" << "*.DCM" << "*.dicom" << "*.DICOM";
-    QStringList dicomFiles = dir.entryList(filters, QDir::Files);
+    qDebug()<<folderPath;
+    vtkSmartPointer<vtkStringArray> fileNames =
+        vtkSmartPointer<vtkStringArray>::New();
 
-    qDebug() << "Found" << dicomFiles.size() << "standard DICOM files in folder";
-
-    // 如果没有标准DICOM扩展名，检查是否有无扩展名的文件或CT开头的文件
-    if (dicomFiles.isEmpty()) {
-        QStringList allFiles = dir.entryList(QDir::Files);
-        qDebug() << "Total files in folder:" << allFiles.size();
-
-        for (const QString &file : allFiles) {
-            // 检查无扩展名的文件
-            if (!file.contains('.')) {
-                qDebug() << "Found file without extension:" << file;
-                return true;
-            }
-            // 检查以CT开头的文件（适应你的DICOM文件格式）
-            if (file.startsWith("CT.", Qt::CaseInsensitive)) {
-                qDebug() << "Found CT file:" << file;
-                return true;
-            }
-            // 检查其他常见的DICOM文件模式
-            if (file.contains("1.2.840") || file.contains("1.3.12")) {
-                qDebug() << "Found file with DICOM UID pattern:" << file;
-                return true;
+    try
+    {
+        for (const auto& entry : fs::directory_iterator(folderPath.toStdString()))
+        {
+            // 检查文件扩展名是否为 .dcm 或其他 DICOM 常用扩展名
+            std::string filename = entry.path().filename().string();
+            if (entry.is_regular_file() &&
+                (filename.rfind("CT", 0) == 0 || // rfind的第二个参数0表示从字符串开头搜索
+                 entry.path().extension() == ".dcm" ||
+                 entry.path().extension() == ".DCM")){
+                qDebug()<< "找到文件: " << filename;
+                fileNames->InsertNextValue(entry.path().string());
             }
         }
-        qDebug() << "No valid DICOM files found in folder";
+    }
+    catch (const fs::filesystem_error& e)
+    {
+        qDebug()<< "访问目录时出错: " << e.what();
+        GlobalVTKDataManager::instance().setIsLoaded(false);
         return false;
     }
 
+    if (fileNames->GetNumberOfValues() == 0)
+    {
+        qDebug() << "在目录 '" << folderPath << "' 中未找到符合条件的文件";
+        GlobalVTKDataManager::instance().setIsLoaded(false);
+        return false;
+    }
+
+    auto reader = vtkSmartPointer<vtkDICOMReader>::New();
+    reader->SetFileNames(fileNames);
+    reader->Update();
+    vtkDICOMMetaData *metaData = reader->GetMetaData();
+    if (!metaData) {
+        qWarning() << "无法获取DICOM元数据！";
+        GlobalVTKDataManager::instance().setIsLoaded(false);
+        return false;
+    }
+
+    // 定义需要提取的标签 (使用QMap)
+    QMap<QString, vtkDICOMTag> tagsToExtract;
+    tagsToExtract["Patient ID"]       = vtkDICOMTag(0x0010, 0x0020);
+    tagsToExtract["Patient's Name"]   = vtkDICOMTag(0x0010, 0x0010);
+    tagsToExtract["Patient's Age"]    = vtkDICOMTag(0x0010, 0x1010);
+    tagsToExtract["Study Date"]       = vtkDICOMTag(0x0008, 0x0020);
+    tagsToExtract["Study Description"] = vtkDICOMTag(0x0008, 0x1030);
+    tagsToExtract["Modality"]         = vtkDICOMTag(0x0008, 0x0060);
+    tagsToExtract["Series Date"]      = vtkDICOMTag(0x0008, 0x0021);
+    tagsToExtract["Series Description"] = vtkDICOMTag(0x0008, 0x103E);
+    QMap<QString,QString> g_dicomTags;
+
+    // 循环提取并存入全局QMap
+    QMapIterator<QString, vtkDICOMTag> i(tagsToExtract);
+    while (i.hasNext()) {
+        i.next();
+        const QString& key = i.key();
+        const vtkDICOMTag& tag = i.value();
+
+        if (metaData->Has(tag)) {
+            // 与VTK交互: metaData->Get()返回的值需要从std::string转换为QString
+            // QString::trimmed() 用于替代之前的 trimString() 函数
+            QString value = QString::fromStdString(metaData->Get(tag).AsString()).trimmed();
+            g_dicomTags.insert(key, value);
+            qDebug()<<key<<value;
+        } else {
+            g_dicomTags.insert(key, "Not Found");
+            qDebug()<<key;
+        }
+    }
+    GlobalVTKDataManager::instance().setDicomTags(g_dicomTags);
+    if (!reader->GetOutput() || reader->GetOutput()->GetNumberOfPoints() == 0) {
+        qWarning() << "vtkDICOMReader未能成功读取图像数据。";
+        GlobalVTKDataManager::instance().setIsLoaded(false);
+        return false;
+    }else{
+        GlobalVTKDataManager::instance().setImage(reader->GetOutput());
+    }
+    GlobalVTKDataManager::instance().setIsLoaded(true);
     return true;
 }

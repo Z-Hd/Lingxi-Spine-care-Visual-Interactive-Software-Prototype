@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-3d935382afea2ead7d5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "surgical-robot-software-2-0",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "surgical-robot-software-2-0::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-surgical-robot-software-2-0-Release-26f6a78856e5a94dfb93.json",
+					"name" : "surgical-robot-software-2-0",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "surgical-robot-software-2-0_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-surgical-robot-software-2-0_autogen-Release-6ee02db8d1849cfb4ac5.json",
+					"name" : "surgical-robot-software-2-0_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "surgical-robot-software-2-0_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-surgical-robot-software-2-0_autogen_timestamp_deps-Release-f7f003b921acdc2b7995.json",
+					"name" : "surgical-robot-software-2-0_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "surgical-robot-software-2-0_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-surgical-robot-software-2-0_qmlimportscan-Release-0ad6e38b64a0f1a1db7a.json",
+					"name" : "surgical-robot-software-2-0_qmlimportscan",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release",
+		"source" : "D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

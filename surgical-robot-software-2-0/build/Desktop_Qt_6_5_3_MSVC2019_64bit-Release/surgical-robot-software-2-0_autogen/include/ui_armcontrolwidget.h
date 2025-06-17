@@ -122,7 +122,8 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QWidget *widget_2;
+    QSpacerItem *horizontalSpacer_3;
+    QWidget *directionPadPlaceholder;
     QWidget *widget_mid_down;
     QWidget *widget_right;
     QVBoxLayout *verticalLayout_4;
@@ -783,7 +784,7 @@ public:
         horizontalLayout_4 = new QHBoxLayout(widget_mid_up);
         horizontalLayout_4->setSpacing(50);
         horizontalLayout_4->setObjectName("horizontalLayout_4");
-        horizontalLayout_4->setContentsMargins(2, -1, -1, -1);
+        horizontalLayout_4->setContentsMargins(30, 0, 80, 0);
         widget = new QWidget(widget_mid_up);
         widget->setObjectName("widget");
         horizontalLayout_3 = new QHBoxLayout(widget);
@@ -791,6 +792,8 @@ public:
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         pushButton = new QPushButton(widget);
         pushButton->setObjectName("pushButton");
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
         pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "background-color: rgb(37, 38, 43);\n"
 "color: rgb(192, 192, 192);\n"
@@ -810,6 +813,8 @@ public:
 
         pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName("pushButton_2");
+        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy);
         pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "background-color: rgb(37, 38, 43);\n"
 "color: rgb(192, 192, 192);\n"
@@ -829,6 +834,8 @@ public:
 
         pushButton_3 = new QPushButton(widget);
         pushButton_3->setObjectName("pushButton_3");
+        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy);
         pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "background-color: rgb(37, 38, 43);\n"
 "color: rgb(192, 192, 192);\n"
@@ -849,13 +856,24 @@ public:
 
         horizontalLayout_4->addWidget(widget);
 
-        widget_2 = new QWidget(widget_mid_up);
-        widget_2->setObjectName("widget_2");
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_4->addWidget(widget_2);
+        horizontalLayout_4->addItem(horizontalSpacer_3);
 
-        horizontalLayout_4->setStretch(0, 2);
-        horizontalLayout_4->setStretch(1, 1);
+        directionPadPlaceholder = new QWidget(widget_mid_up);
+        directionPadPlaceholder->setObjectName("directionPadPlaceholder");
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(200);
+        sizePolicy1.setVerticalStretch(200);
+        sizePolicy1.setHeightForWidth(directionPadPlaceholder->sizePolicy().hasHeightForWidth());
+        directionPadPlaceholder->setSizePolicy(sizePolicy1);
+        directionPadPlaceholder->setMinimumSize(QSize(70, 70));
+
+        horizontalLayout_4->addWidget(directionPadPlaceholder);
+
+        horizontalLayout_4->setStretch(0, 1);
+        horizontalLayout_4->setStretch(1, 2);
+        horizontalLayout_4->setStretch(2, 1);
 
         verticalLayout_3->addWidget(widget_mid_up);
 

@@ -8,6 +8,7 @@ Login::Login(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowState(Qt::WindowMaximized);
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 }
 
 Login::~Login()
@@ -20,5 +21,7 @@ void Login::on_loginButton_clicked()
     this->close();
     QWidget* m = new MainWidget();
     m->show();
+    m->showMaximized();
+    m->setGeometry(this->geometry());
 }
 

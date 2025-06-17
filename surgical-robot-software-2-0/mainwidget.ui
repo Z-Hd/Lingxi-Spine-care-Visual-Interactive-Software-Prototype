@@ -579,7 +579,7 @@ font-size:17px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_10">
+          <widget class="QPushButton" name="exitButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -599,6 +599,12 @@ font-size:17px;</string>
     border-radius: 10px; /* 圆角半径设置为宽度或高度的一半 */
     background-color: rgb(46, 48, 54);
     color: white;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
 }</string>
            </property>
            <property name="text">

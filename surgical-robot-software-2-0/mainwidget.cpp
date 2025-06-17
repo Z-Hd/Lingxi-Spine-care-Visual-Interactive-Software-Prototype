@@ -1,5 +1,6 @@
 #include "mainwidget.h"
 #include "./ui_mainwidget.h"
+#include <QApplication>
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -7,6 +8,7 @@ MainWidget::MainWidget(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowState(Qt::WindowMaximized); //窗口最大化显示
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     initToolBar();
     initButton();
 
@@ -128,6 +130,8 @@ MainWidget::MainWidget(QWidget *parent)
 
     connect(image_input_widget, &ImageInputWidget::currentWidgetChanged,
             this, &MainWidget::onCurrentWidgetChanged);
+
+    connect(ui->exitButton, &QPushButton::clicked, qApp, &QApplication::quit);
 }
 
 MainWidget::~MainWidget()
@@ -175,7 +179,7 @@ void MainWidget::initButton()
         { ui->pushButton_8,    ":/resource/image/snapshot.png" },
         { ui->pushButton_11,        ":/resource/image/setting.png" },
         { ui->pushButton_9,        ":/resource/image/blok.png" },
-        { ui->pushButton_10,  ":/resource/image/ending.png" },
+        { ui->exitButton,  ":/resource/image/ending.png" },
         { ui->pushButton_4,  ":/resource/image/arm_1.png" },
         { ui->pushButton_3,  ":/resource/image/person.png" },
         { ui->pushButton_2,  ":/resource/image/规则引擎.png" },

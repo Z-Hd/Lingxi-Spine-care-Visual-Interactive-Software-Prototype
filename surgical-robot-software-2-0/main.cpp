@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
         }
     )");
 
+    //connect(ui->exitButton, &QPushButton::clicked, qApp, &QApplication::quit);
+
     Login w;
     w.show();
     return a.exec();

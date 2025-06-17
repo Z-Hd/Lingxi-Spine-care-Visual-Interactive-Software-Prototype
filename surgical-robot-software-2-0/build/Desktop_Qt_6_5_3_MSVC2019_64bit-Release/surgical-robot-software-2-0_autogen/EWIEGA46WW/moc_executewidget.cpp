@@ -42,9 +42,9 @@ static constexpr auto qt_meta_stringdata_CLASSExecuteWidgetENDCLASS = QtMocHelpe
     "back_to_routePlan2Widget",
     "",
     "simulationButton_pressed",
-    "nextButton_pressed",
+    "executeButton_pressed",
     "on_backButton_clicked",
-    "on_nextButton_clicked",
+    "on_executeButton_clicked",
     "on_simulationButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
@@ -54,9 +54,9 @@ struct qt_meta_stringdata_CLASSExecuteWidgetENDCLASS_t {
     char stringdata1[25];
     char stringdata2[1];
     char stringdata3[25];
-    char stringdata4[19];
+    char stringdata4[22];
     char stringdata5[22];
-    char stringdata6[22];
+    char stringdata6[25];
     char stringdata7[28];
 };
 #define QT_MOC_LITERAL(ofs, len) \
@@ -67,18 +67,18 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSExecuteWidgetENDCLASS_t qt_meta
         QT_MOC_LITERAL(14, 24),  // "back_to_routePlan2Widget"
         QT_MOC_LITERAL(39, 0),  // ""
         QT_MOC_LITERAL(40, 24),  // "simulationButton_pressed"
-        QT_MOC_LITERAL(65, 18),  // "nextButton_pressed"
-        QT_MOC_LITERAL(84, 21),  // "on_backButton_clicked"
-        QT_MOC_LITERAL(106, 21),  // "on_nextButton_clicked"
-        QT_MOC_LITERAL(128, 27)   // "on_simulationButton_clicked"
+        QT_MOC_LITERAL(65, 21),  // "executeButton_pressed"
+        QT_MOC_LITERAL(87, 21),  // "on_backButton_clicked"
+        QT_MOC_LITERAL(109, 24),  // "on_executeButton_clicked"
+        QT_MOC_LITERAL(134, 27)   // "on_simulationButton_clicked"
     },
     "ExecuteWidget",
     "back_to_routePlan2Widget",
     "",
     "simulationButton_pressed",
-    "nextButton_pressed",
+    "executeButton_pressed",
     "on_backButton_clicked",
-    "on_nextButton_clicked",
+    "on_executeButton_clicked",
     "on_simulationButton_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -134,11 +134,11 @@ Q_CONSTINIT const QMetaObject ExecuteWidget::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'simulationButton_pressed'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'nextButton_pressed'
+        // method 'executeButton_pressed'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_backButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_nextButton_clicked'
+        // method 'on_executeButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_simulationButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
@@ -154,9 +154,9 @@ void ExecuteWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         switch (_id) {
         case 0: _t->back_to_routePlan2Widget(); break;
         case 1: _t->simulationButton_pressed(); break;
-        case 2: _t->nextButton_pressed(); break;
+        case 2: _t->executeButton_pressed(); break;
         case 3: _t->on_backButton_clicked(); break;
-        case 4: _t->on_nextButton_clicked(); break;
+        case 4: _t->on_executeButton_clicked(); break;
         case 5: _t->on_simulationButton_clicked(); break;
         default: ;
         }
@@ -178,7 +178,7 @@ void ExecuteWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         }
         {
             using _t = void (ExecuteWidget::*)();
-            if (_t _q_method = &ExecuteWidget::nextButton_pressed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &ExecuteWidget::executeButton_pressed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 2;
                 return;
             }
@@ -230,7 +230,7 @@ void ExecuteWidget::simulationButton_pressed()
 }
 
 // SIGNAL 2
-void ExecuteWidget::nextButton_pressed()
+void ExecuteWidget::executeButton_pressed()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }

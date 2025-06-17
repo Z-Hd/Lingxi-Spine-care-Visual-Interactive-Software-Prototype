@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NaviLinkInfo>
+    <Columns>512</Columns>
+    <CT>D:\NaviLinkImage\1.3.12.2.1107.5.12.17.50174.1.20231021171826\1.3.12.2.1107.5.12.17.50174.2.202310211731590756</CT>
+    <FirstImagePositionPatient>-7.997150e+001\+7.997150e+001\+7.997150e+001</FirstImagePositionPatient>
+    <ImageNumber>512</ImageNumber>
+    <LastImagePositionPatient>-7.997150e+001\+7.997150e+001\-7.997150e+001</LastImagePositionPatient>
+    <NaviLinkCalibrationID>0_1</NaviLinkCalibrationID>
+    <NaviLinkISOCID>50174</NaviLinkISOCID>
+    <NaviLinkImageOrientationPatient>+1.000000e+000\-0.000000e+000\+0.000000e+000\+0.000000e+000\-1.000000e+000\+0.000000e+000</NaviLinkImageOrientationPatient>
+    <NaviLinkMatrix>-2.537469e-002\-9.885644e-001\+1.486483e-001\-6.842296e+002\-1.663552e-003\+1.487378e-001\+9.888752e-001\-1.211191e+002\-9.996766e-001\+2.484512e-002\-5.418678e-003\-2.205093e+002\+0.000000e+000\+0.000000e+000\+0.000000e+000\+1.000000e+000</NaviLinkMatrix>
+    <NaviLinkPixelSpacing>+3.130000e-001\+3.130000e-001</NaviLinkPixelSpacing>
+    <NaviLinkProjectionsDone>200</NaviLinkProjectionsDone>
+    <NaviLinkProjectionsRequested>0</NaviLinkProjectionsRequested>
+    <NaviLinkScanID>SID1_1</NaviLinkScanID>
+    <Rows>512</Rows>
+    <SeriesInstanceUID>1.3.12.2.1107.5.12.17.50174.2.202310211731590756</SeriesInstanceUID>
+    <currentStudyInstanceUID>1.3.12.2.1107.5.12.17.50174.1.20231021171826</currentStudyInstanceUID>
+    <ii2img>-0.0253747 -0.00166355 -0.999677 0 -0.988564 0.148738 0.0248451 0 0.148648 0.988875 -0.00541868 0 -684.23 -121.119 -220.509 1 </ii2img>
+    <img2ii>-0.0253747 -0.988565 0.148648 0 -0.00166353 0.148738 0.988875 0 -0.999677 0.0248451 -0.00541871 0 -238.002 -652.912 220.286 1 </img2ii>
+    <mii2p>0.995104 -0.0970364 0.0103032 0 -0.0318707 -0.222089 0.974041 0 -0.0918528 -0.969852 -0.224217 0 19.4499 60.7732 740.365 1 </mii2p>
+    <mOri>1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 </mOri>
+    <MiddleOfTheReconstructedVolume>80.128,80.128,80.128</MiddleOfTheReconstructedVolume>
+    <v3do>80.128,-80.128,-80.128</v3do>
+    <ImageToReferenceToolMatrix>-0.00739798 0.0778446 -0.996494 0 -0.0972268 -0.991934 -0.0768629 0 -0.995076 0.0967425 0.0151153 0 -216.812 15.2272 52.5578 1 </ImageToReferenceToolMatrix>
+    <ImageToWorldMatrix>1 0 0 0 0 -1 0 0 0 0 -1 0 -80.128 -80.128 -80.128 1 </ImageToWorldMatrix>
+    <WorldToImageMatrix>1 0 0 0 0 -1 0 0 0 0 -1 0 -80.128 -80.128 -80.128 1 </WorldToImageMatrix>
+    <C-ArmToolQuat>-193.21,-163.65,-1826.48,0.1625,-0.8406,0.1328,-0.4991</C-ArmToolQuat>
+    <RefToolQuat>40.2,521.42,-1658.01,0.5481,0.6261,-0.5013,0.2372</RefToolQuat>
+</NaviLinkInfo>

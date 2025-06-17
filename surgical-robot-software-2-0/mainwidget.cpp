@@ -1,7 +1,7 @@
 #include "mainwidget.h"
 #include "./ui_mainwidget.h"
 #include <QApplication>
-
+#include <QDebug>
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MainWidget)
@@ -63,6 +63,7 @@ MainWidget::MainWidget(QWidget *parent)
         void* set_image_display_widget_stacked_widget_as_segmentation = image_display_widget->setStackedWidgetAsSegmentation();
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(2);//setCurrentWidget(image_display_widget);
+        image_display_widget->initImage();
         curIndex = 2;
     });
 
@@ -74,6 +75,7 @@ MainWidget::MainWidget(QWidget *parent)
         // void* set_image_display_widget_visualization_widget_as_average = image_display_widget->setVisualizationWidgetAsAverage();
         preIndex = curIndex;
         ui->centralWidget->setCurrentIndex(2);//setCurrentWidget(image_display_widget);
+        image_display_widget->initImage();
         curIndex = 2;
     });
 
@@ -110,6 +112,7 @@ MainWidget::MainWidget(QWidget *parent)
 
     connect(image_display_widget, &ImageDisplayWidget::executeWidget_nextButton_pressed, [&, this](){
         preIndex = curIndex;
+        intraoperative_widget->initImage();
         ui->centralWidget->setCurrentIndex(7);
         curIndex = 7;
     });

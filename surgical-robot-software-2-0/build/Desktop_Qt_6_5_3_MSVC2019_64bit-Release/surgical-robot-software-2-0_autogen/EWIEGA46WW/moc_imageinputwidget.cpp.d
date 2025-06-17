@@ -1,4 +1,5 @@
 D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/surgical-robot-software-2-0_autogen/EWIEGA46WW/moc_imageinputwidget.cpp: D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/imageinputwidget.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/QDir \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/q20memory.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/q20type_traits.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qalgorithms.h \
@@ -15,6 +16,7 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qbytearrayalgorithms.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qbytearraylist.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qbytearrayview.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/qcalendar.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qchar.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qcompare.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qcompare_impl.h \
@@ -27,8 +29,13 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qcontiguouscache.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qdarwinhelpers.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qdatastream.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/qdatetime.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qdebug.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/qdir.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qexceptionhandling.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/qfile.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/qfiledevice.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/qfileinfo.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qflags.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qfloat16.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qforeach.h \
@@ -44,6 +51,7 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qiterator.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qline.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qlist.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtCore/qlocale.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qlogging.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qmalloc.h \
   D:/qt/6.5.3/msvc2019_64/include/QtCore/qmap.h \
@@ -136,9 +144,14 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtGui/qtransform.h \
   D:/qt/6.5.3/msvc2019_64/include/QtGui/qwindowdefs.h \
   D:/qt/6.5.3/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QFileDialog \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QMessageBox \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/QWidget \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qdialog.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qfiledialog.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qframe.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qlabel.h \
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qmessagebox.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qsizepolicy.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \

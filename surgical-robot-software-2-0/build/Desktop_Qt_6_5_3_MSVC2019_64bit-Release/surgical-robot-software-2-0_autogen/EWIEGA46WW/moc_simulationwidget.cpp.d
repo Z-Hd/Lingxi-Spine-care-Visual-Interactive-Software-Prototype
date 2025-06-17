@@ -137,4 +137,5 @@ D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Deskto
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
-  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qwidget.h
+  D:/qt/6.5.3/msvc2019_64/include/QtWidgets/qwidget.h \
+  D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/directionalpadwidget.h

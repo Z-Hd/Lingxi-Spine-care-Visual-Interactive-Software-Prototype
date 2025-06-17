@@ -15,9 +15,11 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "QVTKOpenGLNativeWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -29,18 +31,21 @@ public:
     QHBoxLayout *horizontalLayout;
     QWidget *leftWidget;
     QGridLayout *gridLayout_2;
-    QWidget *transverseWidget;
-    QGridLayout *gridLayout_6;
-    QWidget *widget;
-    QWidget *sagittalWidget;
-    QGridLayout *gridLayout_5;
-    QWidget *widget_2;
-    QWidget *coronalWidget;
-    QGridLayout *gridLayout_3;
-    QWidget *widget_3;
     QWidget *model3dWidget;
-    QGridLayout *gridLayout_4;
+    QHBoxLayout *horizontalLayout_4;
     QWidget *widget_4;
+    QWidget *Widget1;
+    QHBoxLayout *horizontalLayout_3;
+    QVTKOpenGLNativeWidget *coronalWidget;
+    QSlider *coronalSlider;
+    QWidget *Widget2;
+    QHBoxLayout *horizontalLayout_5;
+    QVTKOpenGLNativeWidget *sagittalWidget;
+    QSlider *sagittalSlider;
+    QWidget *Widget3;
+    QHBoxLayout *horizontalLayout_6;
+    QVTKOpenGLNativeWidget *transverseWidget;
+    QSlider *transverseSlider;
     QWidget *rightWidget;
     QVBoxLayout *verticalLayout;
     QVideoWidget *endoscopyWidget;
@@ -72,65 +77,160 @@ public:
         gridLayout_2->setSpacing(2);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 2, 0, 2);
-        transverseWidget = new QWidget(leftWidget);
-        transverseWidget->setObjectName("transverseWidget");
-        transverseWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 95);"));
-        gridLayout_6 = new QGridLayout(transverseWidget);
-        gridLayout_6->setObjectName("gridLayout_6");
-        gridLayout_6->setContentsMargins(1, 1, 1, 1);
-        widget = new QWidget(transverseWidget);
-        widget->setObjectName("widget");
-        widget->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
-
-        gridLayout_6->addWidget(widget, 0, 0, 1, 1);
-
-
-        gridLayout_2->addWidget(transverseWidget, 0, 0, 1, 1);
-
-        sagittalWidget = new QWidget(leftWidget);
-        sagittalWidget->setObjectName("sagittalWidget");
-        sagittalWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 95);"));
-        gridLayout_5 = new QGridLayout(sagittalWidget);
-        gridLayout_5->setObjectName("gridLayout_5");
-        gridLayout_5->setContentsMargins(1, 1, 1, 1);
-        widget_2 = new QWidget(sagittalWidget);
-        widget_2->setObjectName("widget_2");
-        widget_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
-
-        gridLayout_5->addWidget(widget_2, 0, 0, 1, 1);
-
-
-        gridLayout_2->addWidget(sagittalWidget, 0, 1, 1, 1);
-
-        coronalWidget = new QWidget(leftWidget);
-        coronalWidget->setObjectName("coronalWidget");
-        coronalWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 95);"));
-        gridLayout_3 = new QGridLayout(coronalWidget);
-        gridLayout_3->setObjectName("gridLayout_3");
-        gridLayout_3->setContentsMargins(1, 1, 1, 1);
-        widget_3 = new QWidget(coronalWidget);
-        widget_3->setObjectName("widget_3");
-        widget_3->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
-
-        gridLayout_3->addWidget(widget_3, 0, 0, 1, 1);
-
-
-        gridLayout_2->addWidget(coronalWidget, 1, 0, 1, 1);
-
         model3dWidget = new QWidget(leftWidget);
         model3dWidget->setObjectName("model3dWidget");
-        model3dWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 95);"));
-        gridLayout_4 = new QGridLayout(model3dWidget);
-        gridLayout_4->setObjectName("gridLayout_4");
-        gridLayout_4->setContentsMargins(1, 1, 1, 1);
+        model3dWidget->setStyleSheet(QString::fromUtf8(""));
+        horizontalLayout_4 = new QHBoxLayout(model3dWidget);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        horizontalLayout_4->setContentsMargins(1, 1, 1, 1);
         widget_4 = new QWidget(model3dWidget);
         widget_4->setObjectName("widget_4");
         widget_4->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
 
-        gridLayout_4->addWidget(widget_4, 0, 0, 1, 1);
+        horizontalLayout_4->addWidget(widget_4);
 
 
         gridLayout_2->addWidget(model3dWidget, 1, 1, 1, 1);
+
+        Widget1 = new QWidget(leftWidget);
+        Widget1->setObjectName("Widget1");
+        Widget1->setStyleSheet(QString::fromUtf8(""));
+        horizontalLayout_3 = new QHBoxLayout(Widget1);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(1, 1, 1, 1);
+        coronalWidget = new QVTKOpenGLNativeWidget(Widget1);
+        coronalWidget->setObjectName("coronalWidget");
+        coronalWidget->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout_3->addWidget(coronalWidget);
+
+        coronalSlider = new QSlider(Widget1);
+        coronalSlider->setObjectName("coronalSlider");
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(coronalSlider->sizePolicy().hasHeightForWidth());
+        coronalSlider->setSizePolicy(sizePolicy);
+        coronalSlider->setStyleSheet(QString::fromUtf8("QSlider::groove:vertical {\n"
+"    background: #000000;    /* \351\273\221\350\211\262\346\273\221\350\275\250 */\n"
+"    width: 10px;            /* \346\273\221\350\275\250\345\256\275\345\272\246 */\n"
+"    border-radius: 5px;     /* \345\234\206\350\247\222 */\n"
+"    margin: 0px;\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #1E88E5;    /* \346\267\261\350\223\235\350\211\262\346\273\221\345\235\227 (\351\235\236\345\242\250\350\223\235) */\n"
+"    border: none;           /* \346\227\240\350\276\271\346\241\206 */\n"
+"    width: 16px;            /* \346\273\221\345\235\227\345\256\275\345\272\246 */\n"
+"    height: 30px;           /* \346\273\221\345\235\227\351\225\277\345\272\246 */\n"
+"    margin: 0px 0;          /* \346\273\221\345\235\227\344\275\215\347\275\256 */\n"
+"    border-radius: 5px;     /* \345\234\206\350\247\222 */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical:hover {\n"
+"    background: #42A5F5;    /* \346\202\254\345\201\234\346\227\266\344\272\256\346\267\261\350\223\235\350\211"
+                        "\262 */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical:pressed {\n"
+"    background: #0D47A1;    /* \346\214\211\344\270\213\346\227\266\346\233\264\346\267\261\350\223\235\350\211\262 */\n"
+"}"));
+        coronalSlider->setOrientation(Qt::Vertical);
+
+        horizontalLayout_3->addWidget(coronalSlider);
+
+
+        gridLayout_2->addWidget(Widget1, 1, 0, 1, 1);
+
+        Widget2 = new QWidget(leftWidget);
+        Widget2->setObjectName("Widget2");
+        Widget2->setStyleSheet(QString::fromUtf8(""));
+        horizontalLayout_5 = new QHBoxLayout(Widget2);
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        horizontalLayout_5->setContentsMargins(1, 1, 1, 1);
+        sagittalWidget = new QVTKOpenGLNativeWidget(Widget2);
+        sagittalWidget->setObjectName("sagittalWidget");
+        sagittalWidget->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout_5->addWidget(sagittalWidget);
+
+        sagittalSlider = new QSlider(Widget2);
+        sagittalSlider->setObjectName("sagittalSlider");
+        sagittalSlider->setStyleSheet(QString::fromUtf8("QSlider::groove:vertical {\n"
+"    background: #000000;    /* \351\273\221\350\211\262\346\273\221\350\275\250 */\n"
+"    width: 10px;            /* \346\273\221\350\275\250\345\256\275\345\272\246 */\n"
+"    border-radius: 5px;     /* \345\234\206\350\247\222 */\n"
+"    margin: 0px;\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #FFB74D;    /* \346\251\231\351\273\204\350\211\262\346\273\221\345\235\227 */\n"
+"    border: none;           /* \346\227\240\350\276\271\346\241\206 */\n"
+"    width: 16px;            /* \346\273\221\345\235\227\345\256\275\345\272\246 */\n"
+"    height: 30px;           /* \346\273\221\345\235\227\351\225\277\345\272\246 */\n"
+"    margin: 0px 0;          /* \346\273\221\345\235\227\344\275\215\347\275\256 */\n"
+"    border-radius: 5px;     /* \345\234\206\350\247\222 */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical:hover {\n"
+"    background: #FFCC80;    /* \346\202\254\345\201\234\346\227\266\346\265\205\346\251\231\351\273\204\350\211\262 */\n"
+"}\n"
+"\n"
+"QSlider::handl"
+                        "e:vertical:pressed {\n"
+"    background: #FFA726;    /* \346\214\211\344\270\213\346\227\266\346\267\261\346\251\231\351\273\204\350\211\262 */\n"
+"}"));
+        sagittalSlider->setOrientation(Qt::Vertical);
+
+        horizontalLayout_5->addWidget(sagittalSlider);
+
+
+        gridLayout_2->addWidget(Widget2, 0, 1, 1, 1);
+
+        Widget3 = new QWidget(leftWidget);
+        Widget3->setObjectName("Widget3");
+        Widget3->setStyleSheet(QString::fromUtf8(""));
+        horizontalLayout_6 = new QHBoxLayout(Widget3);
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        horizontalLayout_6->setContentsMargins(1, 1, 1, 1);
+        transverseWidget = new QVTKOpenGLNativeWidget(Widget3);
+        transverseWidget->setObjectName("transverseWidget");
+        transverseWidget->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout_6->addWidget(transverseWidget);
+
+        transverseSlider = new QSlider(Widget3);
+        transverseSlider->setObjectName("transverseSlider");
+        transverseSlider->setStyleSheet(QString::fromUtf8("QSlider::groove:vertical {\n"
+"    background: #000000;    /* \351\273\221\350\211\262\346\273\221\350\275\250 */\n"
+"    width: 10px;            /* \346\273\221\350\275\250\345\256\275\345\272\246 */\n"
+"    border-radius: 5px;     /* \345\234\206\350\247\222 */\n"
+"    margin: 0px;\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #8A2BE2;    /* \347\264\253\350\211\262\346\273\221\345\235\227 */\n"
+"    border: none;           /* \346\227\240\350\276\271\346\241\206 */\n"
+"    width: 16px;            /* \346\273\221\345\235\227\345\256\275\345\272\246 */\n"
+"    height: 30px;           /* \347\274\251\347\237\255\347\232\204\346\273\221\345\235\227\351\225\277\345\272\246 */\n"
+"    margin: 0px 0;         /* \350\260\203\346\225\264\346\273\221\345\235\227\344\275\215\347\275\256 */\n"
+"    border-radius: 5px;     /* \345\234\206\350\247\222 */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical:hover {\n"
+"    background: #9C4DE8;    /* \346\202\254\345\201\234\346\227\266\344\272\256\347\264\253\350\211\262"
+                        " */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical:pressed {\n"
+"    background: #7B17D9;    /* \346\214\211\344\270\213\346\227\266\346\267\261\347\264\253\350\211\262 */\n"
+"}"));
+        transverseSlider->setOrientation(Qt::Vertical);
+
+        horizontalLayout_6->addWidget(transverseSlider);
+
+
+        gridLayout_2->addWidget(Widget3, 0, 0, 1, 1);
 
 
         horizontalLayout->addWidget(leftWidget);

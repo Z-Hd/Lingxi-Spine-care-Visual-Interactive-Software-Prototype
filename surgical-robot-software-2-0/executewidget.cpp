@@ -9,6 +9,8 @@ ExecuteWidget::ExecuteWidget(QWidget *parent)
 
     initDistanceWidget(0);
     initAngleWidget(0);
+
+    setupSwitchButton();
 }
 
 ExecuteWidget::~ExecuteWidget()
@@ -79,4 +81,12 @@ void ExecuteWidget::initAngleWidget(int curValue)
 
     ui->angleSlider->setValue(curValue);
     ui->angleValue->setText(QString::number(curValue));
+}
+
+void ExecuteWidget::setupSwitchButton()
+{
+    auto switchbutton = new SwitchButton(this);
+    auto layout = new QVBoxLayout(ui->switchButton);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->addWidget(switchbutton);
 }

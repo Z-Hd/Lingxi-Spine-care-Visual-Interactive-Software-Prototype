@@ -34,6 +34,7 @@ public:
     void* setVisualizationWidgetAsAverage() const;
     void initImage();
     void setStackedWidgetAsRoutePlan2(const QString &vertebra);
+
 signals:
     void imageInputButton_received();
     void simulationButton_received();
@@ -51,6 +52,13 @@ private slots:
     void on_sagittalSlider_valueChanged(int value);
 
     void on_transverseSlider_valueChanged(int value);
+    void on_unfoldButton_clicked();  // 添加unfoldButton点击事件处理函数
+    void on_unfoldButton_2_clicked();
+    void on_unfoldButton_3_clicked();
+
+protected:
+    void showEvent(QShowEvent *event) override;
+    void resizeEvent(QResizeEvent *event) override;
 
 private:
     Ui::ImageDisplayWidget *ui;
@@ -68,6 +76,10 @@ private:
     vtkImageData* imageData;
 
     ImageInputWidget *image_input_widget;
+
+    int unfoldButtonState = 0;  // 添加unfoldButton状态变量，初始值为0
+    int unfoldButton2State = 0;
+    int unfoldButton3State = 0;
 };
 
 #endif // IMAGEDISPLAYWIDGET_H

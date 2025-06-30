@@ -2,6 +2,8 @@
 #define EXECUTEWIDGET_H
 
 #include <QWidget>
+#include "switchbutton.h"
+#include <QPushButton>
 
 namespace Ui {
 class ExecuteWidget;
@@ -30,6 +32,8 @@ private:
 
     void initDistanceWidget(int curValue);
     void initAngleWidget(int curValue);
+
+    void setupSwitchButton();
 };
 
 #endif // EXECUTEWIDGET_H

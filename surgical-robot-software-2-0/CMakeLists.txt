@@ -52,6 +52,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         login.h login.cpp login.ui
         directionalpadwidget.cpp directionalpadwidget.h
         GlobalVTKDataManager.h visualizetool.cpp visualizetool.h
+        switchbutton.h switchbutton.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET surgical-robot-software-2-0 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

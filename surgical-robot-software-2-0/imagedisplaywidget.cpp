@@ -263,7 +263,6 @@ void ImageDisplayWidget::on_coronalSlider_valueChanged(int value)
     if(imageData!=nullptr){
         vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->coronalPlate->renderWindow();
         visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
-        visualizeTool.zoom(coronalRenderWindow,2);
     }
 }
 
@@ -274,7 +273,6 @@ void ImageDisplayWidget::on_sagittalSlider_valueChanged(int value)
     if(imageData!=nullptr){
         vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->sagittalPlate->renderWindow();
         visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
-        visualizeTool.zoom(sagittalRenderWindow,2);
     }
 }
 
@@ -285,7 +283,6 @@ void ImageDisplayWidget::on_transverseSlider_valueChanged(int value)
     if(imageData!=nullptr){
         vtkSmartPointer<vtkRenderWindow> transverseRenderWindow = ui->transversePlate->renderWindow();
         visualizeTool.showReslice(imageData,transverseRenderWindow,VisualizeTool::Axial,value,false);
-        visualizeTool.zoom(transverseRenderWindow,2);
     }
 }
 

@@ -81,7 +81,6 @@ void IntraoperativeWidget::on_coronalSlider_valueChanged(int value)
     if(imageData!=nullptr){
         vtkSmartPointer<vtkRenderWindow> coronalRenderWindow = ui->coronalWidget->renderWindow();
         visualizeTool.showReslice(imageData,coronalRenderWindow,VisualizeTool::Coronal,value,false);
-        visualizeTool.zoom(coronalRenderWindow,2);
     }
 }
 
@@ -91,7 +90,6 @@ void IntraoperativeWidget::on_sagittalSlider_valueChanged(int value)
     if(imageData!=nullptr){
         vtkSmartPointer<vtkRenderWindow> sagittalRenderWindow = ui->sagittalWidget->renderWindow();
         visualizeTool.showReslice(imageData,sagittalRenderWindow,VisualizeTool::Sagittal,value,false);
-        visualizeTool.zoom(sagittalRenderWindow,2);
     }
 }
 
@@ -102,7 +100,6 @@ void IntraoperativeWidget::on_transverseSlider_valueChanged(int value)
     if(imageData!=nullptr){
         vtkSmartPointer<vtkRenderWindow> transverseRenderWindow = ui->transverseWidget->renderWindow();
         visualizeTool.showReslice(imageData,transverseRenderWindow,VisualizeTool::Axial,value,false);
-        visualizeTool.zoom(transverseRenderWindow,2);
     }
 }
 

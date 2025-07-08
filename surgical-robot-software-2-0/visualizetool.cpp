@@ -104,6 +104,11 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
     mapToColors->Update();
     auto imageActor = vtkSmartPointer<vtkImageActor>::New();
     imageActor->GetMapper()->SetInputConnection(mapToColors->GetOutputPort());
+    vtkSmartPointer<vtkCamera> oldCamera = nullptr;
+    if (renderWindow->GetRenderers()->GetNumberOfItems() > 0) {
+        // 如果已经有渲染器，获取其相机
+        oldCamera = renderWindow->GetRenderers()->GetFirstRenderer()->GetActiveCamera();
+    }
     auto renderCollection = renderWindow->GetRenderers();
     renderCollection->RemoveAllItems();
     auto renderer = vtkSmartPointer<vtkRenderer>::New();
@@ -111,6 +116,17 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
     renderWindow->AddRenderer(renderer);
     auto imageStyle = vtkSmartPointer<vtkInteractorStyleImage>::New();
     renderWindow->GetInteractor()->SetInteractorStyle(imageStyle);
+    if (oldCamera) {
+        // 如果存在旧相机，将旧相机的属性复制到新相机的属性上
+        vtkCamera* newCamera = renderer->GetActiveCamera();
+        newCamera->DeepCopy(oldCamera);
+    } else {
+        // 否则，重置相机并设置平行投影
+        renderer->ResetCamera();
+        vtkCamera* camera = renderer->GetActiveCamera();
+        camera->ParallelProjectionOn();
+        camera->Zoom(2);
+    }
     renderWindow->Render();
 }
 

@@ -15,6 +15,7 @@ RoutePlan1Widget::RoutePlan1Widget(QWidget *parent)
     , vertebraSelectionWidget(nullptr)
 {
     ui->setupUi(this);
+    setupSwitchButton();
 }
 
 RoutePlan1Widget::~RoutePlan1Widget()
@@ -89,4 +90,12 @@ void RoutePlan1Widget::handleSelectionCanceled()
 void RoutePlan1Widget::on_nextButton_clicked()
 {
     emit nextButton_pressed();
+}
+
+void RoutePlan1Widget::setupSwitchButton()
+{
+    auto switchbutton = new SwitchButton(this);
+    auto layout = new QVBoxLayout(ui->switchButton);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->addWidget(switchbutton);
 }

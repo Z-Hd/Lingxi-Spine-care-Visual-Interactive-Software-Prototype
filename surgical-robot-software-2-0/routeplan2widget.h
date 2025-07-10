@@ -2,7 +2,9 @@
 #define ROUTEPLAN2WIDGET_H
 
 #include <QWidget>
+#include "switchbutton.h"
 #include "vertebraselectionwidget.h"
+#include <QPushButton>
 
 namespace Ui {
 class RoutePlan2Widget;
@@ -37,6 +39,8 @@ signals:
 private:
     Ui::RoutePlan2Widget *ui;
     VertebraSelectionWidget *vertebraSelectionWidget;
+
+    void setupSwitchButton();
 };
 
 #endif // ROUTEPLAN2WIDGET_H

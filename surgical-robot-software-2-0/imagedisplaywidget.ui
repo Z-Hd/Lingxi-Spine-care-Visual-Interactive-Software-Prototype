@@ -55,7 +55,7 @@
       </property>
       <item row="0" column="0">
        <widget class="QWidget" name="transverseWidget" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="14,3">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="28,5">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -74,12 +74,183 @@
          <item>
           <widget class="QVTKOpenGLNativeWidget" name="transversePlate" native="true">
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(170, 255, 255);</string>
+            <string notr="true">background-color: rgb(0, 0, 0);</string>
            </property>
+           <widget class="QLabel" name="labelP">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>0</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>P</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelL">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>210</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>L</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelR">
+            <property name="geometry">
+             <rect>
+              <x>390</x>
+              <y>220</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>R</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelA">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>450</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>A</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="coronalLine_1">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>210</y>
+              <width>401</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame{
+	background-color:transparent;
+	min-height:5px;
+	color:#1E88E5
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::HLine</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="lineWidth">
+             <number>2</number>
+            </property>
+           </widget>
+           <widget class="QFrame" name="sagittalLine_1">
+            <property name="geometry">
+             <rect>
+              <x>190</x>
+              <y>10</y>
+              <width>20</width>
+              <height>421</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame{
+	background-color:transparent;
+	min-width:5px;
+	color:#FFB74D
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::VLine</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="lineWidth">
+             <number>2</number>
+            </property>
+           </widget>
           </widget>
          </item>
          <item>
           <widget class="QWidget" name="transverseTools" native="true">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <property name="spacing">
              <number>0</number>
@@ -97,22 +268,444 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QPushButton" name="enlargeTransverseButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+             <widget class="QWidget" name="transverseButtonsWidget" native="true">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(0, 0, 0);</string>
               </property>
-              <property name="minimumSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>扩大</string>
-              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,7,5">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>4</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>4</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="unfoldButton">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 10px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 7px;           /* 内边距 */
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>展开</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="transverseButtons" native="true">
+                 <layout class="QGridLayout" name="gridLayout_2">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>6</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>4</number>
+                  </property>
+                  <item row="6" column="0">
+                   <widget class="QPushButton" name="rightButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="antiClockWiseButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QPushButton" name="downButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QPushButton" name="brightButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QPushButton" name="clockWiseButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="eraseButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="enlargeTransverseButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QPushButton" name="distanceMeasureButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="rotateButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="MPRButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="angleMeasureButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QPushButton" name="upButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QPushButton" name="leftButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QPushButton" name="targetButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="transverseSpaceWidget" native="true"/>
+               </item>
+              </layout>
              </widget>
             </item>
             <item>
@@ -142,6 +735,9 @@ QSlider::handle:vertical:pressed {
     background: #7B17D9;    /* 按下时深紫色 */
 }</string>
               </property>
+              <property name="pageStep">
+               <number>10</number>
+              </property>
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -155,7 +751,7 @@ QSlider::handle:vertical:pressed {
       </item>
       <item row="0" column="1">
        <widget class="QWidget" name="sagittalWidget" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="14,3">
+        <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="28,5">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -174,8 +770,176 @@ QSlider::handle:vertical:pressed {
          <item>
           <widget class="QVTKOpenGLNativeWidget" name="sagittalPlate" native="true">
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(170, 255, 255);</string>
+            <string notr="true">background-color: rgb(0, 0, 0);</string>
            </property>
+           <widget class="QLabel" name="labelS">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>0</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>S</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelP_2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>220</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>P</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelI">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>450</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>I</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelA_2">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>230</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>A</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="coronalLine_2">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>10</y>
+              <width>20</width>
+              <height>411</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame{
+	background-color:transparent;
+	min-width:5px;
+	color:#1E88E5
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::VLine</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="lineWidth">
+             <number>2</number>
+            </property>
+           </widget>
+           <widget class="QFrame" name="transverseLine_1">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>210</y>
+              <width>401</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame{
+	background-color:transparent;
+	min-height:5px;
+	color:#8A2BE2
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::HLine</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="lineWidth">
+             <number>2</number>
+            </property>
+           </widget>
           </widget>
          </item>
          <item>
@@ -197,22 +961,444 @@ QSlider::handle:vertical:pressed {
              <number>0</number>
             </property>
             <item>
-             <widget class="QPushButton" name="enlargeSagittalButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+             <widget class="QWidget" name="sagittalButtonsWidget" native="true">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(0, 0, 0);</string>
               </property>
-              <property name="minimumSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>扩大</string>
-              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,7,5">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>4</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>4</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="unfoldButton_2">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 10px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 7px;           /* 内边距 */
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>展开</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="sagittalButtons" native="true">
+                 <layout class="QGridLayout" name="gridLayout_3">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>6</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>4</number>
+                  </property>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="MPRButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QPushButton" name="distanceMeasureButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QPushButton" name="clockWiseButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="rotateButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="enlargeSagittalButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QPushButton" name="targetButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QPushButton" name="leftButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QPushButton" name="brightButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QPushButton" name="rightButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="angleMeasureButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="antiClockWiseButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QPushButton" name="upButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="eraseButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QPushButton" name="downButton_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="sagittalSpaceWidget" native="true"/>
+               </item>
+              </layout>
              </widget>
             </item>
             <item>
@@ -255,7 +1441,7 @@ QSlider::handle:vertical:pressed {
       </item>
       <item row="1" column="0">
        <widget class="QWidget" name="coronalWidget" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="14,3">
+        <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="28,5">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -274,8 +1460,176 @@ QSlider::handle:vertical:pressed {
          <item>
           <widget class="QVTKOpenGLNativeWidget" name="coronalPlate" native="true">
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(170, 255, 255);</string>
+            <string notr="true">background-color: rgb(0, 0, 0);</string>
            </property>
+           <widget class="QLabel" name="labelS_2">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>30</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>S</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelL_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>230</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>L</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelI_2">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>450</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>I</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="labelR_2">
+            <property name="geometry">
+             <rect>
+              <x>390</x>
+              <y>230</y>
+              <width>40</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei UI</family>
+              <pointsize>17</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
+            </property>
+            <property name="text">
+             <string>R</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="sagittalLine_2">
+            <property name="geometry">
+             <rect>
+              <x>190</x>
+              <y>50</y>
+              <width>20</width>
+              <height>411</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame{
+	background-color:transparent;
+	min-width:5px;
+	color:#FFB74D
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::VLine</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="lineWidth">
+             <number>2</number>
+            </property>
+           </widget>
+           <widget class="QFrame" name="transverseLine_2">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>240</y>
+              <width>401</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame{
+	background-color:transparent;
+	min-height:5px;
+	color:#8A2BE2
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::HLine</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="lineWidth">
+             <number>2</number>
+            </property>
+           </widget>
           </widget>
          </item>
          <item>
@@ -297,22 +1651,444 @@ QSlider::handle:vertical:pressed {
              <number>0</number>
             </property>
             <item>
-             <widget class="QPushButton" name="enlargeCoronalButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+             <widget class="QWidget" name="coronalButtonsWidget" native="true">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(0, 0, 0);</string>
               </property>
-              <property name="minimumSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>扩大</string>
-              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4" stretch="2,7,5">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>4</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>4</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="unfoldButton_3">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 10px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 7px;           /* 内边距 */
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>展开</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="coronalButtons" native="true">
+                 <layout class="QGridLayout" name="gridLayout_4">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>6</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>4</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="rotateButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QPushButton" name="leftButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QPushButton" name="rightButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QPushButton" name="brightButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QPushButton" name="targetButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QPushButton" name="distanceMeasureButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QPushButton" name="upButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="eraseButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="MPRButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="antiClockWiseButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="enlargeCoronalButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="angleMeasureButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QPushButton" name="clockWiseButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QPushButton" name="downButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="coronalSpaceWidget" native="true"/>
+               </item>
+              </layout>
              </widget>
             </item>
             <item>
@@ -355,7 +2131,7 @@ QSlider::handle:vertical:pressed {
       </item>
       <item row="1" column="1">
        <widget class="QWidget" name="model3DWidget" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="28,4,5">
+        <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="32,5,4">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -374,7 +2150,7 @@ QSlider::handle:vertical:pressed {
          <item>
           <widget class="QVTKOpenGLNativeWidget" name="model3DPlate" native="true">
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(170, 255, 255);</string>
+            <string notr="true">background-color: rgb(0, 0, 0);</string>
            </property>
           </widget>
          </item>
@@ -387,40 +2163,273 @@ QSlider::handle:vertical:pressed {
          </item>
          <item>
           <widget class="QWidget" name="model3DTools" native="true">
-           <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 0, 0);</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_5" stretch="2,7,5">
             <property name="spacing">
              <number>0</number>
             </property>
             <property name="leftMargin">
-             <number>0</number>
+             <number>4</number>
             </property>
             <property name="topMargin">
-             <number>0</number>
+             <number>6</number>
             </property>
             <property name="rightMargin">
-             <number>0</number>
+             <number>4</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
             </property>
             <item>
-             <widget class="QPushButton" name="enlarge3DModelButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
+             <widget class="QPushButton" name="unfoldButton_4">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    border-radius: 10px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 7px;           /* 内边距 */
+}</string>
               </property>
               <property name="text">
-               <string>扩大</string>
+               <string>展开</string>
               </property>
              </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="model3DButtons" native="true">
+              <layout class="QGridLayout" name="gridLayout_5">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <property name="spacing">
+                <number>4</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="enlarge3DModelButton">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="eyeButton">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>2</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="cubeButton">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>3</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QPushButton" name="CButton">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 6px;
+    border: 2px solid #1E88E5;  /* 边框颜色 */
+    background-color: rgb(37, 38, 43);
+    color: white;
+    padding: 3px;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>C</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QPushButton" name="TButton">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 6px;
+    border: 2px solid #8A2BE2;  /* 边框颜色 */
+    background-color: rgb(37, 38, 43);
+    color: white;
+    padding: 3px;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>T</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QPushButton" name="SButton">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 6px;
+    border: 2px solid #FFB74D;  /* 边框颜色 */
+    background-color: rgb(37, 38, 43);
+    color: white;
+    padding: 3px;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>S</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QPushButton" name="brightButton_4">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    border-radius: 6px;    /* 圆角半径 */
+    background-color:rgb(37, 38, 43); /* 背景色 */
+    color: white;           /* 文本颜色 */
+    padding: 3px;           /* 内边距 */
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>4</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="model3DSpaceWidget" native="true"/>
             </item>
            </layout>
           </widget>

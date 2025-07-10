@@ -125,9 +125,10 @@ qproperty-alignment: 'AlignLeft | AlignVCenter';</string>
          </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image: url(:/resource/image/switchbuttonclose.png);
-background-position: center; 
-background-repeat: no-repeat;</string>
+         <string notr="true">background-position: center;
+background-repeat: no-repeat;
+border: none;
+background-color: transparent;</string>
         </property>
         <property name="text">
          <string/>

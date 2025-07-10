@@ -33,6 +33,9 @@
 #include "GlobalVTKDataManager.h"
 
 vtkSmartPointer<vtkRenderer> sharedRenderer = nullptr;
+// 在文件顶部添加实现
+vtkStandardNewMacro(DisabledInteractorStyle);
+
 
 vtkSmartPointer<vtkImageReslice> VisualizeTool::getReslice(vtkImageData* imageData, Type type, double index){
     int extent[6];
@@ -106,6 +109,13 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
     mapToColors->Update();
     auto imageActor = vtkSmartPointer<vtkImageActor>::New();
     imageActor->GetMapper()->SetInputConnection(mapToColors->GetOutputPort());
+
+    vtkSmartPointer<vtkCamera> oldCamera = nullptr;
+    if (renderWindow->GetRenderers()->GetNumberOfItems() > 0) {
+        // 如果已经有渲染器，获取其相机
+        oldCamera = renderWindow->GetRenderers()->GetFirstRenderer()->GetActiveCamera();
+    }
+
     auto renderCollection = renderWindow->GetRenderers();
     renderCollection->RemoveAllItems();
     auto renderer = vtkSmartPointer<vtkRenderer>::New();
@@ -113,6 +123,24 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
     renderWindow->AddRenderer(renderer);
     auto imageStyle = vtkSmartPointer<vtkInteractorStyleImage>::New();
     renderWindow->GetInteractor()->SetInteractorStyle(imageStyle);
+
+    if (oldCamera) {
+        // 如果存在旧相机，将旧相机的属性复制到新相机的属性上
+        vtkCamera* newCamera = renderer->GetActiveCamera();
+        newCamera->DeepCopy(oldCamera);
+    } else {
+        // 否则，重置相机并设置平行投影
+        renderer->ResetCamera();
+        vtkCamera* camera = renderer->GetActiveCamera();
+        camera->ParallelProjectionOn();
+        camera->Zoom(2);
+    }
+
+    renderWindow->Render();
+
+    // 使用禁用鼠标交互的样式
+    auto disabledStyle = vtkSmartPointer<DisabledInteractorStyle>::New();
+    renderWindow->GetInteractor()->SetInteractorStyle(disabledStyle);
     renderWindow->Render();
 }
 
@@ -226,12 +254,12 @@ void VisualizeTool::showImageData(vtkImageData* imageData, vtkRenderWindow* rend
     if (!imageData || !renderWindow)
         return;
 
-    // 保留交互器
-    vtkRenderWindowInteractor* interactor = renderWindow->GetInteractor();
-    vtkInteractorStyle* style = nullptr;
-    if (interactor) {
-        style = vtkInteractorStyle::SafeDownCast(interactor->GetInteractorStyle());
-    }
+    // // 保留交互器
+    // vtkRenderWindowInteractor* interactor = renderWindow->GetInteractor();
+    // vtkInteractorStyle* style = nullptr;
+    // if (interactor) {
+    //     style = vtkInteractorStyle::SafeDownCast(interactor->GetInteractorStyle());
+    // }
 
     // 清除现有渲染器
     renderWindow->GetRenderers()->RemoveAllItems();
@@ -283,10 +311,14 @@ void VisualizeTool::showImageData(vtkImageData* imageData, vtkRenderWindow* rend
     // 添加渲染器到渲染窗口
     renderWindow->AddRenderer(renderer);
 
-    // 恢复交互器样式
-    if (interactor && style) {
-        interactor->SetInteractorStyle(style);
-    }
+    // // 恢复交互器样式
+    // if (interactor && style) {
+    //     interactor->SetInteractorStyle(style);
+    // }
+
+    // 使用禁用鼠标交互的样式
+    auto disabledStyle = vtkSmartPointer<DisabledInteractorStyle>::New();
+    renderWindow->GetInteractor()->SetInteractorStyle(disabledStyle);
 
     // 重置相机并渲染
     renderer->ResetCamera();

@@ -4,6 +4,7 @@
 #include <vtkImageReslice.h>
 #include <vtkImageData.h>
 #include <vtkRenderWindow.h>
+#include <vtkInteractorStyleImage.h>
 
 VTK_MODULE_INIT(vtkRenderingOpenGL2);
 VTK_MODULE_INIT(vtkInteractionStyle);
@@ -11,6 +12,26 @@ VTK_MODULE_INIT(vtkRenderingVolumeOpenGL2);
 VTK_MODULE_INIT(vtkRenderingFreeType);
 
 #include <vtkActor.h>
+
+// 自定义交互器样式，禁用所有鼠标事件
+class DisabledInteractorStyle : public vtkInteractorStyleImage
+{
+public:
+    static DisabledInteractorStyle* New();
+    vtkTypeMacro(DisabledInteractorStyle, vtkInteractorStyleImage);
+
+    // 重写所有鼠标事件处理函数，使其不执行任何操作
+    virtual void OnLeftButtonDown() override {}
+    virtual void OnLeftButtonUp() override {}
+    virtual void OnMiddleButtonDown() override {}
+    virtual void OnMiddleButtonUp() override {}
+    virtual void OnRightButtonDown() override {}
+    virtual void OnRightButtonUp() override {}
+    virtual void OnMouseMove() override {}
+    // virtual void OnMouseWheelForward() override {}
+    // virtual void OnMouseWheelBackward() override {}
+};
+
 
 class VisualizeTool
 {

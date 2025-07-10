@@ -1,6 +1,7 @@
 #include "imagedisplaywidget.h"
 #include "ui_imagedisplaywidget.h"
 #include "GlobalVTKDataManager.h"
+#include <vtkNIFTIImageReader.h>
 
 ImageDisplayWidget::ImageDisplayWidget(QWidget *parent)
     : QWidget(parent)
@@ -136,11 +137,22 @@ void ImageDisplayWidget::initImage(){
         connect(ui->sagittalSlider,&QSlider::valueChanged,this,&ImageDisplayWidget::on_sagittalSlider_valueChanged);
         ui->sagittalSlider->setValue( origin[0] + spacing[0] * 0.5 * (extent[0] + extent[1]));
 
+        show3DModel();
     }
 }
 
+void ImageDisplayWidget::show3DModel()
+{
+    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/segment/spine_007.nii.gz"));
+    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
+    reader->SetFileName(str.toStdString().c_str());
+    reader->Update();
+    imageSegment = reader->GetOutput();
+    GlobalVTKDataManager::instance().setSegment(imageSegment);
 
-
+    vtkSmartPointer<vtkRenderWindow> threeDimensiona1Render = ui->model3DPlate->renderWindow();
+    visualizeTool.show3D(threeDimensiona1Render,imageSegment,true);
+}
 
 ImageDisplayWidget::~ImageDisplayWidget()
 {

@@ -34,6 +34,8 @@ public:
     void* setVisualizationWidgetAsAverage() const;
     void initImage();
     void setStackedWidgetAsRoutePlan2(const QString &vertebra);
+    void show3DModel();
+
 signals:
     void imageInputButton_received();
     void simulationButton_received();
@@ -68,6 +70,9 @@ private:
     vtkImageData* imageData;
 
     ImageInputWidget *image_input_widget;
+
+    vtkImageData* imageSegment;
+    bool isSegment=false;
 };
 
 #endif // IMAGEDISPLAYWIDGET_H

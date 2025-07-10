@@ -2,6 +2,12 @@
 #include "ui_intraoperativewidget.h"
 #include "GlobalVTKDataManager.h"
 #include <QDebug>
+#include "ballrenderer_2.h"
+#include "ballrenderer.h"
+#include <QVBoxLayout>
+#include <vtkNIFTIImageReader.h>
+
+QVTKOpenGLNativeWidget *vtkWidget;
 
 IntraoperativeWidget::IntraoperativeWidget(QWidget *parent)
     : QWidget(parent)
@@ -10,6 +16,12 @@ IntraoperativeWidget::IntraoperativeWidget(QWidget *parent)
     ui->setupUi(this);
 
     initCamera();
+
+    // 在构造函数中添加如下代码：
+    vtkWidget = new QVTKOpenGLNativeWidget(ui->widget_4);
+    QVBoxLayout *layout = new QVBoxLayout(ui->widget_4);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->addWidget(vtkWidget);
 }
 
 IntraoperativeWidget::~IntraoperativeWidget()
@@ -45,9 +57,29 @@ void IntraoperativeWidget::initImage(){
         ui->sagittalSlider->setMaximum(origin[0] + spacing[0]*extent[1]);
         connect(ui->sagittalSlider,&QSlider::valueChanged,this,&IntraoperativeWidget::on_sagittalSlider_valueChanged);
         ui->sagittalSlider->setValue( origin[0] + spacing[0] * 0.5 * (extent[0] + extent[1]));
-
     }
 }
+
+void IntraoperativeWidget::show3DModel()
+{
+    QString str = QDir::cleanPath(QCoreApplication::applicationDirPath() + QDir::separator() + QString("file/segment/spine_007.nii.gz"));
+    vtkSmartPointer<vtkNIFTIImageReader> reader = vtkSmartPointer<vtkNIFTIImageReader>::New();
+    reader->SetFileName(str.toStdString().c_str());
+    reader->Update();
+    imageSegment = reader->GetOutput();
+    GlobalVTKDataManager::instance().setSegment(imageSegment);
+
+    vtkSmartPointer<vtkRenderWindow> threeDimensiona1Render = vtkWidget->renderWindow();
+    visualizeTool.show3D(threeDimensiona1Render,imageSegment,true);
+
+    // 渲染小球
+    // Ballrenderer::renderBall(vtkWidget);
+    // Ballrenderer_2::renderBall(vtkWidget);
+
+    QString stl_fileName = QFileDialog::getOpenFileName(this, QString::fromLocal8Bit("请选择文件路径..."), "*.STL");
+    Ballrenderer::createItemFromSTL(vtkWidget, stl_fileName);
+}
+
 void IntraoperativeWidget::initCamera(){
     //1. 发现摄像头,若没有默认摄像头,就无法进行本示例的操作
     QCameraDevice defaultCameraDevice= QMediaDevices::defaultVideoInput();

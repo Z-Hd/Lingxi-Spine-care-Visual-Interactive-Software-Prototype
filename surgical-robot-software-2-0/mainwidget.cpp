@@ -113,6 +113,7 @@ MainWidget::MainWidget(QWidget *parent)
     connect(image_display_widget, &ImageDisplayWidget::executeWidget_nextButton_pressed, [&, this](){
         preIndex = curIndex;
         intraoperative_widget->initImage();
+        intraoperative_widget->show3DModel();
         ui->centralWidget->setCurrentIndex(7);
         curIndex = 7;
     });

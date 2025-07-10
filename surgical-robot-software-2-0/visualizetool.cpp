@@ -32,6 +32,8 @@
 #include <vtkRendererCollection.h>
 #include "GlobalVTKDataManager.h"
 
+vtkSmartPointer<vtkRenderer> sharedRenderer = nullptr;
+
 vtkSmartPointer<vtkImageReslice> VisualizeTool::getReslice(vtkImageData* imageData, Type type, double index){
     int extent[6];
     double spacing[3];
@@ -115,9 +117,12 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
 }
 
 void VisualizeTool::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkImageData* imageSegment,bool update){
+
     auto renderer = vtkSmartPointer<vtkRenderer>::New();
+    sharedRenderer = vtkSmartPointer<vtkRenderer>::New();
+
     vtkRenderWindowInteractor* ir = renderWindow->GetInteractor();
-    renderWindow->AddRenderer(renderer);
+    renderWindow->AddRenderer(sharedRenderer);
     auto style = vtkSmartPointer<vtkInteractorStyleTrackballCamera>::New();
     ir->SetInteractorStyle(style);
     if(update){
@@ -161,9 +166,27 @@ void VisualizeTool::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkIma
     // 创建演员对象
     auto imageActor = vtkSmartPointer<vtkActor>::New();
     imageActor->SetMapper(conMapper);
+
+    double bounds[6];
+    imageActor->GetBounds(bounds);
+
+    double centerX = (bounds[0] + bounds[1]) / 2.0;
+    double centerY = (bounds[2] + bounds[3]) / 2.0;
+    double centerZ = (bounds[4] + bounds[5]) / 2.0;
+
+    qDebug() << "Model bounds: "
+             << bounds[0] << bounds[1] << bounds[2] << bounds[3] << bounds[4] << bounds[5];
+    qDebug() << "Computed center: " << centerX << centerY << centerZ;
+
+    imageActor->SetPosition(-centerX, -centerY, -centerZ);
+
+    double pos[3];
+    imageActor->GetPosition(pos);
+    qDebug() << "New actor position: " << pos[0] << pos[1] << pos[2];
+
     imageActor->GetProperty()->SetOpacity(1.0);
     // 添加演员至场景
-    renderer->AddActor(imageActor);
+    sharedRenderer->AddActor(imageActor);
     auto boxFilter = vtkSmartPointer<vtkOutlineFilter>::New();
     boxFilter->SetInputData(imageSegment);
     auto boxMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
@@ -178,8 +201,8 @@ void VisualizeTool::show3D(vtkSmartPointer<vtkRenderWindow>& renderWindow,vtkIma
     camera->SetFocalPoint(0,0,0);
     camera->ComputeViewPlaneNormal();
     camera->Dolly(1.5);
-    renderer->SetActiveCamera(camera);
-    renderer->ResetCamera();
+    sharedRenderer->SetActiveCamera(camera);
+    sharedRenderer->ResetCamera();
     renderWindow->SetMultiSamples(0);
 }
 

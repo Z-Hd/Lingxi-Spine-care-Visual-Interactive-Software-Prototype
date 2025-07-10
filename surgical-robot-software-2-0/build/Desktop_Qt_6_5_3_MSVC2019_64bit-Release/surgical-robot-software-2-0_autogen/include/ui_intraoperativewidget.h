@@ -33,7 +33,7 @@ public:
     QGridLayout *gridLayout_2;
     QWidget *model3dWidget;
     QHBoxLayout *horizontalLayout_4;
-    QWidget *widget_4;
+    QVTKOpenGLNativeWidget *widget_4;
     QWidget *Widget1;
     QHBoxLayout *horizontalLayout_3;
     QVTKOpenGLNativeWidget *coronalWidget;
@@ -83,7 +83,7 @@ public:
         horizontalLayout_4 = new QHBoxLayout(model3dWidget);
         horizontalLayout_4->setObjectName("horizontalLayout_4");
         horizontalLayout_4->setContentsMargins(1, 1, 1, 1);
-        widget_4 = new QWidget(model3dWidget);
+        widget_4 = new QVTKOpenGLNativeWidget(model3dWidget);
         widget_4->setObjectName("widget_4");
         widget_4->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
 

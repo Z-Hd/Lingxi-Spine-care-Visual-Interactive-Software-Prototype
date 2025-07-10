@@ -9,7 +9,7 @@ endif()
 
 _qt_internal_deploy_qml_imports_for_target(
     ${__qt_opts}
-    IMPORTS_FILE "D:/qtProjects/surgical-robot-software_1/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/.qt_plugins/Qt6_QmlPlugins_Imports_surgical-robot-software-2-0.cmake"
+    IMPORTS_FILE "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/.qt_plugins/Qt6_QmlPlugins_Imports_surgical-robot-software-2-0.cmake"
     PLUGINS_FOUND __qt_internal_plugins_found
     QML_DIR     "${arg_QML_DIR}"
     PLUGINS_DIR "${arg_PLUGINS_DIR}"

@@ -10,6 +10,8 @@ VTK_MODULE_INIT(vtkInteractionStyle);
 VTK_MODULE_INIT(vtkRenderingVolumeOpenGL2);
 VTK_MODULE_INIT(vtkRenderingFreeType);
 
+#include <vtkActor.h>
+
 class VisualizeTool
 {
 public:

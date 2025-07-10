@@ -6,6 +6,8 @@
 #include <QtMultimedia>
 #include <vtkImageData.h>
 #include "visualizetool.h"
+#include <QVBoxLayout>
+#include <QVTKOpenGLNativeWidget.h>
 
 namespace Ui {
 class IntraoperativeWidget;
@@ -19,6 +21,7 @@ public:
     explicit IntraoperativeWidget(QWidget *parent = nullptr);
     ~IntraoperativeWidget();
     void initImage();
+    void show3DModel();
 
 private slots:
     void on_backButton_clicked();
@@ -39,6 +42,7 @@ private:
     QCamera     *camera;                //摄像头
     VisualizeTool visualizeTool;
     vtkImageData* imageData;
+    vtkImageData* imageSegment;
 
     void    initCamera();//初始化
 };

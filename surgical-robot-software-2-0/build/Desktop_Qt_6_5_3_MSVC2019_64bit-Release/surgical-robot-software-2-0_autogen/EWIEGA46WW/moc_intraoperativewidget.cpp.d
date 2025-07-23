@@ -514,6 +514,11 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   E:/Lab/software/VTK/include/vtk-9.2/vtkImageReslice.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkImagingCoreModule.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkIndent.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractionStyleModule.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorObserver.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorStyle.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorStyleImage.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorStyleTrackballCamera.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkLegacy.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkMeta.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkNew.h \

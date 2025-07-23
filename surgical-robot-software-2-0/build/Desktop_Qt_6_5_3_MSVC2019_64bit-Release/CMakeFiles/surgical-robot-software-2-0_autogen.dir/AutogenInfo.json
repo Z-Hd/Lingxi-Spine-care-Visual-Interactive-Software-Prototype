@@ -1333,6 +1333,8 @@
 		"D:/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"D:/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"E:/Lab/software/Project/surgical-robot-software/NiftyReg/lib/cmake/NiftyReg/NIFTYREGConfigVersion.cmake",
+		"E:/Lab/software/Project/surgical-robot-software/NiftyReg/lib/cmake/NiftyReg/NIFTYREGConfig.cmake",
 		"D:/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"D:/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"D:/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6/Qt6Config.cmake",
@@ -1444,12 +1446,6 @@
 			null
 		],
 		[
-			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/ballrenderer_2.h",
-			"MU",
-			"EWIEGA46WW/moc_ballrenderer_2.cpp",
-			null
-		],
-		[
 			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/directionalpadwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_directionalpadwidget.cpp",
@@ -1558,6 +1554,12 @@
 			null
 		],
 		[
+			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/switchbutton.h",
+			"MU",
+			"EWIEGA46WW/moc_switchbutton.cpp",
+			null
+		],
+		[
 			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/vertebraselectionwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_vertebraselectionwidget.cpp",
@@ -1620,6 +1622,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"E:/Lab/software/Project/surgical-robot-software/NiftyReg/include",
 		"D:/Qt/6.5.3/msvc2019_64/include/QtCore",
 		"D:/Qt/6.5.3/msvc2019_64/include",
 		"D:/Qt/6.5.3/msvc2019_64/mkspecs/win32-msvc",
@@ -1681,11 +1684,6 @@
 		],
 		[
 			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/ballrenderer.cpp",
-			"MU",
-			null
-		],
-		[
-			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/ballrenderer_2.cpp",
 			"MU",
 			null
 		],
@@ -1776,6 +1774,11 @@
 		],
 		[
 			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/simulationwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/switchbutton.cpp",
 			"MU",
 			null
 		],

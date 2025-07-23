@@ -144,9 +144,10 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(switchButton->sizePolicy().hasHeightForWidth());
         switchButton->setSizePolicy(sizePolicy);
-        switchButton->setStyleSheet(QString::fromUtf8("border-image: url(:/resource/image/switchbuttonclose.png);\n"
-"background-position: center; \n"
-"background-repeat: no-repeat;"));
+        switchButton->setStyleSheet(QString::fromUtf8("background-position: center;\n"
+"background-repeat: no-repeat;\n"
+"border: none;\n"
+"background-color: transparent;"));
 
         horizontalLayout_4->addWidget(switchButton);
 

@@ -2,6 +2,7 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QByteArray \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QCryptographicHash \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QDeadlineTimer \
+  D:/Qt/6.5.3/msvc2019_64/include/QtCore/QDebug \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QDir \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QEvent \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QFlags \
@@ -13,6 +14,7 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QMetaType \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QMutex \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QObject \
+  D:/Qt/6.5.3/msvc2019_64/include/QtCore/QPropertyAnimation \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QRect \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QScopedPointer \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/QSharedDataPointer \
@@ -268,8 +270,11 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/qxmlstream.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/qxpfunctional.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtCore/qxptype_traits.h \
+  D:/Qt/6.5.3/msvc2019_64/include/QtGui/QColor \
+  D:/Qt/6.5.3/msvc2019_64/include/QtGui/QMouseEvent \
   D:/Qt/6.5.3/msvc2019_64/include/QtGui/QPaintDevice \
   D:/Qt/6.5.3/msvc2019_64/include/QtGui/QPaintDeviceWindow \
+  D:/Qt/6.5.3/msvc2019_64/include/QtGui/QPainter \
   D:/Qt/6.5.3/msvc2019_64/include/QtGui/QSurfaceFormat \
   D:/Qt/6.5.3/msvc2019_64/include/QtGui/QTransform \
   D:/Qt/6.5.3/msvc2019_64/include/QtGui/QWindow \
@@ -479,10 +484,12 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QFileDialog \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QListWidgetItem \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QMessageBox \
+  D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QPushButton \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QStyleOptionViewItem \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QStyledItemDelegate \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/QWidget \
+  D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qabstractitemview.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qabstractscrollarea.h \
@@ -499,6 +506,7 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qlistview.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qlistwidget.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qmessagebox.h \
+  D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qsizepolicy.h \
   D:/Qt/6.5.3/msvc2019_64/include/QtWidgets/qslider.h \
@@ -528,6 +536,7 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/routeplan2widget.h \
   E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/segmentationwidget.h \
   E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/simulationwidget.h \
+  E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/switchbutton.h \
   E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/vertebraselectionwidget.h \
   E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/visualizetool.h \
   E:/Lab/software/VTK/include/vtk-9.2/QVTKInteractor.h \
@@ -551,14 +560,22 @@ E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/buil
   E:/Lab/software/VTK/include/vtk-9.2/vtkFeatures.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkFiltersCoreModule.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkGUISupportQtModule.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkIOImageModule.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkIOStream.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkImageAlgorithm.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkImageData.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkImageReader2.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkImageReslice.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkImagingCoreModule.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkIndent.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractionStyleModule.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorObserver.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorStyle.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorStyleImage.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkInteractorStyleTrackballCamera.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkLegacy.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkMeta.h \
+  E:/Lab/software/VTK/include/vtk-9.2/vtkNIFTIImageReader.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkNew.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkOStrStreamWrapper.h \
   E:/Lab/software/VTK/include/vtk-9.2/vtkOStreamWrapper.h \

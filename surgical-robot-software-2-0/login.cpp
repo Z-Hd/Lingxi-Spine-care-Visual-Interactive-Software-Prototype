@@ -2,6 +2,9 @@
 #include "ui_login.h"
 #include "mainwidget.h"
 
+#include <QProcess>
+#include <QDebug>
+
 Login::Login(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Login)

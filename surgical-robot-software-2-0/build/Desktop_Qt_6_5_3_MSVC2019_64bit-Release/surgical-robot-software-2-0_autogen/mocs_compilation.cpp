@@ -18,4 +18,5 @@
 #include "EWIEGA46WW/moc_routeplan2widget.cpp"
 #include "EWIEGA46WW/moc_segmentationwidget.cpp"
 #include "EWIEGA46WW/moc_simulationwidget.cpp"
+#include "EWIEGA46WW/moc_switchbutton.cpp"
 #include "EWIEGA46WW/moc_vertebraselectionwidget.cpp"

@@ -63,8 +63,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-ehj613"
-      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-ehj613"
+      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-1vpzku"
+      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-1vpzku"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -74,11 +74,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-ehj613'
+        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-1vpzku'
         
-        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_be027
-        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_be027.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_be027.dir\\ /FS -c D:\\Qt\\Tools\\CMake_64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_be027.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_be027.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_be027.exe /implib:cmTC_be027.lib /pdb:cmTC_be027.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_9bb82
+        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_9bb82.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_9bb82.dir\\ /FS -c D:\\Qt\\Tools\\CMake_64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_9bb82.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_9bb82.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_9bb82.exe /implib:cmTC_9bb82.lib /pdb:cmTC_9bb82.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -126,8 +126,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-mwuu8o"
-      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-mwuu8o"
+      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-j88o6i"
+      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-j88o6i"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -137,13 +137,13 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-mwuu8o'
+        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-j88o6i'
         
-        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_31a45
-        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_31a45.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_31a45.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-mwuu8o\\src.cxx
-        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_31a45.dir/src.cxx.obj 
-        D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_31a45.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_31a45.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-mwuu8o\\src.cxx
-        E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-mwuu8o\\src.cxx(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_dabc7
+        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_dabc7.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_dabc7.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-j88o6i\\src.cxx
+        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_dabc7.dir/src.cxx.obj 
+        D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_dabc7.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_dabc7.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-j88o6i\\src.cxx
+        E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-j88o6i\\src.cxx(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -163,8 +163,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-ge9ne8"
-      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-ge9ne8"
+      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-o6fld2"
+      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-o6fld2"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -174,14 +174,14 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-ge9ne8'
+        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-o6fld2'
         
-        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_170c7
-        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_170c7.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_170c7.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-ge9ne8\\CheckFunctionExists.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_170c7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_170c7.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_170c7.exe /implib:cmTC_170c7.lib /pdb:cmTC_170c7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        \x1b[31mFAILED: \x1b[0mcmTC_170c7.exe 
-        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_170c7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_170c7.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_170c7.exe /implib:cmTC_170c7.lib /pdb:cmTC_170c7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_170c7.dir\\CheckFunctionExists.cxx.obj /out:cmTC_170c7.exe /implib:cmTC_170c7.lib /pdb:cmTC_170c7.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_170c7.dir/intermediate.manifest CMakeFiles\\cmTC_170c7.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_8f428
+        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_8f428.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_8f428.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-o6fld2\\CheckFunctionExists.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_8f428.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_8f428.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_8f428.exe /implib:cmTC_8f428.lib /pdb:cmTC_8f428.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        \x1b[31mFAILED: \x1b[0mcmTC_8f428.exe 
+        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_8f428.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_8f428.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_8f428.exe /implib:cmTC_8f428.lib /pdb:cmTC_8f428.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_8f428.dir\\CheckFunctionExists.cxx.obj /out:cmTC_8f428.exe /implib:cmTC_8f428.lib /pdb:cmTC_8f428.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_8f428.dir/intermediate.manifest CMakeFiles\\cmTC_8f428.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: 无法打开文件“pthreads.lib”\x0d
         ninja: build stopped: subcommand failed.
         
@@ -202,8 +202,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-p260pi"
-      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-p260pi"
+      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-y220x2"
+      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-y220x2"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -213,14 +213,14 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-p260pi'
+        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-y220x2'
         
-        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_208e7
-        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_208e7.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_208e7.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-p260pi\\CheckFunctionExists.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_208e7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_208e7.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_208e7.exe /implib:cmTC_208e7.lib /pdb:cmTC_208e7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        \x1b[31mFAILED: \x1b[0mcmTC_208e7.exe 
-        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_208e7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_208e7.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_208e7.exe /implib:cmTC_208e7.lib /pdb:cmTC_208e7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_208e7.dir\\CheckFunctionExists.cxx.obj /out:cmTC_208e7.exe /implib:cmTC_208e7.lib /pdb:cmTC_208e7.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_208e7.dir/intermediate.manifest CMakeFiles\\cmTC_208e7.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_bf8a5
+        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_bf8a5.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_bf8a5.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-y220x2\\CheckFunctionExists.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_bf8a5.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_bf8a5.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_bf8a5.exe /implib:cmTC_bf8a5.lib /pdb:cmTC_bf8a5.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        \x1b[31mFAILED: \x1b[0mcmTC_bf8a5.exe 
+        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_bf8a5.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_bf8a5.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_bf8a5.exe /implib:cmTC_bf8a5.lib /pdb:cmTC_bf8a5.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_bf8a5.dir\\CheckFunctionExists.cxx.obj /out:cmTC_bf8a5.exe /implib:cmTC_bf8a5.lib /pdb:cmTC_bf8a5.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_bf8a5.dir/intermediate.manifest CMakeFiles\\cmTC_bf8a5.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: 无法打开文件“pthread.lib”\x0d
         ninja: build stopped: subcommand failed.
         
@@ -246,8 +246,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-xqcbfh"
-      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-xqcbfh"
+      source: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-nziyrm"
+      binary: "E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-nziyrm"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -257,11 +257,11 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-xqcbfh'
+        Change Dir: 'E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Release/CMakeFiles/CMakeScratch/TryCompile-nziyrm'
         
-        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_2afed
-        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_2afed.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_2afed.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-xqcbfh\\src.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_2afed.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_2afed.dir\\src.cxx.obj  /out:cmTC_2afed.exe /implib:cmTC_2afed.lib /pdb:cmTC_2afed.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): D:/MicrosoftVisualStudio/2022/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_091c7
+        [1/2] D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_091c7.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_091c7.dir\\ /FS -c E:\\Lab\\software\\Project\\surgical-robot-software\\surgical-robot-software-2-0\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Release\\CMakeFiles\\CMakeScratch\\TryCompile-nziyrm\\src.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_091c7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\MicrosoftVisualStudio\\2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_091c7.dir\\src.cxx.obj  /out:cmTC_091c7.exe /implib:cmTC_091c7.lib /pdb:cmTC_091c7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
 ...

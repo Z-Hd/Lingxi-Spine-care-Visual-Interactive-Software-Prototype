@@ -2,7 +2,6 @@
 #include "ui_intraoperativewidget.h"
 #include "GlobalVTKDataManager.h"
 #include <QDebug>
-#include "ballrenderer_2.h"
 #include "ballrenderer.h"
 #include <QVBoxLayout>
 #include <vtkNIFTIImageReader.h>
@@ -71,10 +70,6 @@ void IntraoperativeWidget::show3DModel()
 
     vtkSmartPointer<vtkRenderWindow> threeDimensiona1Render = vtkWidget->renderWindow();
     visualizeTool.show3D(threeDimensiona1Render,imageSegment,true);
-
-    // 渲染小球
-    // Ballrenderer::renderBall(vtkWidget);
-    // Ballrenderer_2::renderBall(vtkWidget);
 
     QString stl_fileName = QFileDialog::getOpenFileName(this, QString::fromLocal8Bit("请选择文件路径..."), "*.STL");
     Ballrenderer::createItemFromSTL(vtkWidget, stl_fileName);

@@ -14,6 +14,10 @@ find_package(VTK 9.2 REQUIRED)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+set(NiftyReg_DIR "${CMAKE_SOURCE_DIR}/../NiftyReg/lib/cmake/NiftyReg")
+find_package(NiftyReg REQUIRED)
+
+
 find_package(Qt6 REQUIRED COMPONENTS Multimedia)
 find_package(Qt6 REQUIRED COMPONENTS MultimediaWidgets)
 
@@ -53,7 +57,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         directionalpadwidget.cpp directionalpadwidget.h
         GlobalVTKDataManager.h visualizetool.cpp visualizetool.h
         ballrenderer.h ballrenderer.cpp
-        ballrenderer_2.h ballrenderer_2.cpp
+
         sharedrenderer.h
         switchbutton.h switchbutton.cpp
     )
@@ -85,6 +89,16 @@ target_link_libraries(surgical-robot-software-2-0 PRIVATE Qt${QT_VERSION_MAJOR}:
 )
 
 vtk_module_autoinit(TARGETS surgical-robot-software-2-0 MODULES ${VTK_LIBRARIES})
+include_directories(${CMAKE_SOURCE_DIR}/../NiftyReg/include)
+link_directories(${CMAKE_SOURCE_DIR}/../NiftyReg/lib)
+target_link_libraries(surgical-robot-software-2-0
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_f3d.lib
+    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_aladin.lib
+    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_resampling.lib
+    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_maths.lib
+    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_tools.lib
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

@@ -56,7 +56,7 @@ void Ballrenderer::createItemFromSTL(QVTKOpenGLNativeWidget* vtkWidget, QString 
 
     sphereActor = vtkSmartPointer<vtkActor>::New();
     sphereActor->SetMapper(mapper);
-    sphereActor->SetPosition(-10, 0, 10);
+    sphereActor->SetPosition(0, 0, 0);
 
     sharedRenderer->AddActor(sphereActor);
     sharedRenderer->SetBackground(0.1, 0.1, 0.1);

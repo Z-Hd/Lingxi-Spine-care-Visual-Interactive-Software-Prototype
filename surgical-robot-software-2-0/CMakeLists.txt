@@ -14,9 +14,10 @@ find_package(VTK 9.2 REQUIRED)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-set(NiftyReg_DIR "${CMAKE_SOURCE_DIR}/../NiftyReg/lib/cmake/NiftyReg")
-find_package(NiftyReg REQUIRED)
-
+set(NIFTYREG_ROOT ${CMAKE_SOURCE_DIR}/../NiftyReg/install)
+include_directories(${NIFTYREG_ROOT}/include)
+link_directories(${NIFTYREG_ROOT}/lib)
+message(STATUS "NIFTYREG_LIB_DIR: ${NIFTYREG_ROOT}/lib")
 
 find_package(Qt6 REQUIRED COMPONENTS Multimedia)
 find_package(Qt6 REQUIRED COMPONENTS MultimediaWidgets)
@@ -79,6 +80,7 @@ else()
     endif()
 endif()
 
+file(GLOB NIFTYREG_LIBS "${NIFTYREG_ROOT}/lib/*.lib")
 target_link_libraries(surgical-robot-software-2-0 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
                                                           Qt${QT_VERSION_MAJOR}::OpenGL
                                                           Qt${QT_VERSION_MAJOR}::Multimedia
@@ -86,19 +88,10 @@ target_link_libraries(surgical-robot-software-2-0 PRIVATE Qt${QT_VERSION_MAJOR}:
                                                           ${VTK_LIBRARIES}
                                                           ${PCL_LIBRARIES}
                                                           ${ITK_LIBRARIES}
+                                                          ${NIFTYREG_LIBS}
 )
 
 vtk_module_autoinit(TARGETS surgical-robot-software-2-0 MODULES ${VTK_LIBRARIES})
-include_directories(${CMAKE_SOURCE_DIR}/../NiftyReg/include)
-link_directories(${CMAKE_SOURCE_DIR}/../NiftyReg/lib)
-target_link_libraries(surgical-robot-software-2-0
-    PRIVATE
-    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_f3d.lib
-    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_aladin.lib
-    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_resampling.lib
-    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_maths.lib
-    ${CMAKE_SOURCE_DIR}/../NiftyReg/lib/_reg_tools.lib
-)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

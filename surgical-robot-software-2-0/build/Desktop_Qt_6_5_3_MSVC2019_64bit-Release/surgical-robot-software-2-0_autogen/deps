@@ -1409,8 +1409,6 @@ surgical-robot-software-2-0_autogen/timestamp: \
 	D:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-MSVC.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake \
-	E:/Lab/software/Project/surgical-robot-software/NiftyReg/lib/cmake/NiftyReg/NIFTYREGConfig.cmake \
-	E:/Lab/software/Project/surgical-robot-software/NiftyReg/lib/cmake/NiftyReg/NIFTYREGConfigVersion.cmake \
 	E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/CMakeLists.txt \
 	E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/GlobalVTKDataManager.h \
 	E:/Lab/software/Project/surgical-robot-software/surgical-robot-software-2-0/armcontrolwidget.cpp \

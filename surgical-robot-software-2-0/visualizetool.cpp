@@ -96,6 +96,7 @@ void VisualizeTool::showReslice(vtkImageData* imageData,vtkSmartPointer<vtkRende
         lookupTable->SetTableValue(2, 0.0, 1.0, 0.0, 1.0);   // 绿色
         lookupTable->SetTableValue(3, 0.0, 0.0, 1.0, 1.0);   // 蓝色
         lookupTable->SetTableValue(4, 1.0, 1.0, 0.0, 1.0);   // 黄色
+        // lookupTable->SetTableValue(5, 0.5, 0.5, 0.5, 1.0);   // 黄色
     }else{
         lookupTable->SetRange(range[0], range[1]);
         lookupTable->SetValueRange(0.0, 1.0);

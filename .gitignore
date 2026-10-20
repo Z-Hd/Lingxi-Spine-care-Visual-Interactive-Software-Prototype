@@ -1,0 +1,67 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Qt Creator user-specific files
+*.pro.user*
+*.qbs.user*
+*.user
+
+# CMake / Ninja / Make build trees
+**/build/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/install_manifest.txt
+**/CTestTestfile.cmake
+**/CMakeScripts/
+**/Makefile
+**/build.ninja
+**/.ninja_deps
+**/.ninja_log
+**/.cmake/
+
+# Qt and tooling generated
+**/*_autogen/
+**/.qt_plugins/
+**/.qtc_clangd/
+**/Testing/
+
+# Visual Studio generated
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.ipch
+*.tlog
+*.lastbuildstate
+
+# Compiler / linker artifacts
+*.obj
+*.o
+*.a
+*.lib
+*.exp
+*.ilk
+*.pdb
+*.idb
+
+# Runtime binaries from local builds
+*.exe
+
+# Logs and temporary
+*.log
+*.tmp
+
+# Keep the prebuilt VTK package in repository
+!VTK/
+!VTK/**
+
+# Keep NiftyReg source, ignore local NiftyReg build/install outputs
+NiftyReg/install/

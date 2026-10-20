@@ -30,6 +30,10 @@ public:
     static void createItemFromSTL(QVTKOpenGLNativeWidget* vtkWidget, QString stl_fileName);
     static void renderBall(QVTKOpenGLNativeWidget* vtkWidget);
 
+    // 新增：在指定世界坐标处加载并渲染 STL，返回创建的 actor（空表示失败）
+    static vtkSmartPointer<vtkActor> createItemFromSTLAt(QVTKOpenGLNativeWidget* vtkWidget, const QString &stl_fileName,
+                                                         double x, double y, double z);
+
 private:
     VisualizeTool visualizeTool;
 };

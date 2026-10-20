@@ -346,6 +346,29 @@ background-color: rgb(245, 245, 245);
              </widget>
             </item>
             <item>
+             <widget class="QPushButton" name="showButton">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+background-color: rgb(37, 38, 43);
+color: rgb(192, 192, 192);
+font-size:15px;
+border-radius: 5px;
+min-width: 100px;
+min-height: 40px;
+}
+QPushButton:hover{
+background-color: rgb(70, 72, 81);
+}
+QPushButton:pressed {
+background-color: rgb(245, 245, 245);
+}</string>
+              </property>
+              <property name="text">
+               <string>显示器械</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <spacer name="horizontalSpacer">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
